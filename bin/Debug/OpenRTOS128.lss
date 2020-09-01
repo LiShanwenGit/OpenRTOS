@@ -1,0 +1,3708 @@
+
+bin\Debug\OpenRTOS128.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000004a  00800100  000016a2  00001736  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000016a2  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000ec7  0080014a  0080014a  00001780  2**0
+                  ALLOC
+  3 .debug_aranges 000000c0  00000000  00000000  00001780  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 00000376  00000000  00000000  00001840  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000f25  00000000  00000000  00001bb6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000005be  00000000  00000000  00002adb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000010c6  00000000  00000000  00003099  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000310  00000000  00000000  00004160  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000484  00000000  00000000  00004470  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000018  00000000  00000000  000048f4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+       4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+       8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+       c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      38:	0c 94 27 01 	jmp	0x24e	; 0x24e <__vector_14>
+      3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+      8c:	11 24       	eor	r1, r1
+      8e:	1f be       	out	0x3f, r1	; 63
+      90:	cf ef       	ldi	r28, 0xFF	; 255
+      92:	d0 e1       	ldi	r29, 0x10	; 16
+      94:	de bf       	out	0x3e, r29	; 62
+      96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+      98:	11 e0       	ldi	r17, 0x01	; 1
+      9a:	a0 e0       	ldi	r26, 0x00	; 0
+      9c:	b1 e0       	ldi	r27, 0x01	; 1
+      9e:	e2 ea       	ldi	r30, 0xA2	; 162
+      a0:	f6 e1       	ldi	r31, 0x16	; 22
+      a2:	00 e0       	ldi	r16, 0x00	; 0
+      a4:	0b bf       	out	0x3b, r16	; 59
+      a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+      a8:	07 90       	elpm	r0, Z+
+      aa:	0d 92       	st	X+, r0
+      ac:	aa 34       	cpi	r26, 0x4A	; 74
+      ae:	b1 07       	cpc	r27, r17
+      b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+      b2:	10 e1       	ldi	r17, 0x10	; 16
+      b4:	aa e4       	ldi	r26, 0x4A	; 74
+      b6:	b1 e0       	ldi	r27, 0x01	; 1
+      b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+      ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+      bc:	a1 31       	cpi	r26, 0x11	; 17
+      be:	b1 07       	cpc	r27, r17
+      c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+      c2:	0e 94 3e 06 	call	0xc7c	; 0xc7c <main>
+      c6:	0c 94 4f 0b 	jmp	0x169e	; 0x169e <_exit>
+
+000000ca <__bad_interrupt>:
+      ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <SysClkInit>:
+/***********************
+系统时钟初始化
+该时钟作为系统滴答时钟
+***********************/
+static void SysClkInit(void)    //定时器作为滴答时钟
+{
+      ce:	df 93       	push	r29
+      d0:	cf 93       	push	r28
+      d2:	cd b7       	in	r28, 0x3d	; 61
+      d4:	de b7       	in	r29, 0x3e	; 62
+    TCCR1B|=0X03;
+      d6:	ae e4       	ldi	r26, 0x4E	; 78
+      d8:	b0 e0       	ldi	r27, 0x00	; 0
+      da:	ee e4       	ldi	r30, 0x4E	; 78
+      dc:	f0 e0       	ldi	r31, 0x00	; 0
+      de:	80 81       	ld	r24, Z
+      e0:	83 60       	ori	r24, 0x03	; 3
+      e2:	8c 93       	st	X, r24
+    TCNT1=0xFE00;
+      e4:	ec e4       	ldi	r30, 0x4C	; 76
+      e6:	f0 e0       	ldi	r31, 0x00	; 0
+      e8:	80 e0       	ldi	r24, 0x00	; 0
+      ea:	9e ef       	ldi	r25, 0xFE	; 254
+      ec:	91 83       	std	Z+1, r25	; 0x01
+      ee:	80 83       	st	Z, r24
+    TIMSK|=(1<<2);
+      f0:	a7 e5       	ldi	r26, 0x57	; 87
+      f2:	b0 e0       	ldi	r27, 0x00	; 0
+      f4:	e7 e5       	ldi	r30, 0x57	; 87
+      f6:	f0 e0       	ldi	r31, 0x00	; 0
+      f8:	80 81       	ld	r24, Z
+      fa:	84 60       	ori	r24, 0x04	; 4
+      fc:	8c 93       	st	X, r24
+}
+      fe:	cf 91       	pop	r28
+     100:	df 91       	pop	r29
+     102:	08 95       	ret
+
+00000104 <DisableIntrp>:
+
+/*****关闭中断*****/
+void DisableIntrp(void)
+{
+     104:	df 93       	push	r29
+     106:	cf 93       	push	r28
+     108:	cd b7       	in	r28, 0x3d	; 61
+     10a:	de b7       	in	r29, 0x3e	; 62
+    SREG&=(unsigned char)(~(1<<7));   //关总中断
+     10c:	af e5       	ldi	r26, 0x5F	; 95
+     10e:	b0 e0       	ldi	r27, 0x00	; 0
+     110:	ef e5       	ldi	r30, 0x5F	; 95
+     112:	f0 e0       	ldi	r31, 0x00	; 0
+     114:	80 81       	ld	r24, Z
+     116:	8f 77       	andi	r24, 0x7F	; 127
+     118:	8c 93       	st	X, r24
+}
+     11a:	cf 91       	pop	r28
+     11c:	df 91       	pop	r29
+     11e:	08 95       	ret
+
+00000120 <EnableIntrp>:
+
+/*****开启中断*****/
+void EnableIntrp(void)
+{
+     120:	df 93       	push	r29
+     122:	cf 93       	push	r28
+     124:	cd b7       	in	r28, 0x3d	; 61
+     126:	de b7       	in	r29, 0x3e	; 62
+    SREG|=(1<<7);
+     128:	af e5       	ldi	r26, 0x5F	; 95
+     12a:	b0 e0       	ldi	r27, 0x00	; 0
+     12c:	ef e5       	ldi	r30, 0x5F	; 95
+     12e:	f0 e0       	ldi	r31, 0x00	; 0
+     130:	80 81       	ld	r24, Z
+     132:	80 68       	ori	r24, 0x80	; 128
+     134:	8c 93       	st	X, r24
+}
+     136:	cf 91       	pop	r28
+     138:	df 91       	pop	r29
+     13a:	08 95       	ret
+
+0000013c <TaskContexSwitch>:
+
+/******上下文切换***********/
+inline void TaskContexSwitch(void)
+{
+     13c:	df 93       	push	r29
+     13e:	cf 93       	push	r28
+     140:	cd b7       	in	r28, 0x3d	; 61
+     142:	de b7       	in	r29, 0x3e	; 62
+    ENTER_CRITICAL();       //进入临界区
+     144:	0e 94 82 00 	call	0x104	; 0x104 <DisableIntrp>
+    asm volatile("push  r1");        //R1入栈
+     148:	1f 92       	push	r1
+    asm volatile("push	r0");        //R0入栈
+     14a:	0f 92       	push	r0
+    asm volatile("in	r0, 0x3f");      //SREG入栈
+     14c:	0f b6       	in	r0, 0x3f	; 63
+    asm volatile("push	r0");
+     14e:	0f 92       	push	r0
+    asm volatile("lds	r0, 0x5B");//RAMPZ入栈
+     150:	00 90 5b 00 	lds	r0, 0x005B
+    asm volatile("push	r0");
+     154:	0f 92       	push	r0
+    asm volatile("eor	r1, r1");    //清零R1
+     156:	11 24       	eor	r1, r1
+
+    asm volatile("push  r2");         //R2入栈
+     158:	2f 92       	push	r2
+    asm volatile("push	r3");         //R3入栈
+     15a:	3f 92       	push	r3
+    asm volatile("push  r4");         //R4入栈
+     15c:	4f 92       	push	r4
+    asm volatile("push	r5");         //R5入栈
+     15e:	5f 92       	push	r5
+    asm volatile("push  r6");         //R6入栈
+     160:	6f 92       	push	r6
+    asm volatile("push	r7");         //R7入栈
+     162:	7f 92       	push	r7
+    asm volatile("push  r8");         //R8入栈
+     164:	8f 92       	push	r8
+    asm volatile("push	r9");         //R9入栈
+     166:	9f 92       	push	r9
+    asm volatile("push  r10");        //R10入栈
+     168:	af 92       	push	r10
+    asm volatile("push	r11");        //R11入栈
+     16a:	bf 92       	push	r11
+    asm volatile("push  r12");        //R12入栈
+     16c:	cf 92       	push	r12
+    asm volatile("push	r13");        //R13入栈
+     16e:	df 92       	push	r13
+    asm volatile("push  r14");        //R14入栈
+     170:	ef 92       	push	r14
+    asm volatile("push	r15");        //R15入栈
+     172:	ff 92       	push	r15
+    asm volatile("push  r16");        //R16入栈
+     174:	0f 93       	push	r16
+    asm volatile("push	r17");        //R17入栈
+     176:	1f 93       	push	r17
+    asm volatile("push  r18");        //R18入栈
+     178:	2f 93       	push	r18
+    asm volatile("push	r19");        //R19入栈
+     17a:	3f 93       	push	r19
+    asm volatile("push  r20");        //R20入栈
+     17c:	4f 93       	push	r20
+    asm volatile("push	r21");        //R21入栈
+     17e:	5f 93       	push	r21
+    asm volatile("push  r22");        //R22入栈
+     180:	6f 93       	push	r22
+    asm volatile("push	r23");        //R23入栈
+     182:	7f 93       	push	r23
+    asm volatile("push	r24");        //R24入栈
+     184:	8f 93       	push	r24
+    asm volatile("push  r25");        //R25入栈
+     186:	9f 93       	push	r25
+    asm volatile("push	r26");        //R26入栈
+     188:	af 93       	push	r26
+    asm volatile("push	r27");        //R27入栈
+     18a:	bf 93       	push	r27
+    asm volatile("push	r30");        //R30入栈
+     18c:	ef 93       	push	r30
+    asm volatile("push	r31");        //R31入栈
+     18e:	ff 93       	push	r31
+
+    RunningTask->TCB_TopSP=SP;
+     190:	a0 91 0d 10 	lds	r26, 0x100D
+     194:	b0 91 0e 10 	lds	r27, 0x100E
+     198:	ed e5       	ldi	r30, 0x5D	; 93
+     19a:	f0 e0       	ldi	r31, 0x00	; 0
+     19c:	80 81       	ld	r24, Z
+     19e:	91 81       	ldd	r25, Z+1	; 0x01
+     1a0:	1b 96       	adiw	r26, 0x0b	; 11
+     1a2:	9c 93       	st	X, r25
+     1a4:	8e 93       	st	-X, r24
+     1a6:	1a 97       	sbiw	r26, 0x0a	; 10
+    RunningTask=RunningTask->TCBNext;
+     1a8:	e0 91 0d 10 	lds	r30, 0x100D
+     1ac:	f0 91 0e 10 	lds	r31, 0x100E
+     1b0:	82 81       	ldd	r24, Z+2	; 0x02
+     1b2:	93 81       	ldd	r25, Z+3	; 0x03
+     1b4:	90 93 0e 10 	sts	0x100E, r25
+     1b8:	80 93 0d 10 	sts	0x100D, r24
+     1bc:	0a c0       	rjmp	.+20     	; 0x1d2 <TaskContexSwitch+0x96>
+    while(RunningTask->TCBState==255)
+    {
+        RunningTask=RunningTask->TCBNext;
+     1be:	e0 91 0d 10 	lds	r30, 0x100D
+     1c2:	f0 91 0e 10 	lds	r31, 0x100E
+     1c6:	82 81       	ldd	r24, Z+2	; 0x02
+     1c8:	93 81       	ldd	r25, Z+3	; 0x03
+     1ca:	90 93 0e 10 	sts	0x100E, r25
+     1ce:	80 93 0d 10 	sts	0x100D, r24
+    asm volatile("push	r30");        //R30入栈
+    asm volatile("push	r31");        //R31入栈
+
+    RunningTask->TCB_TopSP=SP;
+    RunningTask=RunningTask->TCBNext;
+    while(RunningTask->TCBState==255)
+     1d2:	e0 91 0d 10 	lds	r30, 0x100D
+     1d6:	f0 91 0e 10 	lds	r31, 0x100E
+     1da:	86 85       	ldd	r24, Z+14	; 0x0e
+     1dc:	8f 3f       	cpi	r24, 0xFF	; 255
+     1de:	79 f3       	breq	.-34     	; 0x1be <TaskContexSwitch+0x82>
+    {
+        RunningTask=RunningTask->TCBNext;
+    }
+    SP=RunningTask->TCB_TopSP;
+     1e0:	ed e5       	ldi	r30, 0x5D	; 93
+     1e2:	f0 e0       	ldi	r31, 0x00	; 0
+     1e4:	a0 91 0d 10 	lds	r26, 0x100D
+     1e8:	b0 91 0e 10 	lds	r27, 0x100E
+     1ec:	1a 96       	adiw	r26, 0x0a	; 10
+     1ee:	8d 91       	ld	r24, X+
+     1f0:	9c 91       	ld	r25, X
+     1f2:	1b 97       	sbiw	r26, 0x0b	; 11
+     1f4:	91 83       	std	Z+1, r25	; 0x01
+     1f6:	80 83       	st	Z, r24
+    asm volatile("pop	r31");
+     1f8:	ff 91       	pop	r31
+    asm volatile("pop	r30");
+     1fa:	ef 91       	pop	r30
+    asm volatile("pop	r27");
+     1fc:	bf 91       	pop	r27
+    asm volatile("pop	r26");
+     1fe:	af 91       	pop	r26
+    asm volatile("pop   r25");
+     200:	9f 91       	pop	r25
+    asm volatile("pop	r24");
+     202:	8f 91       	pop	r24
+    asm volatile("pop	r23");
+     204:	7f 91       	pop	r23
+    asm volatile("pop   r22");
+     206:	6f 91       	pop	r22
+    asm volatile("pop	r21");
+     208:	5f 91       	pop	r21
+    asm volatile("pop   r20");
+     20a:	4f 91       	pop	r20
+    asm volatile("pop	r19");
+     20c:	3f 91       	pop	r19
+    asm volatile("pop   r18");
+     20e:	2f 91       	pop	r18
+    asm volatile("pop	r17");
+     210:	1f 91       	pop	r17
+    asm volatile("pop   r16");
+     212:	0f 91       	pop	r16
+    asm volatile("pop	r15");
+     214:	ff 90       	pop	r15
+    asm volatile("pop   r14");
+     216:	ef 90       	pop	r14
+    asm volatile("pop	r13");
+     218:	df 90       	pop	r13
+    asm volatile("pop   r12");
+     21a:	cf 90       	pop	r12
+    asm volatile("pop	r11");
+     21c:	bf 90       	pop	r11
+    asm volatile("pop   r10");
+     21e:	af 90       	pop	r10
+    asm volatile("pop	r9");
+     220:	9f 90       	pop	r9
+    asm volatile("pop   r8");
+     222:	8f 90       	pop	r8
+    asm volatile("pop	r7");
+     224:	7f 90       	pop	r7
+    asm volatile("pop   r6");
+     226:	6f 90       	pop	r6
+    asm volatile("pop	r5");
+     228:	5f 90       	pop	r5
+    asm volatile("pop   r4");
+     22a:	4f 90       	pop	r4
+    asm volatile("pop	r3");
+     22c:	3f 90       	pop	r3
+    asm volatile("pop   r2");
+     22e:	2f 90       	pop	r2
+    asm volatile("pop	r0");
+     230:	0f 90       	pop	r0
+    asm volatile("sts	0x5B, r0");
+     232:	00 92 5b 00 	sts	0x005B, r0
+    asm volatile("pop	r0");
+     236:	0f 90       	pop	r0
+    asm volatile("out	0x3f, r0");
+     238:	0f be       	out	0x3f, r0	; 63
+    asm volatile("pop	r0");
+     23a:	0f 90       	pop	r0
+
+    asm volatile("pop	r1");
+     23c:	1f 90       	pop	r1
+    //  TIFR|=(1<<2);
+    EXIT_CRITICAL();
+     23e:	0e 94 90 00 	call	0x120	; 0x120 <EnableIntrp>
+    asm volatile("pop	r28");
+     242:	cf 91       	pop	r28
+    asm volatile("pop	r29");
+     244:	df 91       	pop	r29
+    asm volatile ("RET");
+     246:	08 95       	ret
+
+}
+     248:	cf 91       	pop	r28
+     24a:	df 91       	pop	r29
+     24c:	08 95       	ret
+
+0000024e <__vector_14>:
+    EXIT_CRITICAL();
+}
+#endif
+#if(SYS_CLK_TIMER==1)
+ISR(TIMER1_OVF_vect)
+{
+     24e:	1f 92       	push	r1
+     250:	0f 92       	push	r0
+     252:	0f b6       	in	r0, 0x3f	; 63
+     254:	0f 92       	push	r0
+     256:	00 90 5b 00 	lds	r0, 0x005B
+     25a:	0f 92       	push	r0
+     25c:	11 24       	eor	r1, r1
+     25e:	2f 93       	push	r18
+     260:	3f 93       	push	r19
+     262:	4f 93       	push	r20
+     264:	5f 93       	push	r21
+     266:	6f 93       	push	r22
+     268:	7f 93       	push	r23
+     26a:	8f 93       	push	r24
+     26c:	9f 93       	push	r25
+     26e:	af 93       	push	r26
+     270:	bf 93       	push	r27
+     272:	ef 93       	push	r30
+     274:	ff 93       	push	r31
+     276:	df 93       	push	r29
+     278:	cf 93       	push	r28
+     27a:	cd b7       	in	r28, 0x3d	; 61
+     27c:	de b7       	in	r29, 0x3e	; 62
+    ENTER_CRITICAL();       //进入临界区
+     27e:	0e 94 82 00 	call	0x104	; 0x104 <DisableIntrp>
+    TCNT1=0xFE00;
+     282:	ec e4       	ldi	r30, 0x4C	; 76
+     284:	f0 e0       	ldi	r31, 0x00	; 0
+     286:	80 e0       	ldi	r24, 0x00	; 0
+     288:	9e ef       	ldi	r25, 0xFE	; 254
+     28a:	91 83       	std	Z+1, r25	; 0x01
+     28c:	80 83       	st	Z, r24
+    TIFR|=(1<<2);
+     28e:	a6 e5       	ldi	r26, 0x56	; 86
+     290:	b0 e0       	ldi	r27, 0x00	; 0
+     292:	e6 e5       	ldi	r30, 0x56	; 86
+     294:	f0 e0       	ldi	r31, 0x00	; 0
+     296:	80 81       	ld	r24, Z
+     298:	84 60       	ori	r24, 0x04	; 4
+     29a:	8c 93       	st	X, r24
+    TaskContexSwitch();
+     29c:	0e 94 9e 00 	call	0x13c	; 0x13c <TaskContexSwitch>
+    RefreshBlkList();     //刷新阻塞任务状态
+     2a0:	0e 94 5f 09 	call	0x12be	; 0x12be <RefreshBlkList>
+    EXIT_CRITICAL();
+     2a4:	0e 94 90 00 	call	0x120	; 0x120 <EnableIntrp>
+}
+     2a8:	cf 91       	pop	r28
+     2aa:	df 91       	pop	r29
+     2ac:	ff 91       	pop	r31
+     2ae:	ef 91       	pop	r30
+     2b0:	bf 91       	pop	r27
+     2b2:	af 91       	pop	r26
+     2b4:	9f 91       	pop	r25
+     2b6:	8f 91       	pop	r24
+     2b8:	7f 91       	pop	r23
+     2ba:	6f 91       	pop	r22
+     2bc:	5f 91       	pop	r21
+     2be:	4f 91       	pop	r20
+     2c0:	3f 91       	pop	r19
+     2c2:	2f 91       	pop	r18
+     2c4:	0f 90       	pop	r0
+     2c6:	00 92 5b 00 	sts	0x005B, r0
+     2ca:	0f 90       	pop	r0
+     2cc:	0f be       	out	0x3f, r0	; 63
+     2ce:	0f 90       	pop	r0
+     2d0:	1f 90       	pop	r1
+     2d2:	18 95       	reti
+
+000002d4 <OpenRTOSInit>:
+    TaskContexSwitch();  //任务切换
+}
+#endif
+
+void OpenRTOSInit(void)
+{
+     2d4:	df 93       	push	r29
+     2d6:	cf 93       	push	r28
+     2d8:	cd b7       	in	r28, 0x3d	; 61
+     2da:	de b7       	in	r29, 0x3e	; 62
+    BlankRegisterAll();                 //注册所有任务，即为所有可能的任务分配空间
+     2dc:	0e 94 72 05 	call	0xae4	; 0xae4 <BlankRegisterAll>
+    RdyListIndexInit();                 //初始化任务查询表
+     2e0:	0e 94 b2 05 	call	0xb64	; 0xb64 <RdyListIndexInit>
+    BlkLisInit();
+     2e4:	0e 94 f4 05 	call	0xbe8	; 0xbe8 <BlkLisInit>
+    RdyListNumInit();                   //任务就绪链表初始化
+     2e8:	0e 94 d7 05 	call	0xbae	; 0xbae <RdyListNumInit>
+    SuspListInit();                     //阻塞链表初始化
+     2ec:	0e 94 01 06 	call	0xc02	; 0xc02 <SuspListInit>
+    IdleTaskInit();                   //空闲任务初始化
+     2f0:	0e 94 95 06 	call	0xd2a	; 0xd2a <IdleTaskInit>
+}
+     2f4:	cf 91       	pop	r28
+     2f6:	df 91       	pop	r29
+     2f8:	08 95       	ret
+
+000002fa <pStartSchedule>:
+
+/******任务开始调度函数********/
+void pStartSchedule(void)
+{
+     2fa:	df 93       	push	r29
+     2fc:	cf 93       	push	r28
+     2fe:	cd b7       	in	r28, 0x3d	; 61
+     300:	de b7       	in	r29, 0x3e	; 62
+    ENTER_CRITICAL();                   //进入临界区
+     302:	0e 94 82 00 	call	0x104	; 0x104 <DisableIntrp>
+    RunningTask=GetFirstHighTask();     //获取第一个最高优先级的任务
+     306:	0e 94 08 07 	call	0xe10	; 0xe10 <GetFirstHighTask>
+     30a:	90 93 0e 10 	sts	0x100E, r25
+     30e:	80 93 0d 10 	sts	0x100D, r24
+    SysClkInit();                       //初始化时钟
+     312:	0e 94 67 00 	call	0xce	; 0xce <SysClkInit>
+    TaskContexSwitch();                 //进行一次任务切换
+     316:	0e 94 9e 00 	call	0x13c	; 0x13c <TaskContexSwitch>
+    EXIT_CRITICAL();
+     31a:	0e 94 90 00 	call	0x120	; 0x120 <EnableIntrp>
+}
+     31e:	cf 91       	pop	r28
+     320:	df 91       	pop	r29
+     322:	08 95       	ret
+
+00000324 <MemAlloc>:
+功能：申请内存分配
+参数：申请大字节大小，最大为DynMemAllSizeByte
+返回：申请内存的地址，且地址类型为CHAR8U * 型
+############################################################################***/
+INT8 * MemAlloc(INT16 SizeByte)
+{
+     324:	0f 93       	push	r16
+     326:	1f 93       	push	r17
+     328:	df 93       	push	r29
+     32a:	cf 93       	push	r28
+     32c:	cd b7       	in	r28, 0x3d	; 61
+     32e:	de b7       	in	r29, 0x3e	; 62
+     330:	60 97       	sbiw	r28, 0x10	; 16
+     332:	0f b6       	in	r0, 0x3f	; 63
+     334:	f8 94       	cli
+     336:	de bf       	out	0x3e, r29	; 62
+     338:	0f be       	out	0x3f, r0	; 63
+     33a:	cd bf       	out	0x3d, r28	; 61
+     33c:	98 87       	std	Y+8, r25	; 0x08
+     33e:	8f 83       	std	Y+7, r24	; 0x07
+   INT16 i=0,j=0,IsUseFulNum=0;
+     340:	1e 82       	std	Y+6, r1	; 0x06
+     342:	1d 82       	std	Y+5, r1	; 0x05
+     344:	1c 82       	std	Y+4, r1	; 0x04
+     346:	1b 82       	std	Y+3, r1	; 0x03
+     348:	1a 82       	std	Y+2, r1	; 0x02
+     34a:	19 82       	std	Y+1, r1	; 0x01
+     34c:	f1 c0       	rjmp	.+482    	; 0x530 <MemAlloc+0x20c>
+   while(i<(DynMemAllSizeByte-SizeByte))
+   {
+     if((MemAllocIndex[i/8]&(INT8)(1<<(7-(i%8))))==0)
+     34e:	8d 81       	ldd	r24, Y+5	; 0x05
+     350:	9e 81       	ldd	r25, Y+6	; 0x06
+     352:	9c 87       	std	Y+12, r25	; 0x0c
+     354:	8b 87       	std	Y+11, r24	; 0x0b
+     356:	4b 85       	ldd	r20, Y+11	; 0x0b
+     358:	5c 85       	ldd	r21, Y+12	; 0x0c
+     35a:	55 23       	and	r21, r21
+     35c:	34 f4       	brge	.+12     	; 0x36a <MemAlloc+0x46>
+     35e:	6b 85       	ldd	r22, Y+11	; 0x0b
+     360:	7c 85       	ldd	r23, Y+12	; 0x0c
+     362:	69 5f       	subi	r22, 0xF9	; 249
+     364:	7f 4f       	sbci	r23, 0xFF	; 255
+     366:	7c 87       	std	Y+12, r23	; 0x0c
+     368:	6b 87       	std	Y+11, r22	; 0x0b
+     36a:	8b 85       	ldd	r24, Y+11	; 0x0b
+     36c:	9c 85       	ldd	r25, Y+12	; 0x0c
+     36e:	95 95       	asr	r25
+     370:	87 95       	ror	r24
+     372:	95 95       	asr	r25
+     374:	87 95       	ror	r24
+     376:	95 95       	asr	r25
+     378:	87 95       	ror	r24
+     37a:	fc 01       	movw	r30, r24
+     37c:	e6 5b       	subi	r30, 0xB6	; 182
+     37e:	f2 4f       	sbci	r31, 0xF2	; 242
+     380:	40 81       	ld	r20, Z
+     382:	8d 81       	ldd	r24, Y+5	; 0x05
+     384:	9e 81       	ldd	r25, Y+6	; 0x06
+     386:	28 e0       	ldi	r18, 0x08	; 8
+     388:	30 e0       	ldi	r19, 0x00	; 0
+     38a:	b9 01       	movw	r22, r18
+     38c:	0e 94 1a 0b 	call	0x1634	; 0x1634 <__divmodhi4>
+     390:	9c 01       	movw	r18, r24
+     392:	87 e0       	ldi	r24, 0x07	; 7
+     394:	90 e0       	ldi	r25, 0x00	; 0
+     396:	bc 01       	movw	r22, r24
+     398:	62 1b       	sub	r22, r18
+     39a:	73 0b       	sbc	r23, r19
+     39c:	9b 01       	movw	r18, r22
+     39e:	81 e0       	ldi	r24, 0x01	; 1
+     3a0:	90 e0       	ldi	r25, 0x00	; 0
+     3a2:	02 2e       	mov	r0, r18
+     3a4:	02 c0       	rjmp	.+4      	; 0x3aa <MemAlloc+0x86>
+     3a6:	88 0f       	add	r24, r24
+     3a8:	99 1f       	adc	r25, r25
+     3aa:	0a 94       	dec	r0
+     3ac:	e2 f7       	brpl	.-8      	; 0x3a6 <MemAlloc+0x82>
+     3ae:	84 23       	and	r24, r20
+     3b0:	88 23       	and	r24, r24
+     3b2:	09 f0       	breq	.+2      	; 0x3b6 <MemAlloc+0x92>
+     3b4:	b8 c0       	rjmp	.+368    	; 0x526 <MemAlloc+0x202>
+     {
+        IsUseFulNum=0;
+     3b6:	1a 82       	std	Y+2, r1	; 0x02
+     3b8:	19 82       	std	Y+1, r1	; 0x01
+        for(j=i;j<i+SizeByte;j++)
+     3ba:	8d 81       	ldd	r24, Y+5	; 0x05
+     3bc:	9e 81       	ldd	r25, Y+6	; 0x06
+     3be:	9c 83       	std	Y+4, r25	; 0x04
+     3c0:	8b 83       	std	Y+3, r24	; 0x03
+     3c2:	48 c0       	rjmp	.+144    	; 0x454 <MemAlloc+0x130>
+        {
+            if((MemAllocIndex[j/8]&(INT8)(1<<(7-(j%8))))==0)
+     3c4:	8b 81       	ldd	r24, Y+3	; 0x03
+     3c6:	9c 81       	ldd	r25, Y+4	; 0x04
+     3c8:	9e 87       	std	Y+14, r25	; 0x0e
+     3ca:	8d 87       	std	Y+13, r24	; 0x0d
+     3cc:	8d 85       	ldd	r24, Y+13	; 0x0d
+     3ce:	9e 85       	ldd	r25, Y+14	; 0x0e
+     3d0:	99 23       	and	r25, r25
+     3d2:	34 f4       	brge	.+12     	; 0x3e0 <MemAlloc+0xbc>
+     3d4:	4d 85       	ldd	r20, Y+13	; 0x0d
+     3d6:	5e 85       	ldd	r21, Y+14	; 0x0e
+     3d8:	49 5f       	subi	r20, 0xF9	; 249
+     3da:	5f 4f       	sbci	r21, 0xFF	; 255
+     3dc:	5e 87       	std	Y+14, r21	; 0x0e
+     3de:	4d 87       	std	Y+13, r20	; 0x0d
+     3e0:	8d 85       	ldd	r24, Y+13	; 0x0d
+     3e2:	9e 85       	ldd	r25, Y+14	; 0x0e
+     3e4:	95 95       	asr	r25
+     3e6:	87 95       	ror	r24
+     3e8:	95 95       	asr	r25
+     3ea:	87 95       	ror	r24
+     3ec:	95 95       	asr	r25
+     3ee:	87 95       	ror	r24
+     3f0:	fc 01       	movw	r30, r24
+     3f2:	e6 5b       	subi	r30, 0xB6	; 182
+     3f4:	f2 4f       	sbci	r31, 0xF2	; 242
+     3f6:	40 81       	ld	r20, Z
+     3f8:	8b 81       	ldd	r24, Y+3	; 0x03
+     3fa:	9c 81       	ldd	r25, Y+4	; 0x04
+     3fc:	28 e0       	ldi	r18, 0x08	; 8
+     3fe:	30 e0       	ldi	r19, 0x00	; 0
+     400:	b9 01       	movw	r22, r18
+     402:	0e 94 1a 0b 	call	0x1634	; 0x1634 <__divmodhi4>
+     406:	9c 01       	movw	r18, r24
+     408:	87 e0       	ldi	r24, 0x07	; 7
+     40a:	90 e0       	ldi	r25, 0x00	; 0
+     40c:	bc 01       	movw	r22, r24
+     40e:	62 1b       	sub	r22, r18
+     410:	73 0b       	sbc	r23, r19
+     412:	9b 01       	movw	r18, r22
+     414:	81 e0       	ldi	r24, 0x01	; 1
+     416:	90 e0       	ldi	r25, 0x00	; 0
+     418:	02 2e       	mov	r0, r18
+     41a:	02 c0       	rjmp	.+4      	; 0x420 <MemAlloc+0xfc>
+     41c:	88 0f       	add	r24, r24
+     41e:	99 1f       	adc	r25, r25
+     420:	0a 94       	dec	r0
+     422:	e2 f7       	brpl	.-8      	; 0x41c <MemAlloc+0xf8>
+     424:	84 23       	and	r24, r20
+     426:	88 23       	and	r24, r24
+     428:	59 f4       	brne	.+22     	; 0x440 <MemAlloc+0x11c>
+               IsUseFulNum++;
+     42a:	89 81       	ldd	r24, Y+1	; 0x01
+     42c:	9a 81       	ldd	r25, Y+2	; 0x02
+     42e:	01 96       	adiw	r24, 0x01	; 1
+     430:	9a 83       	std	Y+2, r25	; 0x02
+     432:	89 83       	std	Y+1, r24	; 0x01
+   while(i<(DynMemAllSizeByte-SizeByte))
+   {
+     if((MemAllocIndex[i/8]&(INT8)(1<<(7-(i%8))))==0)
+     {
+        IsUseFulNum=0;
+        for(j=i;j<i+SizeByte;j++)
+     434:	8b 81       	ldd	r24, Y+3	; 0x03
+     436:	9c 81       	ldd	r25, Y+4	; 0x04
+     438:	01 96       	adiw	r24, 0x01	; 1
+     43a:	9c 83       	std	Y+4, r25	; 0x04
+     43c:	8b 83       	std	Y+3, r24	; 0x03
+     43e:	0a c0       	rjmp	.+20     	; 0x454 <MemAlloc+0x130>
+        {
+            if((MemAllocIndex[j/8]&(INT8)(1<<(7-(j%8))))==0)
+               IsUseFulNum++;
+            else
+            {
+                i=i+j+1;
+     440:	2d 81       	ldd	r18, Y+5	; 0x05
+     442:	3e 81       	ldd	r19, Y+6	; 0x06
+     444:	8b 81       	ldd	r24, Y+3	; 0x03
+     446:	9c 81       	ldd	r25, Y+4	; 0x04
+     448:	82 0f       	add	r24, r18
+     44a:	93 1f       	adc	r25, r19
+     44c:	01 96       	adiw	r24, 0x01	; 1
+     44e:	9e 83       	std	Y+6, r25	; 0x06
+     450:	8d 83       	std	Y+5, r24	; 0x05
+     452:	0c c0       	rjmp	.+24     	; 0x46c <MemAlloc+0x148>
+   while(i<(DynMemAllSizeByte-SizeByte))
+   {
+     if((MemAllocIndex[i/8]&(INT8)(1<<(7-(i%8))))==0)
+     {
+        IsUseFulNum=0;
+        for(j=i;j<i+SizeByte;j++)
+     454:	2d 81       	ldd	r18, Y+5	; 0x05
+     456:	3e 81       	ldd	r19, Y+6	; 0x06
+     458:	8f 81       	ldd	r24, Y+7	; 0x07
+     45a:	98 85       	ldd	r25, Y+8	; 0x08
+     45c:	28 0f       	add	r18, r24
+     45e:	39 1f       	adc	r19, r25
+     460:	8b 81       	ldd	r24, Y+3	; 0x03
+     462:	9c 81       	ldd	r25, Y+4	; 0x04
+     464:	82 17       	cp	r24, r18
+     466:	93 07       	cpc	r25, r19
+     468:	0c f4       	brge	.+2      	; 0x46c <MemAlloc+0x148>
+     46a:	ac cf       	rjmp	.-168    	; 0x3c4 <MemAlloc+0xa0>
+            {
+                i=i+j+1;
+                break;
+            }
+        }
+        if(IsUseFulNum==SizeByte)
+     46c:	29 81       	ldd	r18, Y+1	; 0x01
+     46e:	3a 81       	ldd	r19, Y+2	; 0x02
+     470:	8f 81       	ldd	r24, Y+7	; 0x07
+     472:	98 85       	ldd	r25, Y+8	; 0x08
+     474:	28 17       	cp	r18, r24
+     476:	39 07       	cpc	r19, r25
+     478:	09 f0       	breq	.+2      	; 0x47c <MemAlloc+0x158>
+     47a:	5a c0       	rjmp	.+180    	; 0x530 <MemAlloc+0x20c>
+        {
+          for(j=i;j<i+SizeByte;j++)
+     47c:	8d 81       	ldd	r24, Y+5	; 0x05
+     47e:	9e 81       	ldd	r25, Y+6	; 0x06
+     480:	9c 83       	std	Y+4, r25	; 0x04
+     482:	8b 83       	std	Y+3, r24	; 0x03
+     484:	3a c0       	rjmp	.+116    	; 0x4fa <MemAlloc+0x1d6>
+          {
+            MemAllocIndex[j/8]|=(INT8)(1<<(7-(j%8)));
+     486:	8b 81       	ldd	r24, Y+3	; 0x03
+     488:	9c 81       	ldd	r25, Y+4	; 0x04
+     48a:	98 8b       	std	Y+16, r25	; 0x10
+     48c:	8f 87       	std	Y+15, r24	; 0x0f
+     48e:	8f 85       	ldd	r24, Y+15	; 0x0f
+     490:	98 89       	ldd	r25, Y+16	; 0x10
+     492:	99 23       	and	r25, r25
+     494:	34 f4       	brge	.+12     	; 0x4a2 <MemAlloc+0x17e>
+     496:	4f 85       	ldd	r20, Y+15	; 0x0f
+     498:	58 89       	ldd	r21, Y+16	; 0x10
+     49a:	49 5f       	subi	r20, 0xF9	; 249
+     49c:	5f 4f       	sbci	r21, 0xFF	; 255
+     49e:	58 8b       	std	Y+16, r21	; 0x10
+     4a0:	4f 87       	std	Y+15, r20	; 0x0f
+     4a2:	8f 85       	ldd	r24, Y+15	; 0x0f
+     4a4:	98 89       	ldd	r25, Y+16	; 0x10
+     4a6:	95 95       	asr	r25
+     4a8:	87 95       	ror	r24
+     4aa:	95 95       	asr	r25
+     4ac:	87 95       	ror	r24
+     4ae:	95 95       	asr	r25
+     4b0:	87 95       	ror	r24
+     4b2:	8c 01       	movw	r16, r24
+     4b4:	fc 01       	movw	r30, r24
+     4b6:	e6 5b       	subi	r30, 0xB6	; 182
+     4b8:	f2 4f       	sbci	r31, 0xF2	; 242
+     4ba:	40 81       	ld	r20, Z
+     4bc:	8b 81       	ldd	r24, Y+3	; 0x03
+     4be:	9c 81       	ldd	r25, Y+4	; 0x04
+     4c0:	28 e0       	ldi	r18, 0x08	; 8
+     4c2:	30 e0       	ldi	r19, 0x00	; 0
+     4c4:	b9 01       	movw	r22, r18
+     4c6:	0e 94 1a 0b 	call	0x1634	; 0x1634 <__divmodhi4>
+     4ca:	9c 01       	movw	r18, r24
+     4cc:	87 e0       	ldi	r24, 0x07	; 7
+     4ce:	90 e0       	ldi	r25, 0x00	; 0
+     4d0:	bc 01       	movw	r22, r24
+     4d2:	62 1b       	sub	r22, r18
+     4d4:	73 0b       	sbc	r23, r19
+     4d6:	9b 01       	movw	r18, r22
+     4d8:	81 e0       	ldi	r24, 0x01	; 1
+     4da:	90 e0       	ldi	r25, 0x00	; 0
+     4dc:	02 c0       	rjmp	.+4      	; 0x4e2 <MemAlloc+0x1be>
+     4de:	88 0f       	add	r24, r24
+     4e0:	99 1f       	adc	r25, r25
+     4e2:	2a 95       	dec	r18
+     4e4:	e2 f7       	brpl	.-8      	; 0x4de <MemAlloc+0x1ba>
+     4e6:	84 2b       	or	r24, r20
+     4e8:	f8 01       	movw	r30, r16
+     4ea:	e6 5b       	subi	r30, 0xB6	; 182
+     4ec:	f2 4f       	sbci	r31, 0xF2	; 242
+     4ee:	80 83       	st	Z, r24
+                break;
+            }
+        }
+        if(IsUseFulNum==SizeByte)
+        {
+          for(j=i;j<i+SizeByte;j++)
+     4f0:	8b 81       	ldd	r24, Y+3	; 0x03
+     4f2:	9c 81       	ldd	r25, Y+4	; 0x04
+     4f4:	01 96       	adiw	r24, 0x01	; 1
+     4f6:	9c 83       	std	Y+4, r25	; 0x04
+     4f8:	8b 83       	std	Y+3, r24	; 0x03
+     4fa:	2d 81       	ldd	r18, Y+5	; 0x05
+     4fc:	3e 81       	ldd	r19, Y+6	; 0x06
+     4fe:	8f 81       	ldd	r24, Y+7	; 0x07
+     500:	98 85       	ldd	r25, Y+8	; 0x08
+     502:	28 0f       	add	r18, r24
+     504:	39 1f       	adc	r19, r25
+     506:	8b 81       	ldd	r24, Y+3	; 0x03
+     508:	9c 81       	ldd	r25, Y+4	; 0x04
+     50a:	82 17       	cp	r24, r18
+     50c:	93 07       	cpc	r25, r19
+     50e:	0c f4       	brge	.+2      	; 0x512 <MemAlloc+0x1ee>
+     510:	ba cf       	rjmp	.-140    	; 0x486 <MemAlloc+0x162>
+          {
+            MemAllocIndex[j/8]|=(INT8)(1<<(7-(j%8)));
+          }
+          return  (INT8 *)DynamicMem+i;
+     512:	2a e4       	ldi	r18, 0x4A	; 74
+     514:	31 e0       	ldi	r19, 0x01	; 1
+     516:	8d 81       	ldd	r24, Y+5	; 0x05
+     518:	9e 81       	ldd	r25, Y+6	; 0x06
+     51a:	a9 01       	movw	r20, r18
+     51c:	48 0f       	add	r20, r24
+     51e:	59 1f       	adc	r21, r25
+     520:	5a 87       	std	Y+10, r21	; 0x0a
+     522:	49 87       	std	Y+9, r20	; 0x09
+     524:	13 c0       	rjmp	.+38     	; 0x54c <MemAlloc+0x228>
+        }
+     }
+     else
+       i++;
+     526:	8d 81       	ldd	r24, Y+5	; 0x05
+     528:	9e 81       	ldd	r25, Y+6	; 0x06
+     52a:	01 96       	adiw	r24, 0x01	; 1
+     52c:	9e 83       	std	Y+6, r25	; 0x06
+     52e:	8d 83       	std	Y+5, r24	; 0x05
+返回：申请内存的地址，且地址类型为CHAR8U * 型
+############################################################################***/
+INT8 * MemAlloc(INT16 SizeByte)
+{
+   INT16 i=0,j=0,IsUseFulNum=0;
+   while(i<(DynMemAllSizeByte-SizeByte))
+     530:	20 e0       	ldi	r18, 0x00	; 0
+     532:	3c e0       	ldi	r19, 0x0C	; 12
+     534:	8f 81       	ldd	r24, Y+7	; 0x07
+     536:	98 85       	ldd	r25, Y+8	; 0x08
+     538:	28 1b       	sub	r18, r24
+     53a:	39 0b       	sbc	r19, r25
+     53c:	8d 81       	ldd	r24, Y+5	; 0x05
+     53e:	9e 81       	ldd	r25, Y+6	; 0x06
+     540:	82 17       	cp	r24, r18
+     542:	93 07       	cpc	r25, r19
+     544:	0c f4       	brge	.+2      	; 0x548 <MemAlloc+0x224>
+     546:	03 cf       	rjmp	.-506    	; 0x34e <MemAlloc+0x2a>
+     }
+     else
+       i++;
+   }
+
+   return 0;
+     548:	1a 86       	std	Y+10, r1	; 0x0a
+     54a:	19 86       	std	Y+9, r1	; 0x09
+     54c:	89 85       	ldd	r24, Y+9	; 0x09
+     54e:	9a 85       	ldd	r25, Y+10	; 0x0a
+}
+     550:	60 96       	adiw	r28, 0x10	; 16
+     552:	0f b6       	in	r0, 0x3f	; 63
+     554:	f8 94       	cli
+     556:	de bf       	out	0x3e, r29	; 62
+     558:	0f be       	out	0x3f, r0	; 63
+     55a:	cd bf       	out	0x3d, r28	; 61
+     55c:	cf 91       	pop	r28
+     55e:	df 91       	pop	r29
+     560:	1f 91       	pop	r17
+     562:	0f 91       	pop	r16
+     564:	08 95       	ret
+
+00000566 <MemFree>:
+参数：需要释放内存的指针void *，    之前申请大字节大小Size
+返回：无
+############################################################################*****/
+
+void MemFree(void *MemAddr,INT16 Size)
+{
+     566:	0f 93       	push	r16
+     568:	1f 93       	push	r17
+     56a:	df 93       	push	r29
+     56c:	cf 93       	push	r28
+     56e:	cd b7       	in	r28, 0x3d	; 61
+     570:	de b7       	in	r29, 0x3e	; 62
+     572:	28 97       	sbiw	r28, 0x08	; 8
+     574:	0f b6       	in	r0, 0x3f	; 63
+     576:	f8 94       	cli
+     578:	de bf       	out	0x3e, r29	; 62
+     57a:	0f be       	out	0x3f, r0	; 63
+     57c:	cd bf       	out	0x3d, r28	; 61
+     57e:	9c 83       	std	Y+4, r25	; 0x04
+     580:	8b 83       	std	Y+3, r24	; 0x03
+     582:	7e 83       	std	Y+6, r23	; 0x06
+     584:	6d 83       	std	Y+5, r22	; 0x05
+    #define MemAddrOffset  (unsigned int)((unsigned char*)(MemAddr)-DynamicMem)
+    INT16 addr=0;
+     586:	1a 82       	std	Y+2, r1	; 0x02
+     588:	19 82       	std	Y+1, r1	; 0x01
+    for(addr=MemAddrOffset;addr<Size+MemAddrOffset;addr++)
+     58a:	8b 81       	ldd	r24, Y+3	; 0x03
+     58c:	9c 81       	ldd	r25, Y+4	; 0x04
+     58e:	2a e4       	ldi	r18, 0x4A	; 74
+     590:	31 e0       	ldi	r19, 0x01	; 1
+     592:	82 1b       	sub	r24, r18
+     594:	93 0b       	sbc	r25, r19
+     596:	9a 83       	std	Y+2, r25	; 0x02
+     598:	89 83       	std	Y+1, r24	; 0x01
+     59a:	3a c0       	rjmp	.+116    	; 0x610 <MemFree+0xaa>
+    {
+      MemAllocIndex[addr/8]&=(INT8)(~(1<<(7-(addr%8))));
+     59c:	89 81       	ldd	r24, Y+1	; 0x01
+     59e:	9a 81       	ldd	r25, Y+2	; 0x02
+     5a0:	98 87       	std	Y+8, r25	; 0x08
+     5a2:	8f 83       	std	Y+7, r24	; 0x07
+     5a4:	6f 81       	ldd	r22, Y+7	; 0x07
+     5a6:	78 85       	ldd	r23, Y+8	; 0x08
+     5a8:	77 23       	and	r23, r23
+     5aa:	2c f4       	brge	.+10     	; 0x5b6 <MemFree+0x50>
+     5ac:	8f 81       	ldd	r24, Y+7	; 0x07
+     5ae:	98 85       	ldd	r25, Y+8	; 0x08
+     5b0:	07 96       	adiw	r24, 0x07	; 7
+     5b2:	98 87       	std	Y+8, r25	; 0x08
+     5b4:	8f 83       	std	Y+7, r24	; 0x07
+     5b6:	8f 81       	ldd	r24, Y+7	; 0x07
+     5b8:	98 85       	ldd	r25, Y+8	; 0x08
+     5ba:	95 95       	asr	r25
+     5bc:	87 95       	ror	r24
+     5be:	95 95       	asr	r25
+     5c0:	87 95       	ror	r24
+     5c2:	95 95       	asr	r25
+     5c4:	87 95       	ror	r24
+     5c6:	8c 01       	movw	r16, r24
+     5c8:	fc 01       	movw	r30, r24
+     5ca:	e6 5b       	subi	r30, 0xB6	; 182
+     5cc:	f2 4f       	sbci	r31, 0xF2	; 242
+     5ce:	40 81       	ld	r20, Z
+     5d0:	89 81       	ldd	r24, Y+1	; 0x01
+     5d2:	9a 81       	ldd	r25, Y+2	; 0x02
+     5d4:	28 e0       	ldi	r18, 0x08	; 8
+     5d6:	30 e0       	ldi	r19, 0x00	; 0
+     5d8:	b9 01       	movw	r22, r18
+     5da:	0e 94 1a 0b 	call	0x1634	; 0x1634 <__divmodhi4>
+     5de:	9c 01       	movw	r18, r24
+     5e0:	87 e0       	ldi	r24, 0x07	; 7
+     5e2:	90 e0       	ldi	r25, 0x00	; 0
+     5e4:	bc 01       	movw	r22, r24
+     5e6:	62 1b       	sub	r22, r18
+     5e8:	73 0b       	sbc	r23, r19
+     5ea:	9b 01       	movw	r18, r22
+     5ec:	81 e0       	ldi	r24, 0x01	; 1
+     5ee:	90 e0       	ldi	r25, 0x00	; 0
+     5f0:	02 c0       	rjmp	.+4      	; 0x5f6 <MemFree+0x90>
+     5f2:	88 0f       	add	r24, r24
+     5f4:	99 1f       	adc	r25, r25
+     5f6:	2a 95       	dec	r18
+     5f8:	e2 f7       	brpl	.-8      	; 0x5f2 <MemFree+0x8c>
+     5fa:	80 95       	com	r24
+     5fc:	84 23       	and	r24, r20
+     5fe:	f8 01       	movw	r30, r16
+     600:	e6 5b       	subi	r30, 0xB6	; 182
+     602:	f2 4f       	sbci	r31, 0xF2	; 242
+     604:	80 83       	st	Z, r24
+
+void MemFree(void *MemAddr,INT16 Size)
+{
+    #define MemAddrOffset  (unsigned int)((unsigned char*)(MemAddr)-DynamicMem)
+    INT16 addr=0;
+    for(addr=MemAddrOffset;addr<Size+MemAddrOffset;addr++)
+     606:	89 81       	ldd	r24, Y+1	; 0x01
+     608:	9a 81       	ldd	r25, Y+2	; 0x02
+     60a:	01 96       	adiw	r24, 0x01	; 1
+     60c:	9a 83       	std	Y+2, r25	; 0x02
+     60e:	89 83       	std	Y+1, r24	; 0x01
+     610:	49 81       	ldd	r20, Y+1	; 0x01
+     612:	5a 81       	ldd	r21, Y+2	; 0x02
+     614:	2d 81       	ldd	r18, Y+5	; 0x05
+     616:	3e 81       	ldd	r19, Y+6	; 0x06
+     618:	8a e4       	ldi	r24, 0x4A	; 74
+     61a:	91 e0       	ldi	r25, 0x01	; 1
+     61c:	28 1b       	sub	r18, r24
+     61e:	39 0b       	sbc	r19, r25
+     620:	8b 81       	ldd	r24, Y+3	; 0x03
+     622:	9c 81       	ldd	r25, Y+4	; 0x04
+     624:	82 0f       	add	r24, r18
+     626:	93 1f       	adc	r25, r19
+     628:	48 17       	cp	r20, r24
+     62a:	59 07       	cpc	r21, r25
+     62c:	08 f4       	brcc	.+2      	; 0x630 <MemFree+0xca>
+     62e:	b6 cf       	rjmp	.-148    	; 0x59c <MemFree+0x36>
+    {
+      MemAllocIndex[addr/8]&=(INT8)(~(1<<(7-(addr%8))));
+    }
+}
+     630:	28 96       	adiw	r28, 0x08	; 8
+     632:	0f b6       	in	r0, 0x3f	; 63
+     634:	f8 94       	cli
+     636:	de bf       	out	0x3e, r29	; 62
+     638:	0f be       	out	0x3f, r0	; 63
+     63a:	cd bf       	out	0x3d, r28	; 61
+     63c:	cf 91       	pop	r28
+     63e:	df 91       	pop	r29
+     640:	1f 91       	pop	r17
+     642:	0f 91       	pop	r16
+     644:	08 95       	ret
+
+00000646 <MemGetUsed>:
+功能：获取内存使用情况
+参数：无
+返回：已经使用了的字节数
+##########################################################################******/
+INT16 MemGetUsed(void)
+{
+     646:	df 93       	push	r29
+     648:	cf 93       	push	r28
+     64a:	00 d0       	rcall	.+0      	; 0x64c <MemGetUsed+0x6>
+     64c:	00 d0       	rcall	.+0      	; 0x64e <MemGetUsed+0x8>
+     64e:	00 d0       	rcall	.+0      	; 0x650 <MemGetUsed+0xa>
+     650:	cd b7       	in	r28, 0x3d	; 61
+     652:	de b7       	in	r29, 0x3e	; 62
+   INT16 i=0,MemUsed=0;
+     654:	1c 82       	std	Y+4, r1	; 0x04
+     656:	1b 82       	std	Y+3, r1	; 0x03
+     658:	1a 82       	std	Y+2, r1	; 0x02
+     65a:	19 82       	std	Y+1, r1	; 0x01
+   for(i=0;i<DynMemAllSizeByte;i++)
+     65c:	1c 82       	std	Y+4, r1	; 0x04
+     65e:	1b 82       	std	Y+3, r1	; 0x03
+     660:	3c c0       	rjmp	.+120    	; 0x6da <MemGetUsed+0x94>
+   {
+      if((MemAllocIndex[i/8]&(INT8)(1<<(7-i%8)))!=0)
+     662:	8b 81       	ldd	r24, Y+3	; 0x03
+     664:	9c 81       	ldd	r25, Y+4	; 0x04
+     666:	9e 83       	std	Y+6, r25	; 0x06
+     668:	8d 83       	std	Y+5, r24	; 0x05
+     66a:	6d 81       	ldd	r22, Y+5	; 0x05
+     66c:	7e 81       	ldd	r23, Y+6	; 0x06
+     66e:	77 23       	and	r23, r23
+     670:	2c f4       	brge	.+10     	; 0x67c <MemGetUsed+0x36>
+     672:	8d 81       	ldd	r24, Y+5	; 0x05
+     674:	9e 81       	ldd	r25, Y+6	; 0x06
+     676:	07 96       	adiw	r24, 0x07	; 7
+     678:	9e 83       	std	Y+6, r25	; 0x06
+     67a:	8d 83       	std	Y+5, r24	; 0x05
+     67c:	8d 81       	ldd	r24, Y+5	; 0x05
+     67e:	9e 81       	ldd	r25, Y+6	; 0x06
+     680:	95 95       	asr	r25
+     682:	87 95       	ror	r24
+     684:	95 95       	asr	r25
+     686:	87 95       	ror	r24
+     688:	95 95       	asr	r25
+     68a:	87 95       	ror	r24
+     68c:	fc 01       	movw	r30, r24
+     68e:	e6 5b       	subi	r30, 0xB6	; 182
+     690:	f2 4f       	sbci	r31, 0xF2	; 242
+     692:	40 81       	ld	r20, Z
+     694:	8b 81       	ldd	r24, Y+3	; 0x03
+     696:	9c 81       	ldd	r25, Y+4	; 0x04
+     698:	28 e0       	ldi	r18, 0x08	; 8
+     69a:	30 e0       	ldi	r19, 0x00	; 0
+     69c:	b9 01       	movw	r22, r18
+     69e:	0e 94 1a 0b 	call	0x1634	; 0x1634 <__divmodhi4>
+     6a2:	9c 01       	movw	r18, r24
+     6a4:	87 e0       	ldi	r24, 0x07	; 7
+     6a6:	90 e0       	ldi	r25, 0x00	; 0
+     6a8:	bc 01       	movw	r22, r24
+     6aa:	62 1b       	sub	r22, r18
+     6ac:	73 0b       	sbc	r23, r19
+     6ae:	9b 01       	movw	r18, r22
+     6b0:	81 e0       	ldi	r24, 0x01	; 1
+     6b2:	90 e0       	ldi	r25, 0x00	; 0
+     6b4:	02 2e       	mov	r0, r18
+     6b6:	02 c0       	rjmp	.+4      	; 0x6bc <MemGetUsed+0x76>
+     6b8:	88 0f       	add	r24, r24
+     6ba:	99 1f       	adc	r25, r25
+     6bc:	0a 94       	dec	r0
+     6be:	e2 f7       	brpl	.-8      	; 0x6b8 <MemGetUsed+0x72>
+     6c0:	84 23       	and	r24, r20
+     6c2:	88 23       	and	r24, r24
+     6c4:	29 f0       	breq	.+10     	; 0x6d0 <MemGetUsed+0x8a>
+        MemUsed++;
+     6c6:	89 81       	ldd	r24, Y+1	; 0x01
+     6c8:	9a 81       	ldd	r25, Y+2	; 0x02
+     6ca:	01 96       	adiw	r24, 0x01	; 1
+     6cc:	9a 83       	std	Y+2, r25	; 0x02
+     6ce:	89 83       	std	Y+1, r24	; 0x01
+返回：已经使用了的字节数
+##########################################################################******/
+INT16 MemGetUsed(void)
+{
+   INT16 i=0,MemUsed=0;
+   for(i=0;i<DynMemAllSizeByte;i++)
+     6d0:	8b 81       	ldd	r24, Y+3	; 0x03
+     6d2:	9c 81       	ldd	r25, Y+4	; 0x04
+     6d4:	01 96       	adiw	r24, 0x01	; 1
+     6d6:	9c 83       	std	Y+4, r25	; 0x04
+     6d8:	8b 83       	std	Y+3, r24	; 0x03
+     6da:	8b 81       	ldd	r24, Y+3	; 0x03
+     6dc:	9c 81       	ldd	r25, Y+4	; 0x04
+     6de:	7c e0       	ldi	r23, 0x0C	; 12
+     6e0:	80 30       	cpi	r24, 0x00	; 0
+     6e2:	97 07       	cpc	r25, r23
+     6e4:	0c f4       	brge	.+2      	; 0x6e8 <MemGetUsed+0xa2>
+     6e6:	bd cf       	rjmp	.-134    	; 0x662 <MemGetUsed+0x1c>
+   {
+      if((MemAllocIndex[i/8]&(INT8)(1<<(7-i%8)))!=0)
+        MemUsed++;
+   }
+   return MemUsed;
+     6e8:	89 81       	ldd	r24, Y+1	; 0x01
+     6ea:	9a 81       	ldd	r25, Y+2	; 0x02
+}
+     6ec:	26 96       	adiw	r28, 0x06	; 6
+     6ee:	0f b6       	in	r0, 0x3f	; 63
+     6f0:	f8 94       	cli
+     6f2:	de bf       	out	0x3e, r29	; 62
+     6f4:	0f be       	out	0x3f, r0	; 63
+     6f6:	cd bf       	out	0x3d, r28	; 61
+     6f8:	cf 91       	pop	r28
+     6fa:	df 91       	pop	r29
+     6fc:	08 95       	ret
+
+000006fe <ListRemoveNode>:
+static pTCB *pBlankList;                 //空白链表
+
+
+/****删除链表一个特定的节点后****/
+void ListRemoveNode(pTCB *Remove)
+{
+     6fe:	df 93       	push	r29
+     700:	cf 93       	push	r28
+     702:	00 d0       	rcall	.+0      	; 0x704 <ListRemoveNode+0x6>
+     704:	cd b7       	in	r28, 0x3d	; 61
+     706:	de b7       	in	r29, 0x3e	; 62
+     708:	9a 83       	std	Y+2, r25	; 0x02
+     70a:	89 83       	std	Y+1, r24	; 0x01
+    Remove->TCBPrev->TCBNext=Remove->TCBNext;
+     70c:	e9 81       	ldd	r30, Y+1	; 0x01
+     70e:	fa 81       	ldd	r31, Y+2	; 0x02
+     710:	a0 81       	ld	r26, Z
+     712:	b1 81       	ldd	r27, Z+1	; 0x01
+     714:	e9 81       	ldd	r30, Y+1	; 0x01
+     716:	fa 81       	ldd	r31, Y+2	; 0x02
+     718:	82 81       	ldd	r24, Z+2	; 0x02
+     71a:	93 81       	ldd	r25, Z+3	; 0x03
+     71c:	13 96       	adiw	r26, 0x03	; 3
+     71e:	9c 93       	st	X, r25
+     720:	8e 93       	st	-X, r24
+     722:	12 97       	sbiw	r26, 0x02	; 2
+    Remove->TCBNext->TCBPrev=Remove->TCBPrev;
+     724:	e9 81       	ldd	r30, Y+1	; 0x01
+     726:	fa 81       	ldd	r31, Y+2	; 0x02
+     728:	a2 81       	ldd	r26, Z+2	; 0x02
+     72a:	b3 81       	ldd	r27, Z+3	; 0x03
+     72c:	e9 81       	ldd	r30, Y+1	; 0x01
+     72e:	fa 81       	ldd	r31, Y+2	; 0x02
+     730:	80 81       	ld	r24, Z
+     732:	91 81       	ldd	r25, Z+1	; 0x01
+     734:	11 96       	adiw	r26, 0x01	; 1
+     736:	9c 93       	st	X, r25
+     738:	8e 93       	st	-X, r24
+}
+     73a:	0f 90       	pop	r0
+     73c:	0f 90       	pop	r0
+     73e:	cf 91       	pop	r28
+     740:	df 91       	pop	r29
+     742:	08 95       	ret
+
+00000744 <NewRdyVoidList>:
+
+/*****新建一个就绪任务控制块链表，包括两个假任务控制块******/
+static pTCB *NewRdyVoidList(void)
+{
+     744:	df 93       	push	r29
+     746:	cf 93       	push	r28
+     748:	00 d0       	rcall	.+0      	; 0x74a <NewRdyVoidList+0x6>
+     74a:	00 d0       	rcall	.+0      	; 0x74c <NewRdyVoidList+0x8>
+     74c:	00 d0       	rcall	.+0      	; 0x74e <NewRdyVoidList+0xa>
+     74e:	cd b7       	in	r28, 0x3d	; 61
+     750:	de b7       	in	r29, 0x3e	; 62
+    pTCB *NewListHead=(pTCB *)MemAlloc(sizeof(pTCB));
+     752:	80 e1       	ldi	r24, 0x10	; 16
+     754:	90 e0       	ldi	r25, 0x00	; 0
+     756:	0e 94 92 01 	call	0x324	; 0x324 <MemAlloc>
+     75a:	9c 83       	std	Y+4, r25	; 0x04
+     75c:	8b 83       	std	Y+3, r24	; 0x03
+    pTCB *NewListTail=(pTCB *)MemAlloc(sizeof(pTCB));
+     75e:	80 e1       	ldi	r24, 0x10	; 16
+     760:	90 e0       	ldi	r25, 0x00	; 0
+     762:	0e 94 92 01 	call	0x324	; 0x324 <MemAlloc>
+     766:	9a 83       	std	Y+2, r25	; 0x02
+     768:	89 83       	std	Y+1, r24	; 0x01
+    if(NewListHead!=NULL&&NewListTail!=NULL)
+     76a:	8b 81       	ldd	r24, Y+3	; 0x03
+     76c:	9c 81       	ldd	r25, Y+4	; 0x04
+     76e:	00 97       	sbiw	r24, 0x00	; 0
+     770:	a9 f1       	breq	.+106    	; 0x7dc <NewRdyVoidList+0x98>
+     772:	89 81       	ldd	r24, Y+1	; 0x01
+     774:	9a 81       	ldd	r25, Y+2	; 0x02
+     776:	00 97       	sbiw	r24, 0x00	; 0
+     778:	89 f1       	breq	.+98     	; 0x7dc <NewRdyVoidList+0x98>
+    {
+        NewListHead->TCBNext=NewListTail;
+     77a:	eb 81       	ldd	r30, Y+3	; 0x03
+     77c:	fc 81       	ldd	r31, Y+4	; 0x04
+     77e:	89 81       	ldd	r24, Y+1	; 0x01
+     780:	9a 81       	ldd	r25, Y+2	; 0x02
+     782:	93 83       	std	Z+3, r25	; 0x03
+     784:	82 83       	std	Z+2, r24	; 0x02
+        NewListHead->TCBPrev=NewListTail;
+     786:	eb 81       	ldd	r30, Y+3	; 0x03
+     788:	fc 81       	ldd	r31, Y+4	; 0x04
+     78a:	89 81       	ldd	r24, Y+1	; 0x01
+     78c:	9a 81       	ldd	r25, Y+2	; 0x02
+     78e:	91 83       	std	Z+1, r25	; 0x01
+     790:	80 83       	st	Z, r24
+        NewListTail->TCBNext=NewListHead;
+     792:	e9 81       	ldd	r30, Y+1	; 0x01
+     794:	fa 81       	ldd	r31, Y+2	; 0x02
+     796:	8b 81       	ldd	r24, Y+3	; 0x03
+     798:	9c 81       	ldd	r25, Y+4	; 0x04
+     79a:	93 83       	std	Z+3, r25	; 0x03
+     79c:	82 83       	std	Z+2, r24	; 0x02
+        NewListTail->TCBPrev=NewListHead;
+     79e:	e9 81       	ldd	r30, Y+1	; 0x01
+     7a0:	fa 81       	ldd	r31, Y+2	; 0x02
+     7a2:	8b 81       	ldd	r24, Y+3	; 0x03
+     7a4:	9c 81       	ldd	r25, Y+4	; 0x04
+     7a6:	91 83       	std	Z+1, r25	; 0x01
+     7a8:	80 83       	st	Z, r24
+        NewListHead->TCBState=255;
+     7aa:	eb 81       	ldd	r30, Y+3	; 0x03
+     7ac:	fc 81       	ldd	r31, Y+4	; 0x04
+     7ae:	8f ef       	ldi	r24, 0xFF	; 255
+     7b0:	86 87       	std	Z+14, r24	; 0x0e
+        NewListTail->TCBState=255;
+     7b2:	e9 81       	ldd	r30, Y+1	; 0x01
+     7b4:	fa 81       	ldd	r31, Y+2	; 0x02
+     7b6:	8f ef       	ldi	r24, 0xFF	; 255
+     7b8:	86 87       	std	Z+14, r24	; 0x0e
+        NewListHead->TCBName="Head";
+     7ba:	eb 81       	ldd	r30, Y+3	; 0x03
+     7bc:	fc 81       	ldd	r31, Y+4	; 0x04
+     7be:	80 e0       	ldi	r24, 0x00	; 0
+     7c0:	91 e0       	ldi	r25, 0x01	; 1
+     7c2:	97 83       	std	Z+7, r25	; 0x07
+     7c4:	86 83       	std	Z+6, r24	; 0x06
+        NewListTail->TCBName="Tail";
+     7c6:	e9 81       	ldd	r30, Y+1	; 0x01
+     7c8:	fa 81       	ldd	r31, Y+2	; 0x02
+     7ca:	85 e0       	ldi	r24, 0x05	; 5
+     7cc:	91 e0       	ldi	r25, 0x01	; 1
+     7ce:	97 83       	std	Z+7, r25	; 0x07
+     7d0:	86 83       	std	Z+6, r24	; 0x06
+        return NewListHead;
+     7d2:	8b 81       	ldd	r24, Y+3	; 0x03
+     7d4:	9c 81       	ldd	r25, Y+4	; 0x04
+     7d6:	9e 83       	std	Y+6, r25	; 0x06
+     7d8:	8d 83       	std	Y+5, r24	; 0x05
+     7da:	02 c0       	rjmp	.+4      	; 0x7e0 <NewRdyVoidList+0x9c>
+    }
+    else
+    {
+        return NULL;
+     7dc:	1e 82       	std	Y+6, r1	; 0x06
+     7de:	1d 82       	std	Y+5, r1	; 0x05
+     7e0:	8d 81       	ldd	r24, Y+5	; 0x05
+     7e2:	9e 81       	ldd	r25, Y+6	; 0x06
+    }
+}
+     7e4:	26 96       	adiw	r28, 0x06	; 6
+     7e6:	0f b6       	in	r0, 0x3f	; 63
+     7e8:	f8 94       	cli
+     7ea:	de bf       	out	0x3e, r29	; 62
+     7ec:	0f be       	out	0x3f, r0	; 63
+     7ee:	cd bf       	out	0x3d, r28	; 61
+     7f0:	cf 91       	pop	r28
+     7f2:	df 91       	pop	r29
+     7f4:	08 95       	ret
+
+000007f6 <NewBlkSupVoidList>:
+
+/*****新建一个阻塞和挂起任务控制块链表，包括两个假任务控制块******/
+static pTCB *NewBlkSupVoidList(void)
+{
+     7f6:	df 93       	push	r29
+     7f8:	cf 93       	push	r28
+     7fa:	00 d0       	rcall	.+0      	; 0x7fc <NewBlkSupVoidList+0x6>
+     7fc:	00 d0       	rcall	.+0      	; 0x7fe <NewBlkSupVoidList+0x8>
+     7fe:	00 d0       	rcall	.+0      	; 0x800 <NewBlkSupVoidList+0xa>
+     800:	cd b7       	in	r28, 0x3d	; 61
+     802:	de b7       	in	r29, 0x3e	; 62
+    pTCB *NewListHead=(pTCB *)MemAlloc(sizeof(pTCB));
+     804:	80 e1       	ldi	r24, 0x10	; 16
+     806:	90 e0       	ldi	r25, 0x00	; 0
+     808:	0e 94 92 01 	call	0x324	; 0x324 <MemAlloc>
+     80c:	9c 83       	std	Y+4, r25	; 0x04
+     80e:	8b 83       	std	Y+3, r24	; 0x03
+    pTCB *NewListTail=(pTCB *)MemAlloc(sizeof(pTCB));
+     810:	80 e1       	ldi	r24, 0x10	; 16
+     812:	90 e0       	ldi	r25, 0x00	; 0
+     814:	0e 94 92 01 	call	0x324	; 0x324 <MemAlloc>
+     818:	9a 83       	std	Y+2, r25	; 0x02
+     81a:	89 83       	std	Y+1, r24	; 0x01
+    if(NewListHead!=NULL&&NewListTail!=NULL)
+     81c:	8b 81       	ldd	r24, Y+3	; 0x03
+     81e:	9c 81       	ldd	r25, Y+4	; 0x04
+     820:	00 97       	sbiw	r24, 0x00	; 0
+     822:	89 f1       	breq	.+98     	; 0x886 <NewBlkSupVoidList+0x90>
+     824:	89 81       	ldd	r24, Y+1	; 0x01
+     826:	9a 81       	ldd	r25, Y+2	; 0x02
+     828:	00 97       	sbiw	r24, 0x00	; 0
+     82a:	69 f1       	breq	.+90     	; 0x886 <NewBlkSupVoidList+0x90>
+    {
+        NewListHead->TCBNext=NewListTail;
+     82c:	eb 81       	ldd	r30, Y+3	; 0x03
+     82e:	fc 81       	ldd	r31, Y+4	; 0x04
+     830:	89 81       	ldd	r24, Y+1	; 0x01
+     832:	9a 81       	ldd	r25, Y+2	; 0x02
+     834:	93 83       	std	Z+3, r25	; 0x03
+     836:	82 83       	std	Z+2, r24	; 0x02
+        NewListHead->TCBPrev=NULL;
+     838:	eb 81       	ldd	r30, Y+3	; 0x03
+     83a:	fc 81       	ldd	r31, Y+4	; 0x04
+     83c:	11 82       	std	Z+1, r1	; 0x01
+     83e:	10 82       	st	Z, r1
+        NewListTail->TCBNext=NULL;
+     840:	e9 81       	ldd	r30, Y+1	; 0x01
+     842:	fa 81       	ldd	r31, Y+2	; 0x02
+     844:	13 82       	std	Z+3, r1	; 0x03
+     846:	12 82       	std	Z+2, r1	; 0x02
+        NewListTail->TCBPrev=NewListHead;
+     848:	e9 81       	ldd	r30, Y+1	; 0x01
+     84a:	fa 81       	ldd	r31, Y+2	; 0x02
+     84c:	8b 81       	ldd	r24, Y+3	; 0x03
+     84e:	9c 81       	ldd	r25, Y+4	; 0x04
+     850:	91 83       	std	Z+1, r25	; 0x01
+     852:	80 83       	st	Z, r24
+        NewListHead->TCBState=255;
+     854:	eb 81       	ldd	r30, Y+3	; 0x03
+     856:	fc 81       	ldd	r31, Y+4	; 0x04
+     858:	8f ef       	ldi	r24, 0xFF	; 255
+     85a:	86 87       	std	Z+14, r24	; 0x0e
+        NewListTail->TCBState=255;
+     85c:	e9 81       	ldd	r30, Y+1	; 0x01
+     85e:	fa 81       	ldd	r31, Y+2	; 0x02
+     860:	8f ef       	ldi	r24, 0xFF	; 255
+     862:	86 87       	std	Z+14, r24	; 0x0e
+        NewListHead->TCBName="Head";
+     864:	eb 81       	ldd	r30, Y+3	; 0x03
+     866:	fc 81       	ldd	r31, Y+4	; 0x04
+     868:	80 e0       	ldi	r24, 0x00	; 0
+     86a:	91 e0       	ldi	r25, 0x01	; 1
+     86c:	97 83       	std	Z+7, r25	; 0x07
+     86e:	86 83       	std	Z+6, r24	; 0x06
+        NewListTail->TCBName="Tail";
+     870:	e9 81       	ldd	r30, Y+1	; 0x01
+     872:	fa 81       	ldd	r31, Y+2	; 0x02
+     874:	85 e0       	ldi	r24, 0x05	; 5
+     876:	91 e0       	ldi	r25, 0x01	; 1
+     878:	97 83       	std	Z+7, r25	; 0x07
+     87a:	86 83       	std	Z+6, r24	; 0x06
+        return NewListHead;
+     87c:	8b 81       	ldd	r24, Y+3	; 0x03
+     87e:	9c 81       	ldd	r25, Y+4	; 0x04
+     880:	9e 83       	std	Y+6, r25	; 0x06
+     882:	8d 83       	std	Y+5, r24	; 0x05
+     884:	02 c0       	rjmp	.+4      	; 0x88a <NewBlkSupVoidList+0x94>
+    }
+    else
+    {
+        return NULL;
+     886:	1e 82       	std	Y+6, r1	; 0x06
+     888:	1d 82       	std	Y+5, r1	; 0x05
+     88a:	8d 81       	ldd	r24, Y+5	; 0x05
+     88c:	9e 81       	ldd	r25, Y+6	; 0x06
+    }
+}
+     88e:	26 96       	adiw	r28, 0x06	; 6
+     890:	0f b6       	in	r0, 0x3f	; 63
+     892:	f8 94       	cli
+     894:	de bf       	out	0x3e, r29	; 62
+     896:	0f be       	out	0x3f, r0	; 63
+     898:	cd bf       	out	0x3d, r28	; 61
+     89a:	cf 91       	pop	r28
+     89c:	df 91       	pop	r29
+     89e:	08 95       	ret
+
+000008a0 <InsertRdyList>:
+
+
+/****将控制块插入到就绪链表头部后****/
+void InsertRdyList(UINT8 Prio,pTCB *Insert)
+{
+     8a0:	df 93       	push	r29
+     8a2:	cf 93       	push	r28
+     8a4:	00 d0       	rcall	.+0      	; 0x8a6 <InsertRdyList+0x6>
+     8a6:	0f 92       	push	r0
+     8a8:	cd b7       	in	r28, 0x3d	; 61
+     8aa:	de b7       	in	r29, 0x3e	; 62
+     8ac:	89 83       	std	Y+1, r24	; 0x01
+     8ae:	7b 83       	std	Y+3, r23	; 0x03
+     8b0:	6a 83       	std	Y+2, r22	; 0x02
+    Insert->TCBNext=RdyListIndex[Prio]->TCBNext;
+     8b2:	89 81       	ldd	r24, Y+1	; 0x01
+     8b4:	88 2f       	mov	r24, r24
+     8b6:	90 e0       	ldi	r25, 0x00	; 0
+     8b8:	88 0f       	add	r24, r24
+     8ba:	99 1f       	adc	r25, r25
+     8bc:	fc 01       	movw	r30, r24
+     8be:	ed 52       	subi	r30, 0x2D	; 45
+     8c0:	f1 4f       	sbci	r31, 0xF1	; 241
+     8c2:	01 90       	ld	r0, Z+
+     8c4:	f0 81       	ld	r31, Z
+     8c6:	e0 2d       	mov	r30, r0
+     8c8:	82 81       	ldd	r24, Z+2	; 0x02
+     8ca:	93 81       	ldd	r25, Z+3	; 0x03
+     8cc:	ea 81       	ldd	r30, Y+2	; 0x02
+     8ce:	fb 81       	ldd	r31, Y+3	; 0x03
+     8d0:	93 83       	std	Z+3, r25	; 0x03
+     8d2:	82 83       	std	Z+2, r24	; 0x02
+    Insert->TCBPrev=RdyListIndex[Prio];
+     8d4:	89 81       	ldd	r24, Y+1	; 0x01
+     8d6:	88 2f       	mov	r24, r24
+     8d8:	90 e0       	ldi	r25, 0x00	; 0
+     8da:	88 0f       	add	r24, r24
+     8dc:	99 1f       	adc	r25, r25
+     8de:	fc 01       	movw	r30, r24
+     8e0:	ed 52       	subi	r30, 0x2D	; 45
+     8e2:	f1 4f       	sbci	r31, 0xF1	; 241
+     8e4:	80 81       	ld	r24, Z
+     8e6:	91 81       	ldd	r25, Z+1	; 0x01
+     8e8:	ea 81       	ldd	r30, Y+2	; 0x02
+     8ea:	fb 81       	ldd	r31, Y+3	; 0x03
+     8ec:	91 83       	std	Z+1, r25	; 0x01
+     8ee:	80 83       	st	Z, r24
+    RdyListIndex[Prio]->TCBNext->TCBPrev=Insert;
+     8f0:	89 81       	ldd	r24, Y+1	; 0x01
+     8f2:	88 2f       	mov	r24, r24
+     8f4:	90 e0       	ldi	r25, 0x00	; 0
+     8f6:	88 0f       	add	r24, r24
+     8f8:	99 1f       	adc	r25, r25
+     8fa:	fc 01       	movw	r30, r24
+     8fc:	ed 52       	subi	r30, 0x2D	; 45
+     8fe:	f1 4f       	sbci	r31, 0xF1	; 241
+     900:	01 90       	ld	r0, Z+
+     902:	f0 81       	ld	r31, Z
+     904:	e0 2d       	mov	r30, r0
+     906:	02 80       	ldd	r0, Z+2	; 0x02
+     908:	f3 81       	ldd	r31, Z+3	; 0x03
+     90a:	e0 2d       	mov	r30, r0
+     90c:	8a 81       	ldd	r24, Y+2	; 0x02
+     90e:	9b 81       	ldd	r25, Y+3	; 0x03
+     910:	91 83       	std	Z+1, r25	; 0x01
+     912:	80 83       	st	Z, r24
+    RdyListIndex[Prio]->TCBNext=Insert;
+     914:	89 81       	ldd	r24, Y+1	; 0x01
+     916:	88 2f       	mov	r24, r24
+     918:	90 e0       	ldi	r25, 0x00	; 0
+     91a:	88 0f       	add	r24, r24
+     91c:	99 1f       	adc	r25, r25
+     91e:	fc 01       	movw	r30, r24
+     920:	ed 52       	subi	r30, 0x2D	; 45
+     922:	f1 4f       	sbci	r31, 0xF1	; 241
+     924:	01 90       	ld	r0, Z+
+     926:	f0 81       	ld	r31, Z
+     928:	e0 2d       	mov	r30, r0
+     92a:	8a 81       	ldd	r24, Y+2	; 0x02
+     92c:	9b 81       	ldd	r25, Y+3	; 0x03
+     92e:	93 83       	std	Z+3, r25	; 0x03
+     930:	82 83       	std	Z+2, r24	; 0x02
+}
+     932:	0f 90       	pop	r0
+     934:	0f 90       	pop	r0
+     936:	0f 90       	pop	r0
+     938:	cf 91       	pop	r28
+     93a:	df 91       	pop	r29
+     93c:	08 95       	ret
+
+0000093e <InsertBlkList>:
+
+/****阻塞链表插入******/
+void InsertBlkList(pTCB *Insert)
+{
+     93e:	df 93       	push	r29
+     940:	cf 93       	push	r28
+     942:	00 d0       	rcall	.+0      	; 0x944 <InsertBlkList+0x6>
+     944:	cd b7       	in	r28, 0x3d	; 61
+     946:	de b7       	in	r29, 0x3e	; 62
+     948:	9a 83       	std	Y+2, r25	; 0x02
+     94a:	89 83       	std	Y+1, r24	; 0x01
+    Insert->TCBNext=pBlkList->TCBNext;
+     94c:	e0 91 dd 0e 	lds	r30, 0x0EDD
+     950:	f0 91 de 0e 	lds	r31, 0x0EDE
+     954:	82 81       	ldd	r24, Z+2	; 0x02
+     956:	93 81       	ldd	r25, Z+3	; 0x03
+     958:	e9 81       	ldd	r30, Y+1	; 0x01
+     95a:	fa 81       	ldd	r31, Y+2	; 0x02
+     95c:	93 83       	std	Z+3, r25	; 0x03
+     95e:	82 83       	std	Z+2, r24	; 0x02
+    Insert->TCBPrev=pBlkList;
+     960:	80 91 dd 0e 	lds	r24, 0x0EDD
+     964:	90 91 de 0e 	lds	r25, 0x0EDE
+     968:	e9 81       	ldd	r30, Y+1	; 0x01
+     96a:	fa 81       	ldd	r31, Y+2	; 0x02
+     96c:	91 83       	std	Z+1, r25	; 0x01
+     96e:	80 83       	st	Z, r24
+    pBlkList->TCBNext->TCBPrev=Insert;
+     970:	e0 91 dd 0e 	lds	r30, 0x0EDD
+     974:	f0 91 de 0e 	lds	r31, 0x0EDE
+     978:	02 80       	ldd	r0, Z+2	; 0x02
+     97a:	f3 81       	ldd	r31, Z+3	; 0x03
+     97c:	e0 2d       	mov	r30, r0
+     97e:	89 81       	ldd	r24, Y+1	; 0x01
+     980:	9a 81       	ldd	r25, Y+2	; 0x02
+     982:	91 83       	std	Z+1, r25	; 0x01
+     984:	80 83       	st	Z, r24
+    pBlkList->TCBNext=Insert;
+     986:	e0 91 dd 0e 	lds	r30, 0x0EDD
+     98a:	f0 91 de 0e 	lds	r31, 0x0EDE
+     98e:	89 81       	ldd	r24, Y+1	; 0x01
+     990:	9a 81       	ldd	r25, Y+2	; 0x02
+     992:	93 83       	std	Z+3, r25	; 0x03
+     994:	82 83       	std	Z+2, r24	; 0x02
+}
+     996:	0f 90       	pop	r0
+     998:	0f 90       	pop	r0
+     99a:	cf 91       	pop	r28
+     99c:	df 91       	pop	r29
+     99e:	08 95       	ret
+
+000009a0 <GetBlankTCB>:
+
+/****从空白链表的表头获取一个任务控制块********/
+pTCB *GetBlankTCB(void)
+{
+     9a0:	df 93       	push	r29
+     9a2:	cf 93       	push	r28
+     9a4:	00 d0       	rcall	.+0      	; 0x9a6 <GetBlankTCB+0x6>
+     9a6:	00 d0       	rcall	.+0      	; 0x9a8 <GetBlankTCB+0x8>
+     9a8:	cd b7       	in	r28, 0x3d	; 61
+     9aa:	de b7       	in	r29, 0x3e	; 62
+    pTCB *GetReturn;
+    GetReturn=pBlankList->TCBNext;        //保存需要返回的节点
+     9ac:	e0 91 cc 0e 	lds	r30, 0x0ECC
+     9b0:	f0 91 cd 0e 	lds	r31, 0x0ECD
+     9b4:	82 81       	ldd	r24, Z+2	; 0x02
+     9b6:	93 81       	ldd	r25, Z+3	; 0x03
+     9b8:	9a 83       	std	Y+2, r25	; 0x02
+     9ba:	89 83       	std	Y+1, r24	; 0x01
+    if(GetReturn!=NULL)
+     9bc:	89 81       	ldd	r24, Y+1	; 0x01
+     9be:	9a 81       	ldd	r25, Y+2	; 0x02
+     9c0:	00 97       	sbiw	r24, 0x00	; 0
+     9c2:	19 f1       	breq	.+70     	; 0xa0a <GetBlankTCB+0x6a>
+    {
+        pBlankList->TCBNext=pBlankList->TCBNext->TCBNext;
+     9c4:	a0 91 cc 0e 	lds	r26, 0x0ECC
+     9c8:	b0 91 cd 0e 	lds	r27, 0x0ECD
+     9cc:	e0 91 cc 0e 	lds	r30, 0x0ECC
+     9d0:	f0 91 cd 0e 	lds	r31, 0x0ECD
+     9d4:	02 80       	ldd	r0, Z+2	; 0x02
+     9d6:	f3 81       	ldd	r31, Z+3	; 0x03
+     9d8:	e0 2d       	mov	r30, r0
+     9da:	82 81       	ldd	r24, Z+2	; 0x02
+     9dc:	93 81       	ldd	r25, Z+3	; 0x03
+     9de:	13 96       	adiw	r26, 0x03	; 3
+     9e0:	9c 93       	st	X, r25
+     9e2:	8e 93       	st	-X, r24
+     9e4:	12 97       	sbiw	r26, 0x02	; 2
+        pBlankList->TCBNext->TCBPrev=pBlankList;
+     9e6:	e0 91 cc 0e 	lds	r30, 0x0ECC
+     9ea:	f0 91 cd 0e 	lds	r31, 0x0ECD
+     9ee:	02 80       	ldd	r0, Z+2	; 0x02
+     9f0:	f3 81       	ldd	r31, Z+3	; 0x03
+     9f2:	e0 2d       	mov	r30, r0
+     9f4:	80 91 cc 0e 	lds	r24, 0x0ECC
+     9f8:	90 91 cd 0e 	lds	r25, 0x0ECD
+     9fc:	91 83       	std	Z+1, r25	; 0x01
+     9fe:	80 83       	st	Z, r24
+        return GetReturn;
+     a00:	89 81       	ldd	r24, Y+1	; 0x01
+     a02:	9a 81       	ldd	r25, Y+2	; 0x02
+     a04:	9c 83       	std	Y+4, r25	; 0x04
+     a06:	8b 83       	std	Y+3, r24	; 0x03
+     a08:	02 c0       	rjmp	.+4      	; 0xa0e <GetBlankTCB+0x6e>
+    }
+    else
+    {
+        return NULL;
+     a0a:	1c 82       	std	Y+4, r1	; 0x04
+     a0c:	1b 82       	std	Y+3, r1	; 0x03
+     a0e:	8b 81       	ldd	r24, Y+3	; 0x03
+     a10:	9c 81       	ldd	r25, Y+4	; 0x04
+    }
+}
+     a12:	0f 90       	pop	r0
+     a14:	0f 90       	pop	r0
+     a16:	0f 90       	pop	r0
+     a18:	0f 90       	pop	r0
+     a1a:	cf 91       	pop	r28
+     a1c:	df 91       	pop	r29
+     a1e:	08 95       	ret
+
+00000a20 <InsertBlankList>:
+
+/****插入到空白链表中************/
+void InsertBlankList(pTCB *Insert)
+{
+     a20:	df 93       	push	r29
+     a22:	cf 93       	push	r28
+     a24:	00 d0       	rcall	.+0      	; 0xa26 <InsertBlankList+0x6>
+     a26:	cd b7       	in	r28, 0x3d	; 61
+     a28:	de b7       	in	r29, 0x3e	; 62
+     a2a:	9a 83       	std	Y+2, r25	; 0x02
+     a2c:	89 83       	std	Y+1, r24	; 0x01
+    Insert->TCBNext=pBlankList->TCBNext;
+     a2e:	e0 91 cc 0e 	lds	r30, 0x0ECC
+     a32:	f0 91 cd 0e 	lds	r31, 0x0ECD
+     a36:	82 81       	ldd	r24, Z+2	; 0x02
+     a38:	93 81       	ldd	r25, Z+3	; 0x03
+     a3a:	e9 81       	ldd	r30, Y+1	; 0x01
+     a3c:	fa 81       	ldd	r31, Y+2	; 0x02
+     a3e:	93 83       	std	Z+3, r25	; 0x03
+     a40:	82 83       	std	Z+2, r24	; 0x02
+    Insert->TCBPrev=pBlankList;
+     a42:	80 91 cc 0e 	lds	r24, 0x0ECC
+     a46:	90 91 cd 0e 	lds	r25, 0x0ECD
+     a4a:	e9 81       	ldd	r30, Y+1	; 0x01
+     a4c:	fa 81       	ldd	r31, Y+2	; 0x02
+     a4e:	91 83       	std	Z+1, r25	; 0x01
+     a50:	80 83       	st	Z, r24
+    pBlankList->TCBNext->TCBPrev=Insert;
+     a52:	e0 91 cc 0e 	lds	r30, 0x0ECC
+     a56:	f0 91 cd 0e 	lds	r31, 0x0ECD
+     a5a:	02 80       	ldd	r0, Z+2	; 0x02
+     a5c:	f3 81       	ldd	r31, Z+3	; 0x03
+     a5e:	e0 2d       	mov	r30, r0
+     a60:	89 81       	ldd	r24, Y+1	; 0x01
+     a62:	9a 81       	ldd	r25, Y+2	; 0x02
+     a64:	91 83       	std	Z+1, r25	; 0x01
+     a66:	80 83       	st	Z, r24
+    pBlankList->TCBNext=Insert;
+     a68:	e0 91 cc 0e 	lds	r30, 0x0ECC
+     a6c:	f0 91 cd 0e 	lds	r31, 0x0ECD
+     a70:	89 81       	ldd	r24, Y+1	; 0x01
+     a72:	9a 81       	ldd	r25, Y+2	; 0x02
+     a74:	93 83       	std	Z+3, r25	; 0x03
+     a76:	82 83       	std	Z+2, r24	; 0x02
+}
+     a78:	0f 90       	pop	r0
+     a7a:	0f 90       	pop	r0
+     a7c:	cf 91       	pop	r28
+     a7e:	df 91       	pop	r29
+     a80:	08 95       	ret
+
+00000a82 <InsertSuspList>:
+
+/****插入到挂起链表************/
+void InsertSuspList(pTCB *Insert)
+{
+     a82:	df 93       	push	r29
+     a84:	cf 93       	push	r28
+     a86:	00 d0       	rcall	.+0      	; 0xa88 <InsertSuspList+0x6>
+     a88:	cd b7       	in	r28, 0x3d	; 61
+     a8a:	de b7       	in	r29, 0x3e	; 62
+     a8c:	9a 83       	std	Y+2, r25	; 0x02
+     a8e:	89 83       	std	Y+1, r24	; 0x01
+    Insert->TCBNext=pSuspList->TCBNext;
+     a90:	e0 91 ca 0e 	lds	r30, 0x0ECA
+     a94:	f0 91 cb 0e 	lds	r31, 0x0ECB
+     a98:	82 81       	ldd	r24, Z+2	; 0x02
+     a9a:	93 81       	ldd	r25, Z+3	; 0x03
+     a9c:	e9 81       	ldd	r30, Y+1	; 0x01
+     a9e:	fa 81       	ldd	r31, Y+2	; 0x02
+     aa0:	93 83       	std	Z+3, r25	; 0x03
+     aa2:	82 83       	std	Z+2, r24	; 0x02
+    Insert->TCBPrev=pSuspList;
+     aa4:	80 91 ca 0e 	lds	r24, 0x0ECA
+     aa8:	90 91 cb 0e 	lds	r25, 0x0ECB
+     aac:	e9 81       	ldd	r30, Y+1	; 0x01
+     aae:	fa 81       	ldd	r31, Y+2	; 0x02
+     ab0:	91 83       	std	Z+1, r25	; 0x01
+     ab2:	80 83       	st	Z, r24
+    pSuspList->TCBNext->TCBPrev=Insert;
+     ab4:	e0 91 ca 0e 	lds	r30, 0x0ECA
+     ab8:	f0 91 cb 0e 	lds	r31, 0x0ECB
+     abc:	02 80       	ldd	r0, Z+2	; 0x02
+     abe:	f3 81       	ldd	r31, Z+3	; 0x03
+     ac0:	e0 2d       	mov	r30, r0
+     ac2:	89 81       	ldd	r24, Y+1	; 0x01
+     ac4:	9a 81       	ldd	r25, Y+2	; 0x02
+     ac6:	91 83       	std	Z+1, r25	; 0x01
+     ac8:	80 83       	st	Z, r24
+    pSuspList->TCBNext=Insert;
+     aca:	e0 91 ca 0e 	lds	r30, 0x0ECA
+     ace:	f0 91 cb 0e 	lds	r31, 0x0ECB
+     ad2:	89 81       	ldd	r24, Y+1	; 0x01
+     ad4:	9a 81       	ldd	r25, Y+2	; 0x02
+     ad6:	93 83       	std	Z+3, r25	; 0x03
+     ad8:	82 83       	std	Z+2, r24	; 0x02
+}
+     ada:	0f 90       	pop	r0
+     adc:	0f 90       	pop	r0
+     ade:	cf 91       	pop	r28
+     ae0:	df 91       	pop	r29
+     ae2:	08 95       	ret
+
+00000ae4 <BlankRegisterAll>:
+
+/***对所有的任务进行注册并存放到空白链表中*******/
+UINT8 BlankRegisterAll(void)
+{
+     ae4:	df 93       	push	r29
+     ae6:	cf 93       	push	r28
+     ae8:	00 d0       	rcall	.+0      	; 0xaea <BlankRegisterAll+0x6>
+     aea:	00 d0       	rcall	.+0      	; 0xaec <BlankRegisterAll+0x8>
+     aec:	0f 92       	push	r0
+     aee:	cd b7       	in	r28, 0x3d	; 61
+     af0:	de b7       	in	r29, 0x3e	; 62
+    UINT16 AllTaskNum=0;
+     af2:	1c 82       	std	Y+4, r1	; 0x04
+     af4:	1b 82       	std	Y+3, r1	; 0x03
+    pBlankList=NewBlkSupVoidList();
+     af6:	0e 94 fb 03 	call	0x7f6	; 0x7f6 <NewBlkSupVoidList>
+     afa:	90 93 cd 0e 	sts	0x0ECD, r25
+     afe:	80 93 cc 0e 	sts	0x0ECC, r24
+    if(pBlankList!=NULL)
+     b02:	80 91 cc 0e 	lds	r24, 0x0ECC
+     b06:	90 91 cd 0e 	lds	r25, 0x0ECD
+     b0a:	00 97       	sbiw	r24, 0x00	; 0
+     b0c:	09 f1       	breq	.+66     	; 0xb50 <BlankRegisterAll+0x6c>
+    {
+        for(AllTaskNum=0;AllTaskNum<PRIO_DIFF_SIZE*PRIO_SAME_SIZE;AllTaskNum++)
+     b0e:	1c 82       	std	Y+4, r1	; 0x04
+     b10:	1b 82       	std	Y+3, r1	; 0x03
+     b12:	16 c0       	rjmp	.+44     	; 0xb40 <BlankRegisterAll+0x5c>
+        {
+            pTCB *NewTask=(pTCB *)MemAlloc(sizeof(pTCB));
+     b14:	80 e1       	ldi	r24, 0x10	; 16
+     b16:	90 e0       	ldi	r25, 0x00	; 0
+     b18:	0e 94 92 01 	call	0x324	; 0x324 <MemAlloc>
+     b1c:	9a 83       	std	Y+2, r25	; 0x02
+     b1e:	89 83       	std	Y+1, r24	; 0x01
+            if(NewTask!=NULL)
+     b20:	89 81       	ldd	r24, Y+1	; 0x01
+     b22:	9a 81       	ldd	r25, Y+2	; 0x02
+     b24:	00 97       	sbiw	r24, 0x00	; 0
+     b26:	51 f0       	breq	.+20     	; 0xb3c <BlankRegisterAll+0x58>
+            {
+                InsertBlankList(NewTask);
+     b28:	89 81       	ldd	r24, Y+1	; 0x01
+     b2a:	9a 81       	ldd	r25, Y+2	; 0x02
+     b2c:	0e 94 10 05 	call	0xa20	; 0xa20 <InsertBlankList>
+{
+    UINT16 AllTaskNum=0;
+    pBlankList=NewBlkSupVoidList();
+    if(pBlankList!=NULL)
+    {
+        for(AllTaskNum=0;AllTaskNum<PRIO_DIFF_SIZE*PRIO_SAME_SIZE;AllTaskNum++)
+     b30:	8b 81       	ldd	r24, Y+3	; 0x03
+     b32:	9c 81       	ldd	r25, Y+4	; 0x04
+     b34:	01 96       	adiw	r24, 0x01	; 1
+     b36:	9c 83       	std	Y+4, r25	; 0x04
+     b38:	8b 83       	std	Y+3, r24	; 0x03
+     b3a:	02 c0       	rjmp	.+4      	; 0xb40 <BlankRegisterAll+0x5c>
+            {
+                InsertBlankList(NewTask);
+            }
+            else
+            {
+                return FAILURE;
+     b3c:	1d 82       	std	Y+5, r1	; 0x05
+     b3e:	09 c0       	rjmp	.+18     	; 0xb52 <BlankRegisterAll+0x6e>
+{
+    UINT16 AllTaskNum=0;
+    pBlankList=NewBlkSupVoidList();
+    if(pBlankList!=NULL)
+    {
+        for(AllTaskNum=0;AllTaskNum<PRIO_DIFF_SIZE*PRIO_SAME_SIZE;AllTaskNum++)
+     b40:	8b 81       	ldd	r24, Y+3	; 0x03
+     b42:	9c 81       	ldd	r25, Y+4	; 0x04
+     b44:	88 30       	cpi	r24, 0x08	; 8
+     b46:	91 05       	cpc	r25, r1
+     b48:	28 f3       	brcs	.-54     	; 0xb14 <BlankRegisterAll+0x30>
+            else
+            {
+                return FAILURE;
+            }
+        }
+        return SUCCESS;
+     b4a:	81 e0       	ldi	r24, 0x01	; 1
+     b4c:	8d 83       	std	Y+5, r24	; 0x05
+     b4e:	01 c0       	rjmp	.+2      	; 0xb52 <BlankRegisterAll+0x6e>
+    }
+    else
+    {
+        return FAILURE;
+     b50:	1d 82       	std	Y+5, r1	; 0x05
+     b52:	8d 81       	ldd	r24, Y+5	; 0x05
+    }
+}
+     b54:	0f 90       	pop	r0
+     b56:	0f 90       	pop	r0
+     b58:	0f 90       	pop	r0
+     b5a:	0f 90       	pop	r0
+     b5c:	0f 90       	pop	r0
+     b5e:	cf 91       	pop	r28
+     b60:	df 91       	pop	r29
+     b62:	08 95       	ret
+
+00000b64 <RdyListIndexInit>:
+
+
+/***初始化就绪链表索引，将所有任务插入到索引表中*******/
+void RdyListIndexInit(void)
+{
+     b64:	0f 93       	push	r16
+     b66:	1f 93       	push	r17
+     b68:	df 93       	push	r29
+     b6a:	cf 93       	push	r28
+     b6c:	0f 92       	push	r0
+     b6e:	cd b7       	in	r28, 0x3d	; 61
+     b70:	de b7       	in	r29, 0x3e	; 62
+    UINT8 i=0;
+     b72:	19 82       	std	Y+1, r1	; 0x01
+    for(i=PRIO_DIFF_SIZE;i>0;i--)
+     b74:	84 e0       	ldi	r24, 0x04	; 4
+     b76:	89 83       	std	Y+1, r24	; 0x01
+     b78:	11 c0       	rjmp	.+34     	; 0xb9c <RdyListIndexInit+0x38>
+    {
+        RdyListIndex[i]=NewRdyVoidList();
+     b7a:	89 81       	ldd	r24, Y+1	; 0x01
+     b7c:	08 2f       	mov	r16, r24
+     b7e:	10 e0       	ldi	r17, 0x00	; 0
+     b80:	0e 94 a2 03 	call	0x744	; 0x744 <NewRdyVoidList>
+     b84:	9c 01       	movw	r18, r24
+     b86:	c8 01       	movw	r24, r16
+     b88:	88 0f       	add	r24, r24
+     b8a:	99 1f       	adc	r25, r25
+     b8c:	fc 01       	movw	r30, r24
+     b8e:	ed 52       	subi	r30, 0x2D	; 45
+     b90:	f1 4f       	sbci	r31, 0xF1	; 241
+     b92:	31 83       	std	Z+1, r19	; 0x01
+     b94:	20 83       	st	Z, r18
+
+/***初始化就绪链表索引，将所有任务插入到索引表中*******/
+void RdyListIndexInit(void)
+{
+    UINT8 i=0;
+    for(i=PRIO_DIFF_SIZE;i>0;i--)
+     b96:	89 81       	ldd	r24, Y+1	; 0x01
+     b98:	81 50       	subi	r24, 0x01	; 1
+     b9a:	89 83       	std	Y+1, r24	; 0x01
+     b9c:	89 81       	ldd	r24, Y+1	; 0x01
+     b9e:	88 23       	and	r24, r24
+     ba0:	61 f7       	brne	.-40     	; 0xb7a <RdyListIndexInit+0x16>
+    {
+        RdyListIndex[i]=NewRdyVoidList();
+    }
+}
+     ba2:	0f 90       	pop	r0
+     ba4:	cf 91       	pop	r28
+     ba6:	df 91       	pop	r29
+     ba8:	1f 91       	pop	r17
+     baa:	0f 91       	pop	r16
+     bac:	08 95       	ret
+
+00000bae <RdyListNumInit>:
+
+/****初始化就绪任务表，将空闲任务设置为就绪态，其他所有空白任务设置为阻塞状态******/
+void RdyListNumInit(void)
+{
+     bae:	df 93       	push	r29
+     bb0:	cf 93       	push	r28
+     bb2:	0f 92       	push	r0
+     bb4:	cd b7       	in	r28, 0x3d	; 61
+     bb6:	de b7       	in	r29, 0x3e	; 62
+    UINT8 i=0;
+     bb8:	19 82       	std	Y+1, r1	; 0x01
+    for(i=PRIO_DIFF_SIZE;i>0;i--)
+     bba:	84 e0       	ldi	r24, 0x04	; 4
+     bbc:	89 83       	std	Y+1, r24	; 0x01
+     bbe:	0a c0       	rjmp	.+20     	; 0xbd4 <RdyListNumInit+0x26>
+    {
+        RdyListNum[i]=0;
+     bc0:	89 81       	ldd	r24, Y+1	; 0x01
+     bc2:	88 2f       	mov	r24, r24
+     bc4:	90 e0       	ldi	r25, 0x00	; 0
+     bc6:	fc 01       	movw	r30, r24
+     bc8:	e2 53       	subi	r30, 0x32	; 50
+     bca:	f1 4f       	sbci	r31, 0xF1	; 241
+     bcc:	10 82       	st	Z, r1
+
+/****初始化就绪任务表，将空闲任务设置为就绪态，其他所有空白任务设置为阻塞状态******/
+void RdyListNumInit(void)
+{
+    UINT8 i=0;
+    for(i=PRIO_DIFF_SIZE;i>0;i--)
+     bce:	89 81       	ldd	r24, Y+1	; 0x01
+     bd0:	81 50       	subi	r24, 0x01	; 1
+     bd2:	89 83       	std	Y+1, r24	; 0x01
+     bd4:	89 81       	ldd	r24, Y+1	; 0x01
+     bd6:	88 23       	and	r24, r24
+     bd8:	99 f7       	brne	.-26     	; 0xbc0 <RdyListNumInit+0x12>
+    {
+        RdyListNum[i]=0;
+    }
+    RdyListNum[0]=1;    //将空闲任务初始化为就绪状态
+     bda:	81 e0       	ldi	r24, 0x01	; 1
+     bdc:	80 93 ce 0e 	sts	0x0ECE, r24
+}
+     be0:	0f 90       	pop	r0
+     be2:	cf 91       	pop	r28
+     be4:	df 91       	pop	r29
+     be6:	08 95       	ret
+
+00000be8 <BlkLisInit>:
+
+/****阻塞链表初始化*******/
+void BlkLisInit(void)
+{
+     be8:	df 93       	push	r29
+     bea:	cf 93       	push	r28
+     bec:	cd b7       	in	r28, 0x3d	; 61
+     bee:	de b7       	in	r29, 0x3e	; 62
+    pBlkList=NewBlkSupVoidList();
+     bf0:	0e 94 fb 03 	call	0x7f6	; 0x7f6 <NewBlkSupVoidList>
+     bf4:	90 93 de 0e 	sts	0x0EDE, r25
+     bf8:	80 93 dd 0e 	sts	0x0EDD, r24
+}
+     bfc:	cf 91       	pop	r28
+     bfe:	df 91       	pop	r29
+     c00:	08 95       	ret
+
+00000c02 <SuspListInit>:
+
+/****挂起链表初始化********/
+void SuspListInit(void)
+{
+     c02:	df 93       	push	r29
+     c04:	cf 93       	push	r28
+     c06:	cd b7       	in	r28, 0x3d	; 61
+     c08:	de b7       	in	r29, 0x3e	; 62
+    pSuspList=NewBlkSupVoidList();
+     c0a:	0e 94 fb 03 	call	0x7f6	; 0x7f6 <NewBlkSupVoidList>
+     c0e:	90 93 cb 0e 	sts	0x0ECB, r25
+     c12:	80 93 ca 0e 	sts	0x0ECA, r24
+}
+     c16:	cf 91       	pop	r28
+     c18:	df 91       	pop	r29
+     c1a:	08 95       	ret
+
+00000c1c <task1>:
+#include "OpenRTOS.h"
+#include "uart.h"
+
+
+void task1(void *p)
+{
+     c1c:	df 93       	push	r29
+     c1e:	cf 93       	push	r28
+     c20:	00 d0       	rcall	.+0      	; 0xc22 <task1+0x6>
+     c22:	cd b7       	in	r28, 0x3d	; 61
+     c24:	de b7       	in	r29, 0x3e	; 62
+     c26:	9a 83       	std	Y+2, r25	; 0x02
+     c28:	89 83       	std	Y+1, r24	; 0x01
+  while(1)
+  {
+    ENTER_CRITICAL();     //进入临界区
+     c2a:	0e 94 82 00 	call	0x104	; 0x104 <DisableIntrp>
+    puts1("task1\r\n");
+     c2e:	8a e0       	ldi	r24, 0x0A	; 10
+     c30:	91 e0       	ldi	r25, 0x01	; 1
+     c32:	0e 94 69 0a 	call	0x14d2	; 0x14d2 <puts1>
+    EXIT_CRITICAL();      //退出临界区
+     c36:	0e 94 90 00 	call	0x120	; 0x120 <EnableIntrp>
+     c3a:	f7 cf       	rjmp	.-18     	; 0xc2a <task1+0xe>
+
+00000c3c <task2>:
+  }
+}
+
+void task2(void *p)       //任务函数2
+{
+     c3c:	df 93       	push	r29
+     c3e:	cf 93       	push	r28
+     c40:	00 d0       	rcall	.+0      	; 0xc42 <task2+0x6>
+     c42:	cd b7       	in	r28, 0x3d	; 61
+     c44:	de b7       	in	r29, 0x3e	; 62
+     c46:	9a 83       	std	Y+2, r25	; 0x02
+     c48:	89 83       	std	Y+1, r24	; 0x01
+  while(1)
+  {
+    ENTER_CRITICAL();     //进入临界区
+     c4a:	0e 94 82 00 	call	0x104	; 0x104 <DisableIntrp>
+    puts1("task2\r\n");
+     c4e:	82 e1       	ldi	r24, 0x12	; 18
+     c50:	91 e0       	ldi	r25, 0x01	; 1
+     c52:	0e 94 69 0a 	call	0x14d2	; 0x14d2 <puts1>
+    EXIT_CRITICAL();      //退出临界区
+     c56:	0e 94 90 00 	call	0x120	; 0x120 <EnableIntrp>
+     c5a:	f7 cf       	rjmp	.-18     	; 0xc4a <task2+0xe>
+
+00000c5c <task3>:
+  }
+}
+
+void task3(void *p)       //任务函数2
+{
+     c5c:	df 93       	push	r29
+     c5e:	cf 93       	push	r28
+     c60:	00 d0       	rcall	.+0      	; 0xc62 <task3+0x6>
+     c62:	cd b7       	in	r28, 0x3d	; 61
+     c64:	de b7       	in	r29, 0x3e	; 62
+     c66:	9a 83       	std	Y+2, r25	; 0x02
+     c68:	89 83       	std	Y+1, r24	; 0x01
+  while(1)
+  {
+    ENTER_CRITICAL();     //进入临界区
+     c6a:	0e 94 82 00 	call	0x104	; 0x104 <DisableIntrp>
+    puts1("task3\r\n");
+     c6e:	8a e1       	ldi	r24, 0x1A	; 26
+     c70:	91 e0       	ldi	r25, 0x01	; 1
+     c72:	0e 94 69 0a 	call	0x14d2	; 0x14d2 <puts1>
+    EXIT_CRITICAL();      //退出临界区
+     c76:	0e 94 90 00 	call	0x120	; 0x120 <EnableIntrp>
+     c7a:	f7 cf       	rjmp	.-18     	; 0xc6a <task3+0xe>
+
+00000c7c <main>:
+unsigned char STACK3[100];
+
+//unsigned int task1
+
+int main(void)
+{
+     c7c:	0f 93       	push	r16
+     c7e:	1f 93       	push	r17
+     c80:	df 93       	push	r29
+     c82:	cf 93       	push	r28
+     c84:	0f 92       	push	r0
+     c86:	cd b7       	in	r28, 0x3d	; 61
+     c88:	de b7       	in	r29, 0x3e	; 62
+    uart1_init();
+     c8a:	0e 94 27 0a 	call	0x144e	; 0x144e <uart1_init>
+    OpenRTOSInit();
+     c8e:	0e 94 6a 01 	call	0x2d4	; 0x2d4 <OpenRTOSInit>
+
+    DDRC=0XFF;
+     c92:	e4 e3       	ldi	r30, 0x34	; 52
+     c94:	f0 e0       	ldi	r31, 0x00	; 0
+     c96:	8f ef       	ldi	r24, 0xFF	; 255
+     c98:	80 83       	st	Z, r24
+    PORTC|=0xff;
+     c9a:	e5 e3       	ldi	r30, 0x35	; 53
+     c9c:	f0 e0       	ldi	r31, 0x00	; 0
+     c9e:	80 81       	ld	r24, Z
+     ca0:	e5 e3       	ldi	r30, 0x35	; 53
+     ca2:	f0 e0       	ldi	r31, 0x00	; 0
+     ca4:	8f ef       	ldi	r24, 0xFF	; 255
+     ca6:	80 83       	st	Z, r24
+
+    re=pCreateTaskStc("task1",task1,&STACK1[99],1,NULL);
+     ca8:	84 e2       	ldi	r24, 0x24	; 36
+     caa:	91 e0       	ldi	r25, 0x01	; 1
+     cac:	2e e0       	ldi	r18, 0x0E	; 14
+     cae:	36 e0       	ldi	r19, 0x06	; 6
+     cb0:	46 ea       	ldi	r20, 0xA6	; 166
+     cb2:	5f e0       	ldi	r21, 0x0F	; 15
+     cb4:	b9 01       	movw	r22, r18
+     cb6:	21 e0       	ldi	r18, 0x01	; 1
+     cb8:	00 e0       	ldi	r16, 0x00	; 0
+     cba:	10 e0       	ldi	r17, 0x00	; 0
+     cbc:	0e 94 87 07 	call	0xf0e	; 0xf0e <pCreateTaskStc>
+     cc0:	80 93 22 01 	sts	0x0122, r24
+    ra=pCreateTaskStc("task2",task2,&STACK2[99],1,NULL);
+     cc4:	8a e2       	ldi	r24, 0x2A	; 42
+     cc6:	91 e0       	ldi	r25, 0x01	; 1
+     cc8:	2e e1       	ldi	r18, 0x1E	; 30
+     cca:	36 e0       	ldi	r19, 0x06	; 6
+     ccc:	42 e4       	ldi	r20, 0x42	; 66
+     cce:	5f e0       	ldi	r21, 0x0F	; 15
+     cd0:	b9 01       	movw	r22, r18
+     cd2:	21 e0       	ldi	r18, 0x01	; 1
+     cd4:	00 e0       	ldi	r16, 0x00	; 0
+     cd6:	10 e0       	ldi	r17, 0x00	; 0
+     cd8:	0e 94 87 07 	call	0xf0e	; 0xf0e <pCreateTaskStc>
+     cdc:	80 93 23 01 	sts	0x0123, r24
+    re=pCreateTaskStc("task3",task3,&STACK3[99],1,NULL);
+     ce0:	80 e3       	ldi	r24, 0x30	; 48
+     ce2:	91 e0       	ldi	r25, 0x01	; 1
+     ce4:	2e e2       	ldi	r18, 0x2E	; 46
+     ce6:	36 e0       	ldi	r19, 0x06	; 6
+     ce8:	4a e0       	ldi	r20, 0x0A	; 10
+     cea:	50 e1       	ldi	r21, 0x10	; 16
+     cec:	b9 01       	movw	r22, r18
+     cee:	21 e0       	ldi	r18, 0x01	; 1
+     cf0:	00 e0       	ldi	r16, 0x00	; 0
+     cf2:	10 e0       	ldi	r17, 0x00	; 0
+     cf4:	0e 94 87 07 	call	0xf0e	; 0xf0e <pCreateTaskStc>
+     cf8:	80 93 22 01 	sts	0x0122, r24
+
+    pStartSchedule();
+     cfc:	0e 94 7d 01 	call	0x2fa	; 0x2fa <pStartSchedule>
+     d00:	04 c0       	rjmp	.+8      	; 0xd0a <main+0x8e>
+    while(re&&ra)
+    {
+        puts1("5565655\r\n");
+     d02:	86 e3       	ldi	r24, 0x36	; 54
+     d04:	91 e0       	ldi	r25, 0x01	; 1
+     d06:	0e 94 69 0a 	call	0x14d2	; 0x14d2 <puts1>
+    re=pCreateTaskStc("task1",task1,&STACK1[99],1,NULL);
+    ra=pCreateTaskStc("task2",task2,&STACK2[99],1,NULL);
+    re=pCreateTaskStc("task3",task3,&STACK3[99],1,NULL);
+
+    pStartSchedule();
+    while(re&&ra)
+     d0a:	80 91 22 01 	lds	r24, 0x0122
+     d0e:	88 23       	and	r24, r24
+     d10:	21 f0       	breq	.+8      	; 0xd1a <main+0x9e>
+     d12:	80 91 23 01 	lds	r24, 0x0123
+     d16:	88 23       	and	r24, r24
+     d18:	a1 f7       	brne	.-24     	; 0xd02 <main+0x86>
+    {
+        puts1("5565655\r\n");
+    }
+    return 0;
+     d1a:	80 e0       	ldi	r24, 0x00	; 0
+     d1c:	90 e0       	ldi	r25, 0x00	; 0
+}
+     d1e:	0f 90       	pop	r0
+     d20:	cf 91       	pop	r28
+     d22:	df 91       	pop	r29
+     d24:	1f 91       	pop	r17
+     d26:	0f 91       	pop	r16
+     d28:	08 95       	ret
+
+00000d2a <IdleTaskInit>:
+}
+#endif
+
+/******空闲任务初始化***********************/
+void IdleTaskInit(void)
+{
+     d2a:	df 93       	push	r29
+     d2c:	cf 93       	push	r28
+     d2e:	00 d0       	rcall	.+0      	; 0xd30 <IdleTaskInit+0x6>
+     d30:	00 d0       	rcall	.+0      	; 0xd32 <IdleTaskInit+0x8>
+     d32:	cd b7       	in	r28, 0x3d	; 61
+     d34:	de b7       	in	r29, 0x3e	; 62
+    ENTER_CRITICAL();               //进入临界区
+     d36:	0e 94 82 00 	call	0x104	; 0x104 <DisableIntrp>
+    UINT8 *Stack=(UINT8 *)MemAlloc(IDLE_STACK_SIZE); //分配内存空间给人工堆栈
+     d3a:	80 e4       	ldi	r24, 0x40	; 64
+     d3c:	90 e0       	ldi	r25, 0x00	; 0
+     d3e:	0e 94 92 01 	call	0x324	; 0x324 <MemAlloc>
+     d42:	9c 83       	std	Y+4, r25	; 0x04
+     d44:	8b 83       	std	Y+3, r24	; 0x03
+    pTCB *TaskTcb=GetBlankTCB();    //从空白链表中取出一个任务控制块内存
+     d46:	0e 94 d0 04 	call	0x9a0	; 0x9a0 <GetBlankTCB>
+     d4a:	9a 83       	std	Y+2, r25	; 0x02
+     d4c:	89 83       	std	Y+1, r24	; 0x01
+    TaskTcb->TCBName="IdleTask";    //任务名初始化
+     d4e:	e9 81       	ldd	r30, Y+1	; 0x01
+     d50:	fa 81       	ldd	r31, Y+2	; 0x02
+     d52:	80 e4       	ldi	r24, 0x40	; 64
+     d54:	91 e0       	ldi	r25, 0x01	; 1
+     d56:	97 83       	std	Z+7, r25	; 0x07
+     d58:	86 83       	std	Z+6, r24	; 0x06
+    TaskTcb->TCBPrio=0;             //任务优先级初始化
+     d5a:	e9 81       	ldd	r30, Y+1	; 0x01
+     d5c:	fa 81       	ldd	r31, Y+2	; 0x02
+     d5e:	17 86       	std	Z+15, r1	; 0x0f
+    TaskTcb->TCBState=1;            //任务状态初始化 1表示就绪状态
+     d60:	e9 81       	ldd	r30, Y+1	; 0x01
+     d62:	fa 81       	ldd	r31, Y+2	; 0x02
+     d64:	81 e0       	ldi	r24, 0x01	; 1
+     d66:	86 87       	std	Z+14, r24	; 0x0e
+    #if(IDLE_CALL_ENABLE==1)
+        TaskTcb->TCBTask=IdleTaskApp;   //任务函数指针初始化
+    #endif
+    IdleTaskHandle=(TaskHandler)TaskTcb;         //任务句柄初始化  也叫ID号
+     d68:	89 81       	ldd	r24, Y+1	; 0x01
+     d6a:	9a 81       	ldd	r25, Y+2	; 0x02
+     d6c:	90 93 0c 10 	sts	0x100C, r25
+     d70:	80 93 0b 10 	sts	0x100B, r24
+    TaskTcb->TCBStack=Stack;        //任务人工堆栈初始化
+     d74:	e9 81       	ldd	r30, Y+1	; 0x01
+     d76:	fa 81       	ldd	r31, Y+2	; 0x02
+     d78:	8b 81       	ldd	r24, Y+3	; 0x03
+     d7a:	9c 81       	ldd	r25, Y+4	; 0x04
+     d7c:	95 83       	std	Z+5, r25	; 0x05
+     d7e:	84 83       	std	Z+4, r24	; 0x04
+    TaskTcb->TCBDlyCount=0;         //任务延时初始化 0
+     d80:	e9 81       	ldd	r30, Y+1	; 0x01
+     d82:	fa 81       	ldd	r31, Y+2	; 0x02
+     d84:	15 86       	std	Z+13, r1	; 0x0d
+     d86:	14 86       	std	Z+12, r1	; 0x0c
+    RdyListIndex[0]=(pTCB *)IdleTaskHandle;   //将最低优先级任务指向空闲任务
+     d88:	80 91 0b 10 	lds	r24, 0x100B
+     d8c:	90 91 0c 10 	lds	r25, 0x100C
+     d90:	90 93 d4 0e 	sts	0x0ED4, r25
+     d94:	80 93 d3 0e 	sts	0x0ED3, r24
+    InsertRdyList(0,TaskTcb);       //将新建的任务插入到任务就绪链表中
+     d98:	29 81       	ldd	r18, Y+1	; 0x01
+     d9a:	3a 81       	ldd	r19, Y+2	; 0x02
+     d9c:	80 e0       	ldi	r24, 0x00	; 0
+     d9e:	b9 01       	movw	r22, r18
+     da0:	0e 94 50 04 	call	0x8a0	; 0x8a0 <InsertRdyList>
+    /******下面为任务人工堆栈初始化********/
+    EXIT_CRITICAL();                //推出临界区
+     da4:	0e 94 90 00 	call	0x120	; 0x120 <EnableIntrp>
+}
+     da8:	0f 90       	pop	r0
+     daa:	0f 90       	pop	r0
+     dac:	0f 90       	pop	r0
+     dae:	0f 90       	pop	r0
+     db0:	cf 91       	pop	r28
+     db2:	df 91       	pop	r29
+     db4:	08 95       	ret
+
+00000db6 <TaskListIsEmpty>:
+
+
+/*******判断任务所在的队列中是否为空********/
+static UINT8 TaskListIsEmpty(pTCB *Handler)
+{
+     db6:	df 93       	push	r29
+     db8:	cf 93       	push	r28
+     dba:	00 d0       	rcall	.+0      	; 0xdbc <TaskListIsEmpty+0x6>
+     dbc:	0f 92       	push	r0
+     dbe:	cd b7       	in	r28, 0x3d	; 61
+     dc0:	de b7       	in	r29, 0x3e	; 62
+     dc2:	9a 83       	std	Y+2, r25	; 0x02
+     dc4:	89 83       	std	Y+1, r24	; 0x01
+    if(RdyListNum[Handler->TCBPrio])
+     dc6:	e9 81       	ldd	r30, Y+1	; 0x01
+     dc8:	fa 81       	ldd	r31, Y+2	; 0x02
+     dca:	87 85       	ldd	r24, Z+15	; 0x0f
+     dcc:	88 2f       	mov	r24, r24
+     dce:	90 e0       	ldi	r25, 0x00	; 0
+     dd0:	fc 01       	movw	r30, r24
+     dd2:	e2 53       	subi	r30, 0x32	; 50
+     dd4:	f1 4f       	sbci	r31, 0xF1	; 241
+     dd6:	80 81       	ld	r24, Z
+     dd8:	88 23       	and	r24, r24
+     dda:	11 f0       	breq	.+4      	; 0xde0 <TaskListIsEmpty+0x2a>
+    {
+        return FAILURE;             //表示此时运行的任务所在队列不为空
+     ddc:	1b 82       	std	Y+3, r1	; 0x03
+     dde:	02 c0       	rjmp	.+4      	; 0xde4 <TaskListIsEmpty+0x2e>
+    }
+    else
+    {
+        return SUCCESS;             //表示此时运行任务所在的队列已为空
+     de0:	81 e0       	ldi	r24, 0x01	; 1
+     de2:	8b 83       	std	Y+3, r24	; 0x03
+     de4:	8b 81       	ldd	r24, Y+3	; 0x03
+    }
+}
+     de6:	0f 90       	pop	r0
+     de8:	0f 90       	pop	r0
+     dea:	0f 90       	pop	r0
+     dec:	cf 91       	pop	r28
+     dee:	df 91       	pop	r29
+     df0:	08 95       	ret
+
+00000df2 <GetTaskListPrio>:
+
+
+/*******获取任务所在的队列的优先级********/
+static UINT8 GetTaskListPrio(pTCB *Task)
+{
+     df2:	df 93       	push	r29
+     df4:	cf 93       	push	r28
+     df6:	00 d0       	rcall	.+0      	; 0xdf8 <GetTaskListPrio+0x6>
+     df8:	cd b7       	in	r28, 0x3d	; 61
+     dfa:	de b7       	in	r29, 0x3e	; 62
+     dfc:	9a 83       	std	Y+2, r25	; 0x02
+     dfe:	89 83       	std	Y+1, r24	; 0x01
+    return Task->TCBPrio;
+     e00:	e9 81       	ldd	r30, Y+1	; 0x01
+     e02:	fa 81       	ldd	r31, Y+2	; 0x02
+     e04:	87 85       	ldd	r24, Z+15	; 0x0f
+}
+     e06:	0f 90       	pop	r0
+     e08:	0f 90       	pop	r0
+     e0a:	cf 91       	pop	r28
+     e0c:	df 91       	pop	r29
+     e0e:	08 95       	ret
+
+00000e10 <GetFirstHighTask>:
+
+
+/*****获取第一个需要运行的任务********/
+pTCB *GetFirstHighTask(void)
+{
+     e10:	df 93       	push	r29
+     e12:	cf 93       	push	r28
+     e14:	00 d0       	rcall	.+0      	; 0xe16 <GetFirstHighTask+0x6>
+     e16:	0f 92       	push	r0
+     e18:	cd b7       	in	r28, 0x3d	; 61
+     e1a:	de b7       	in	r29, 0x3e	; 62
+    UINT8 i=0;
+     e1c:	19 82       	std	Y+1, r1	; 0x01
+    for(i=PRIO_DIFF_SIZE;i>0;i--)      //对所有任务进行遍历，查找就绪表，确定任务是否处于就绪态
+     e1e:	84 e0       	ldi	r24, 0x04	; 4
+     e20:	89 83       	std	Y+1, r24	; 0x01
+     e22:	19 c0       	rjmp	.+50     	; 0xe56 <GetFirstHighTask+0x46>
+    {
+        if(RdyListNum[i])              //如果不为零，则返回当前的优先级
+     e24:	89 81       	ldd	r24, Y+1	; 0x01
+     e26:	88 2f       	mov	r24, r24
+     e28:	90 e0       	ldi	r25, 0x00	; 0
+     e2a:	fc 01       	movw	r30, r24
+     e2c:	e2 53       	subi	r30, 0x32	; 50
+     e2e:	f1 4f       	sbci	r31, 0xF1	; 241
+     e30:	80 81       	ld	r24, Z
+     e32:	88 23       	and	r24, r24
+     e34:	69 f0       	breq	.+26     	; 0xe50 <GetFirstHighTask+0x40>
+            return RdyListIndex[i];
+     e36:	89 81       	ldd	r24, Y+1	; 0x01
+     e38:	88 2f       	mov	r24, r24
+     e3a:	90 e0       	ldi	r25, 0x00	; 0
+     e3c:	88 0f       	add	r24, r24
+     e3e:	99 1f       	adc	r25, r25
+     e40:	fc 01       	movw	r30, r24
+     e42:	ed 52       	subi	r30, 0x2D	; 45
+     e44:	f1 4f       	sbci	r31, 0xF1	; 241
+     e46:	80 81       	ld	r24, Z
+     e48:	91 81       	ldd	r25, Z+1	; 0x01
+     e4a:	9b 83       	std	Y+3, r25	; 0x03
+     e4c:	8a 83       	std	Y+2, r24	; 0x02
+     e4e:	0c c0       	rjmp	.+24     	; 0xe68 <GetFirstHighTask+0x58>
+
+/*****获取第一个需要运行的任务********/
+pTCB *GetFirstHighTask(void)
+{
+    UINT8 i=0;
+    for(i=PRIO_DIFF_SIZE;i>0;i--)      //对所有任务进行遍历，查找就绪表，确定任务是否处于就绪态
+     e50:	89 81       	ldd	r24, Y+1	; 0x01
+     e52:	81 50       	subi	r24, 0x01	; 1
+     e54:	89 83       	std	Y+1, r24	; 0x01
+     e56:	89 81       	ldd	r24, Y+1	; 0x01
+     e58:	88 23       	and	r24, r24
+     e5a:	21 f7       	brne	.-56     	; 0xe24 <GetFirstHighTask+0x14>
+    {
+        if(RdyListNum[i])              //如果不为零，则返回当前的优先级
+            return RdyListIndex[i];
+    }
+    return RdyListIndex[0];
+     e5c:	80 91 d3 0e 	lds	r24, 0x0ED3
+     e60:	90 91 d4 0e 	lds	r25, 0x0ED4
+     e64:	9b 83       	std	Y+3, r25	; 0x03
+     e66:	8a 83       	std	Y+2, r24	; 0x02
+     e68:	8a 81       	ldd	r24, Y+2	; 0x02
+     e6a:	9b 81       	ldd	r25, Y+3	; 0x03
+}
+     e6c:	0f 90       	pop	r0
+     e6e:	0f 90       	pop	r0
+     e70:	0f 90       	pop	r0
+     e72:	cf 91       	pop	r28
+     e74:	df 91       	pop	r29
+     e76:	08 95       	ret
+
+00000e78 <GetNextRdyHighTask>:
+
+
+/****获取下一个就绪任务********/
+static pTCB *GetNextRdyHighTask(void)
+{
+     e78:	df 93       	push	r29
+     e7a:	cf 93       	push	r28
+     e7c:	00 d0       	rcall	.+0      	; 0xe7e <GetNextRdyHighTask+0x6>
+     e7e:	0f 92       	push	r0
+     e80:	cd b7       	in	r28, 0x3d	; 61
+     e82:	de b7       	in	r29, 0x3e	; 62
+    UINT8 i=0;
+     e84:	19 82       	std	Y+1, r1	; 0x01
+    if(TaskListIsEmpty(RunningTask))     //如果当前任务就绪链表已空
+     e86:	80 91 0d 10 	lds	r24, 0x100D
+     e8a:	90 91 0e 10 	lds	r25, 0x100E
+     e8e:	0e 94 db 06 	call	0xdb6	; 0xdb6 <TaskListIsEmpty>
+     e92:	88 23       	and	r24, r24
+     e94:	31 f1       	breq	.+76     	; 0xee2 <GetNextRdyHighTask+0x6a>
+    {
+        for(i=PRIO_DIFF_SIZE;i>0;i--)    //对所有任务进行遍历，查找就绪表，确定任务是否处于就绪态
+     e96:	84 e0       	ldi	r24, 0x04	; 4
+     e98:	89 83       	std	Y+1, r24	; 0x01
+     e9a:	19 c0       	rjmp	.+50     	; 0xece <GetNextRdyHighTask+0x56>
+        {
+            if(RdyListNum[i])            //如果不为零，则返回当前的优先级
+     e9c:	89 81       	ldd	r24, Y+1	; 0x01
+     e9e:	88 2f       	mov	r24, r24
+     ea0:	90 e0       	ldi	r25, 0x00	; 0
+     ea2:	fc 01       	movw	r30, r24
+     ea4:	e2 53       	subi	r30, 0x32	; 50
+     ea6:	f1 4f       	sbci	r31, 0xF1	; 241
+     ea8:	80 81       	ld	r24, Z
+     eaa:	88 23       	and	r24, r24
+     eac:	69 f0       	breq	.+26     	; 0xec8 <GetNextRdyHighTask+0x50>
+                return RdyListIndex[i];
+     eae:	89 81       	ldd	r24, Y+1	; 0x01
+     eb0:	88 2f       	mov	r24, r24
+     eb2:	90 e0       	ldi	r25, 0x00	; 0
+     eb4:	88 0f       	add	r24, r24
+     eb6:	99 1f       	adc	r25, r25
+     eb8:	fc 01       	movw	r30, r24
+     eba:	ed 52       	subi	r30, 0x2D	; 45
+     ebc:	f1 4f       	sbci	r31, 0xF1	; 241
+     ebe:	80 81       	ld	r24, Z
+     ec0:	91 81       	ldd	r25, Z+1	; 0x01
+     ec2:	9b 83       	std	Y+3, r25	; 0x03
+     ec4:	8a 83       	std	Y+2, r24	; 0x02
+     ec6:	1b c0       	rjmp	.+54     	; 0xefe <GetNextRdyHighTask+0x86>
+static pTCB *GetNextRdyHighTask(void)
+{
+    UINT8 i=0;
+    if(TaskListIsEmpty(RunningTask))     //如果当前任务就绪链表已空
+    {
+        for(i=PRIO_DIFF_SIZE;i>0;i--)    //对所有任务进行遍历，查找就绪表，确定任务是否处于就绪态
+     ec8:	89 81       	ldd	r24, Y+1	; 0x01
+     eca:	81 50       	subi	r24, 0x01	; 1
+     ecc:	89 83       	std	Y+1, r24	; 0x01
+     ece:	89 81       	ldd	r24, Y+1	; 0x01
+     ed0:	88 23       	and	r24, r24
+     ed2:	21 f7       	brne	.-56     	; 0xe9c <GetNextRdyHighTask+0x24>
+    }
+    else
+    {
+        return RunningTask=SwitchRun;
+    }
+    return RdyListIndex[0];              //返回最低优先级，即空闲任务的优先级
+     ed4:	80 91 d3 0e 	lds	r24, 0x0ED3
+     ed8:	90 91 d4 0e 	lds	r25, 0x0ED4
+     edc:	9b 83       	std	Y+3, r25	; 0x03
+     ede:	8a 83       	std	Y+2, r24	; 0x02
+     ee0:	0e c0       	rjmp	.+28     	; 0xefe <GetNextRdyHighTask+0x86>
+                return RdyListIndex[i];
+        }
+    }
+    else
+    {
+        return RunningTask=SwitchRun;
+     ee2:	80 91 0f 10 	lds	r24, 0x100F
+     ee6:	90 91 10 10 	lds	r25, 0x1010
+     eea:	90 93 0e 10 	sts	0x100E, r25
+     eee:	80 93 0d 10 	sts	0x100D, r24
+     ef2:	80 91 0d 10 	lds	r24, 0x100D
+     ef6:	90 91 0e 10 	lds	r25, 0x100E
+     efa:	9b 83       	std	Y+3, r25	; 0x03
+     efc:	8a 83       	std	Y+2, r24	; 0x02
+     efe:	8a 81       	ldd	r24, Y+2	; 0x02
+     f00:	9b 81       	ldd	r25, Y+3	; 0x03
+    }
+    return RdyListIndex[0];              //返回最低优先级，即空闲任务的优先级
+}
+     f02:	0f 90       	pop	r0
+     f04:	0f 90       	pop	r0
+     f06:	0f 90       	pop	r0
+     f08:	cf 91       	pop	r28
+     f0a:	df 91       	pop	r29
+     f0c:	08 95       	ret
+
+00000f0e <pCreateTaskStc>:
+
+
+/*********下面为静态创建任务***********************/
+UINT8 pCreateTaskStc(INT8 *Name,FUN Fun,UINT8 *Stack,UINT8 Prio,TaskHandler *Handler)
+{
+     f0e:	0f 93       	push	r16
+     f10:	1f 93       	push	r17
+     f12:	df 93       	push	r29
+     f14:	cf 93       	push	r28
+     f16:	cd b7       	in	r28, 0x3d	; 61
+     f18:	de b7       	in	r29, 0x3e	; 62
+     f1a:	2c 97       	sbiw	r28, 0x0c	; 12
+     f1c:	0f b6       	in	r0, 0x3f	; 63
+     f1e:	f8 94       	cli
+     f20:	de bf       	out	0x3e, r29	; 62
+     f22:	0f be       	out	0x3f, r0	; 63
+     f24:	cd bf       	out	0x3d, r28	; 61
+     f26:	9c 83       	std	Y+4, r25	; 0x04
+     f28:	8b 83       	std	Y+3, r24	; 0x03
+     f2a:	7e 83       	std	Y+6, r23	; 0x06
+     f2c:	6d 83       	std	Y+5, r22	; 0x05
+     f2e:	58 87       	std	Y+8, r21	; 0x08
+     f30:	4f 83       	std	Y+7, r20	; 0x07
+     f32:	29 87       	std	Y+9, r18	; 0x09
+     f34:	1b 87       	std	Y+11, r17	; 0x0b
+     f36:	0a 87       	std	Y+10, r16	; 0x0a
+    ENTER_CRITICAL();                   //进入临界区
+     f38:	0e 94 82 00 	call	0x104	; 0x104 <DisableIntrp>
+    pTCB *TaskTcb=GetBlankTCB();        //从空白链表中取出一个任务控制块内存
+     f3c:	0e 94 d0 04 	call	0x9a0	; 0x9a0 <GetBlankTCB>
+     f40:	9a 83       	std	Y+2, r25	; 0x02
+     f42:	89 83       	std	Y+1, r24	; 0x01
+
+    if(TaskTcb!=NULL)
+     f44:	89 81       	ldd	r24, Y+1	; 0x01
+     f46:	9a 81       	ldd	r25, Y+2	; 0x02
+     f48:	00 97       	sbiw	r24, 0x00	; 0
+     f4a:	09 f4       	brne	.+2      	; 0xf4e <pCreateTaskStc+0x40>
+     f4c:	58 c0       	rjmp	.+176    	; 0xffe <pCreateTaskStc+0xf0>
+    {
+        TaskTcb->TCBName=Name;          //任务名初始化
+     f4e:	e9 81       	ldd	r30, Y+1	; 0x01
+     f50:	fa 81       	ldd	r31, Y+2	; 0x02
+     f52:	8b 81       	ldd	r24, Y+3	; 0x03
+     f54:	9c 81       	ldd	r25, Y+4	; 0x04
+     f56:	97 83       	std	Z+7, r25	; 0x07
+     f58:	86 83       	std	Z+6, r24	; 0x06
+        TaskTcb->TCBPrio=Prio;          //任务优先级初始化
+     f5a:	e9 81       	ldd	r30, Y+1	; 0x01
+     f5c:	fa 81       	ldd	r31, Y+2	; 0x02
+     f5e:	89 85       	ldd	r24, Y+9	; 0x09
+     f60:	87 87       	std	Z+15, r24	; 0x0f
+        TaskTcb->TCBState=1;            //任务状态初始化 1表示就绪状态
+     f62:	e9 81       	ldd	r30, Y+1	; 0x01
+     f64:	fa 81       	ldd	r31, Y+2	; 0x02
+     f66:	81 e0       	ldi	r24, 0x01	; 1
+     f68:	86 87       	std	Z+14, r24	; 0x0e
+        TaskTcb->TCBTask=Fun;           //任务函数指针初始化
+     f6a:	e9 81       	ldd	r30, Y+1	; 0x01
+     f6c:	fa 81       	ldd	r31, Y+2	; 0x02
+     f6e:	8d 81       	ldd	r24, Y+5	; 0x05
+     f70:	9e 81       	ldd	r25, Y+6	; 0x06
+     f72:	91 87       	std	Z+9, r25	; 0x09
+     f74:	80 87       	std	Z+8, r24	; 0x08
+
+        if(Handler!=NULL)
+     f76:	8a 85       	ldd	r24, Y+10	; 0x0a
+     f78:	9b 85       	ldd	r25, Y+11	; 0x0b
+     f7a:	00 97       	sbiw	r24, 0x00	; 0
+     f7c:	31 f0       	breq	.+12     	; 0xf8a <pCreateTaskStc+0x7c>
+            *Handler=(TaskHandler)TaskTcb;  //任务句柄初始化  实质上是任务控制块的首地址
+     f7e:	89 81       	ldd	r24, Y+1	; 0x01
+     f80:	9a 81       	ldd	r25, Y+2	; 0x02
+     f82:	ea 85       	ldd	r30, Y+10	; 0x0a
+     f84:	fb 85       	ldd	r31, Y+11	; 0x0b
+     f86:	91 83       	std	Z+1, r25	; 0x01
+     f88:	80 83       	st	Z, r24
+        TaskTcb->TCBStack=Stack;        //任务人工堆栈初始化
+     f8a:	e9 81       	ldd	r30, Y+1	; 0x01
+     f8c:	fa 81       	ldd	r31, Y+2	; 0x02
+     f8e:	8f 81       	ldd	r24, Y+7	; 0x07
+     f90:	98 85       	ldd	r25, Y+8	; 0x08
+     f92:	95 83       	std	Z+5, r25	; 0x05
+     f94:	84 83       	std	Z+4, r24	; 0x04
+        TaskTcb->TCBDlyCount=0;         //任务延时初始化 0
+     f96:	e9 81       	ldd	r30, Y+1	; 0x01
+     f98:	fa 81       	ldd	r31, Y+2	; 0x02
+     f9a:	15 86       	std	Z+13, r1	; 0x0d
+     f9c:	14 86       	std	Z+12, r1	; 0x0c
+        InsertRdyList(Prio,TaskTcb);    //将新建的任务插入到任务就绪链表中
+     f9e:	29 81       	ldd	r18, Y+1	; 0x01
+     fa0:	3a 81       	ldd	r19, Y+2	; 0x02
+     fa2:	89 85       	ldd	r24, Y+9	; 0x09
+     fa4:	b9 01       	movw	r22, r18
+     fa6:	0e 94 50 04 	call	0x8a0	; 0x8a0 <InsertRdyList>
+        RdyListNum[Prio]++;             //任务就绪状态个数加1
+     faa:	89 85       	ldd	r24, Y+9	; 0x09
+     fac:	28 2f       	mov	r18, r24
+     fae:	30 e0       	ldi	r19, 0x00	; 0
+     fb0:	f9 01       	movw	r30, r18
+     fb2:	e2 53       	subi	r30, 0x32	; 50
+     fb4:	f1 4f       	sbci	r31, 0xF1	; 241
+     fb6:	80 81       	ld	r24, Z
+     fb8:	8f 5f       	subi	r24, 0xFF	; 255
+     fba:	f9 01       	movw	r30, r18
+     fbc:	e2 53       	subi	r30, 0x32	; 50
+     fbe:	f1 4f       	sbci	r31, 0xF1	; 241
+     fc0:	80 83       	st	Z, r24
+        /******下面为任务人工堆栈初始化********/
+        *(Stack)=(unsigned int)Fun;
+     fc2:	8d 81       	ldd	r24, Y+5	; 0x05
+     fc4:	9e 81       	ldd	r25, Y+6	; 0x06
+     fc6:	ef 81       	ldd	r30, Y+7	; 0x07
+     fc8:	f8 85       	ldd	r31, Y+8	; 0x08
+     fca:	80 83       	st	Z, r24
+        *(Stack-1)=((unsigned int)Fun)>>8;
+     fcc:	8f 81       	ldd	r24, Y+7	; 0x07
+     fce:	98 85       	ldd	r25, Y+8	; 0x08
+     fd0:	fc 01       	movw	r30, r24
+     fd2:	31 97       	sbiw	r30, 0x01	; 1
+     fd4:	8d 81       	ldd	r24, Y+5	; 0x05
+     fd6:	9e 81       	ldd	r25, Y+6	; 0x06
+     fd8:	89 2f       	mov	r24, r25
+     fda:	99 27       	eor	r25, r25
+     fdc:	80 83       	st	Z, r24
+        Stack-=36;
+     fde:	8f 81       	ldd	r24, Y+7	; 0x07
+     fe0:	98 85       	ldd	r25, Y+8	; 0x08
+     fe2:	84 97       	sbiw	r24, 0x24	; 36
+     fe4:	98 87       	std	Y+8, r25	; 0x08
+     fe6:	8f 83       	std	Y+7, r24	; 0x07
+        TaskTcb->TCB_TopSP=(unsigned int)Stack;
+     fe8:	8f 81       	ldd	r24, Y+7	; 0x07
+     fea:	98 85       	ldd	r25, Y+8	; 0x08
+     fec:	e9 81       	ldd	r30, Y+1	; 0x01
+     fee:	fa 81       	ldd	r31, Y+2	; 0x02
+     ff0:	93 87       	std	Z+11, r25	; 0x0b
+     ff2:	82 87       	std	Z+10, r24	; 0x0a
+        EXIT_CRITICAL();                //退出临界区
+     ff4:	0e 94 90 00 	call	0x120	; 0x120 <EnableIntrp>
+        return SUCCESS;
+     ff8:	81 e0       	ldi	r24, 0x01	; 1
+     ffa:	8c 87       	std	Y+12, r24	; 0x0c
+     ffc:	01 c0       	rjmp	.+2      	; 0x1000 <pCreateTaskStc+0xf2>
+    }
+    else
+    {
+        return FAILURE;
+     ffe:	1c 86       	std	Y+12, r1	; 0x0c
+    1000:	8c 85       	ldd	r24, Y+12	; 0x0c
+    }
+}
+    1002:	2c 96       	adiw	r28, 0x0c	; 12
+    1004:	0f b6       	in	r0, 0x3f	; 63
+    1006:	f8 94       	cli
+    1008:	de bf       	out	0x3e, r29	; 62
+    100a:	0f be       	out	0x3f, r0	; 63
+    100c:	cd bf       	out	0x3d, r28	; 61
+    100e:	cf 91       	pop	r28
+    1010:	df 91       	pop	r29
+    1012:	1f 91       	pop	r17
+    1014:	0f 91       	pop	r16
+    1016:	08 95       	ret
+
+00001018 <pCreateTaskDyn>:
+
+/********下面动态创建任务******************************/
+UINT8 pCreateTaskDyn(INT8 *Name,FUN Fun,UINT16 StackSize,UINT8 Prio,TaskHandler *Handler)
+{
+    1018:	0f 93       	push	r16
+    101a:	1f 93       	push	r17
+    101c:	df 93       	push	r29
+    101e:	cf 93       	push	r28
+    1020:	cd b7       	in	r28, 0x3d	; 61
+    1022:	de b7       	in	r29, 0x3e	; 62
+    1024:	2e 97       	sbiw	r28, 0x0e	; 14
+    1026:	0f b6       	in	r0, 0x3f	; 63
+    1028:	f8 94       	cli
+    102a:	de bf       	out	0x3e, r29	; 62
+    102c:	0f be       	out	0x3f, r0	; 63
+    102e:	cd bf       	out	0x3d, r28	; 61
+    1030:	9e 83       	std	Y+6, r25	; 0x06
+    1032:	8d 83       	std	Y+5, r24	; 0x05
+    1034:	78 87       	std	Y+8, r23	; 0x08
+    1036:	6f 83       	std	Y+7, r22	; 0x07
+    1038:	5a 87       	std	Y+10, r21	; 0x0a
+    103a:	49 87       	std	Y+9, r20	; 0x09
+    103c:	2b 87       	std	Y+11, r18	; 0x0b
+    103e:	1d 87       	std	Y+13, r17	; 0x0d
+    1040:	0c 87       	std	Y+12, r16	; 0x0c
+    ENTER_CRITICAL();                       //进入临界区
+    1042:	0e 94 82 00 	call	0x104	; 0x104 <DisableIntrp>
+    UINT8 *Stack=(UINT8 *)MemAlloc(StackSize);//分配内存空间给人工堆栈
+    1046:	89 85       	ldd	r24, Y+9	; 0x09
+    1048:	9a 85       	ldd	r25, Y+10	; 0x0a
+    104a:	0e 94 92 01 	call	0x324	; 0x324 <MemAlloc>
+    104e:	9c 83       	std	Y+4, r25	; 0x04
+    1050:	8b 83       	std	Y+3, r24	; 0x03
+    pTCB *TaskTcb=GetBlankTCB();            //从空白链表中取出一个任务控制块内存
+    1052:	0e 94 d0 04 	call	0x9a0	; 0x9a0 <GetBlankTCB>
+    1056:	9a 83       	std	Y+2, r25	; 0x02
+    1058:	89 83       	std	Y+1, r24	; 0x01
+    if(Stack!=NULL&&TaskTcb!=NULL)
+    105a:	8b 81       	ldd	r24, Y+3	; 0x03
+    105c:	9c 81       	ldd	r25, Y+4	; 0x04
+    105e:	00 97       	sbiw	r24, 0x00	; 0
+    1060:	09 f4       	brne	.+2      	; 0x1064 <pCreateTaskDyn+0x4c>
+    1062:	63 c0       	rjmp	.+198    	; 0x112a <__stack+0x2b>
+    1064:	89 81       	ldd	r24, Y+1	; 0x01
+    1066:	9a 81       	ldd	r25, Y+2	; 0x02
+    1068:	00 97       	sbiw	r24, 0x00	; 0
+    106a:	09 f4       	brne	.+2      	; 0x106e <pCreateTaskDyn+0x56>
+    106c:	5e c0       	rjmp	.+188    	; 0x112a <__stack+0x2b>
+    {
+        TaskTcb->TCBName=Name;              //任务名初始化
+    106e:	e9 81       	ldd	r30, Y+1	; 0x01
+    1070:	fa 81       	ldd	r31, Y+2	; 0x02
+    1072:	8d 81       	ldd	r24, Y+5	; 0x05
+    1074:	9e 81       	ldd	r25, Y+6	; 0x06
+    1076:	97 83       	std	Z+7, r25	; 0x07
+    1078:	86 83       	std	Z+6, r24	; 0x06
+        TaskTcb->TCBPrio=Prio;              //任务优先级初始化
+    107a:	e9 81       	ldd	r30, Y+1	; 0x01
+    107c:	fa 81       	ldd	r31, Y+2	; 0x02
+    107e:	8b 85       	ldd	r24, Y+11	; 0x0b
+    1080:	87 87       	std	Z+15, r24	; 0x0f
+        TaskTcb->TCBState=1;                //任务状态初始化 1表示就绪状态
+    1082:	e9 81       	ldd	r30, Y+1	; 0x01
+    1084:	fa 81       	ldd	r31, Y+2	; 0x02
+    1086:	81 e0       	ldi	r24, 0x01	; 1
+    1088:	86 87       	std	Z+14, r24	; 0x0e
+        TaskTcb->TCBTask=Fun;               //任务函数指针初始化
+    108a:	8f 81       	ldd	r24, Y+7	; 0x07
+    108c:	98 85       	ldd	r25, Y+8	; 0x08
+    108e:	e9 81       	ldd	r30, Y+1	; 0x01
+    1090:	fa 81       	ldd	r31, Y+2	; 0x02
+    1092:	91 87       	std	Z+9, r25	; 0x09
+    1094:	80 87       	std	Z+8, r24	; 0x08
+         if(Handler!=NULL)
+    1096:	8c 85       	ldd	r24, Y+12	; 0x0c
+    1098:	9d 85       	ldd	r25, Y+13	; 0x0d
+    109a:	00 97       	sbiw	r24, 0x00	; 0
+    109c:	31 f0       	breq	.+12     	; 0x10aa <pCreateTaskDyn+0x92>
+            *Handler=(TaskHandler)TaskTcb;  //任务句柄初始化  实质上是任务控制块的首地址
+    109e:	89 81       	ldd	r24, Y+1	; 0x01
+    10a0:	9a 81       	ldd	r25, Y+2	; 0x02
+    10a2:	ec 85       	ldd	r30, Y+12	; 0x0c
+    10a4:	fd 85       	ldd	r31, Y+13	; 0x0d
+    10a6:	91 83       	std	Z+1, r25	; 0x01
+    10a8:	80 83       	st	Z, r24
+        TaskTcb->TCBStack=Stack;            //任务人工堆栈初始化
+    10aa:	8b 81       	ldd	r24, Y+3	; 0x03
+    10ac:	9c 81       	ldd	r25, Y+4	; 0x04
+    10ae:	e9 81       	ldd	r30, Y+1	; 0x01
+    10b0:	fa 81       	ldd	r31, Y+2	; 0x02
+    10b2:	95 83       	std	Z+5, r25	; 0x05
+    10b4:	84 83       	std	Z+4, r24	; 0x04
+        TaskTcb->TCBDlyCount=0;             //任务延时初始化 0
+    10b6:	e9 81       	ldd	r30, Y+1	; 0x01
+    10b8:	fa 81       	ldd	r31, Y+2	; 0x02
+    10ba:	15 86       	std	Z+13, r1	; 0x0d
+    10bc:	14 86       	std	Z+12, r1	; 0x0c
+
+        InsertRdyList(Prio,TaskTcb);        //将新建的任务插入到任务就绪链表中
+    10be:	29 81       	ldd	r18, Y+1	; 0x01
+    10c0:	3a 81       	ldd	r19, Y+2	; 0x02
+    10c2:	8b 85       	ldd	r24, Y+11	; 0x0b
+    10c4:	b9 01       	movw	r22, r18
+    10c6:	0e 94 50 04 	call	0x8a0	; 0x8a0 <InsertRdyList>
+        RdyListNum[Prio]++;                 //任务就绪状态个数加1
+    10ca:	8b 85       	ldd	r24, Y+11	; 0x0b
+    10cc:	28 2f       	mov	r18, r24
+    10ce:	30 e0       	ldi	r19, 0x00	; 0
+    10d0:	f9 01       	movw	r30, r18
+    10d2:	e2 53       	subi	r30, 0x32	; 50
+    10d4:	f1 4f       	sbci	r31, 0xF1	; 241
+    10d6:	80 81       	ld	r24, Z
+    10d8:	8f 5f       	subi	r24, 0xFF	; 255
+    10da:	f9 01       	movw	r30, r18
+    10dc:	e2 53       	subi	r30, 0x32	; 50
+    10de:	f1 4f       	sbci	r31, 0xF1	; 241
+    10e0:	80 83       	st	Z, r24
+        /******下面为任务人工堆栈初始化********/
+        *(Stack--)=&Fun;
+    10e2:	eb 81       	ldd	r30, Y+3	; 0x03
+    10e4:	fc 81       	ldd	r31, Y+4	; 0x04
+    10e6:	ce 01       	movw	r24, r28
+    10e8:	07 96       	adiw	r24, 0x07	; 7
+    10ea:	80 83       	st	Z, r24
+    10ec:	cf 01       	movw	r24, r30
+    10ee:	01 97       	sbiw	r24, 0x01	; 1
+    10f0:	9c 83       	std	Y+4, r25	; 0x04
+    10f2:	8b 83       	std	Y+3, r24	; 0x03
+        *(Stack--)=((unsigned int)&Fun)>>8;
+    10f4:	eb 81       	ldd	r30, Y+3	; 0x03
+    10f6:	fc 81       	ldd	r31, Y+4	; 0x04
+    10f8:	ce 01       	movw	r24, r28
+    10fa:	07 96       	adiw	r24, 0x07	; 7
+    10fc:	89 2f       	mov	r24, r25
+    10fe:	99 27       	eor	r25, r25
+    1100:	80 83       	st	Z, r24
+    1102:	cf 01       	movw	r24, r30
+    1104:	01 97       	sbiw	r24, 0x01	; 1
+    1106:	9c 83       	std	Y+4, r25	; 0x04
+    1108:	8b 83       	std	Y+3, r24	; 0x03
+        Stack-=35;
+    110a:	8b 81       	ldd	r24, Y+3	; 0x03
+    110c:	9c 81       	ldd	r25, Y+4	; 0x04
+    110e:	83 97       	sbiw	r24, 0x23	; 35
+    1110:	9c 83       	std	Y+4, r25	; 0x04
+    1112:	8b 83       	std	Y+3, r24	; 0x03
+        TaskTcb->TCB_TopSP=&Stack;
+    1114:	ce 01       	movw	r24, r28
+    1116:	03 96       	adiw	r24, 0x03	; 3
+    1118:	e9 81       	ldd	r30, Y+1	; 0x01
+    111a:	fa 81       	ldd	r31, Y+2	; 0x02
+    111c:	93 87       	std	Z+11, r25	; 0x0b
+    111e:	82 87       	std	Z+10, r24	; 0x0a
+        EXIT_CRITICAL();                    //退出临界区
+    1120:	0e 94 90 00 	call	0x120	; 0x120 <EnableIntrp>
+        return SUCCESS;
+    1124:	81 e0       	ldi	r24, 0x01	; 1
+    1126:	8e 87       	std	Y+14, r24	; 0x0e
+    1128:	01 c0       	rjmp	.+2      	; 0x112c <__stack+0x2d>
+    }
+    else
+    {
+        return FAILURE;
+    112a:	1e 86       	std	Y+14, r1	; 0x0e
+    112c:	8e 85       	ldd	r24, Y+14	; 0x0e
+    }
+}
+    112e:	2e 96       	adiw	r28, 0x0e	; 14
+    1130:	0f b6       	in	r0, 0x3f	; 63
+    1132:	f8 94       	cli
+    1134:	de bf       	out	0x3e, r29	; 62
+    1136:	0f be       	out	0x3f, r0	; 63
+    1138:	cd bf       	out	0x3d, r28	; 61
+    113a:	cf 91       	pop	r28
+    113c:	df 91       	pop	r29
+    113e:	1f 91       	pop	r17
+    1140:	0f 91       	pop	r16
+    1142:	08 95       	ret
+
+00001144 <pDeleteTask>:
+
+
+/*****删除任务********/
+void pDeleteTask(TaskHandler Handler)
+{
+    1144:	df 93       	push	r29
+    1146:	cf 93       	push	r28
+    1148:	00 d0       	rcall	.+0      	; 0x114a <pDeleteTask+0x6>
+    114a:	00 d0       	rcall	.+0      	; 0x114c <pDeleteTask+0x8>
+    114c:	cd b7       	in	r28, 0x3d	; 61
+    114e:	de b7       	in	r29, 0x3e	; 62
+    1150:	9c 83       	std	Y+4, r25	; 0x04
+    1152:	8b 83       	std	Y+3, r24	; 0x03
+    pTCB* p=(pTCB*)(Handler);
+    1154:	8b 81       	ldd	r24, Y+3	; 0x03
+    1156:	9c 81       	ldd	r25, Y+4	; 0x04
+    1158:	9a 83       	std	Y+2, r25	; 0x02
+    115a:	89 83       	std	Y+1, r24	; 0x01
+    ENTER_CRITICAL();                     //进入临界区
+    115c:	0e 94 82 00 	call	0x104	; 0x104 <DisableIntrp>
+    RdyListNum[GetTaskListPrio(p)]--;     //相应的就绪表减一
+    1160:	89 81       	ldd	r24, Y+1	; 0x01
+    1162:	9a 81       	ldd	r25, Y+2	; 0x02
+    1164:	0e 94 f9 06 	call	0xdf2	; 0xdf2 <GetTaskListPrio>
+    1168:	28 2f       	mov	r18, r24
+    116a:	30 e0       	ldi	r19, 0x00	; 0
+    116c:	f9 01       	movw	r30, r18
+    116e:	e2 53       	subi	r30, 0x32	; 50
+    1170:	f1 4f       	sbci	r31, 0xF1	; 241
+    1172:	80 81       	ld	r24, Z
+    1174:	81 50       	subi	r24, 0x01	; 1
+    1176:	f9 01       	movw	r30, r18
+    1178:	e2 53       	subi	r30, 0x32	; 50
+    117a:	f1 4f       	sbci	r31, 0xF1	; 241
+    117c:	80 83       	st	Z, r24
+    if(TaskListIsEmpty(p))                //如果当前删除的任务所在的队列是空的，也就是删除的任务已经是当前优先级里面的最后一个任务了
+    117e:	89 81       	ldd	r24, Y+1	; 0x01
+    1180:	9a 81       	ldd	r25, Y+2	; 0x02
+    1182:	0e 94 db 06 	call	0xdb6	; 0xdb6 <TaskListIsEmpty>
+    1186:	88 23       	and	r24, r24
+    1188:	49 f0       	breq	.+18     	; 0x119c <pDeleteTask+0x58>
+    {
+        RunningTask=GetNextRdyHighTask(); //获取下一个就绪任务中最高优先级的任务
+    118a:	0e 94 3c 07 	call	0xe78	; 0xe78 <GetNextRdyHighTask>
+    118e:	90 93 0e 10 	sts	0x100E, r25
+    1192:	80 93 0d 10 	sts	0x100D, r24
+        TaskContexSwitch();               //强制进行任务切换
+    1196:	0e 94 9e 00 	call	0x13c	; 0x13c <TaskContexSwitch>
+    119a:	29 c0       	rjmp	.+82     	; 0x11ee <pDeleteTask+0xaa>
+    }
+    else if(Handler!=RunningTask)
+    119c:	2b 81       	ldd	r18, Y+3	; 0x03
+    119e:	3c 81       	ldd	r19, Y+4	; 0x04
+    11a0:	80 91 0d 10 	lds	r24, 0x100D
+    11a4:	90 91 0e 10 	lds	r25, 0x100E
+    11a8:	28 17       	cp	r18, r24
+    11aa:	39 07       	cpc	r19, r25
+    11ac:	b1 f0       	breq	.+44     	; 0x11da <pDeleteTask+0x96>
+    {
+        TaskContexSwitch();
+    11ae:	0e 94 9e 00 	call	0x13c	; 0x13c <TaskContexSwitch>
+        ListRemoveNode(p);                //删除此任务
+    11b2:	89 81       	ldd	r24, Y+1	; 0x01
+    11b4:	9a 81       	ldd	r25, Y+2	; 0x02
+    11b6:	0e 94 7f 03 	call	0x6fe	; 0x6fe <ListRemoveNode>
+        InsertBlankList(p);               //回收删除的任务空间到空白链表
+    11ba:	89 81       	ldd	r24, Y+1	; 0x01
+    11bc:	9a 81       	ldd	r25, Y+2	; 0x02
+    11be:	0e 94 10 05 	call	0xa20	; 0xa20 <InsertBlankList>
+        if(p==RunningTask)
+    11c2:	20 91 0d 10 	lds	r18, 0x100D
+    11c6:	30 91 0e 10 	lds	r19, 0x100E
+    11ca:	89 81       	ldd	r24, Y+1	; 0x01
+    11cc:	9a 81       	ldd	r25, Y+2	; 0x02
+    11ce:	82 17       	cp	r24, r18
+    11d0:	93 07       	cpc	r25, r19
+    11d2:	69 f4       	brne	.+26     	; 0x11ee <pDeleteTask+0xaa>
+            TaskContexSwitch();           //强制进行任务切换
+    11d4:	0e 94 9e 00 	call	0x13c	; 0x13c <TaskContexSwitch>
+    11d8:	0a c0       	rjmp	.+20     	; 0x11ee <pDeleteTask+0xaa>
+    }
+    else
+    {
+        TaskContexSwitch();               //强制进行任务切换
+    11da:	0e 94 9e 00 	call	0x13c	; 0x13c <TaskContexSwitch>
+        ListRemoveNode(p);                //在就绪链表删除此任务
+    11de:	89 81       	ldd	r24, Y+1	; 0x01
+    11e0:	9a 81       	ldd	r25, Y+2	; 0x02
+    11e2:	0e 94 7f 03 	call	0x6fe	; 0x6fe <ListRemoveNode>
+        InsertSuspList(p);                //将挂起的任务挂载到挂起链表中
+    11e6:	89 81       	ldd	r24, Y+1	; 0x01
+    11e8:	9a 81       	ldd	r25, Y+2	; 0x02
+    11ea:	0e 94 41 05 	call	0xa82	; 0xa82 <InsertSuspList>
+    }
+    EXIT_CRITICAL();                      //退出临界区
+    11ee:	0e 94 90 00 	call	0x120	; 0x120 <EnableIntrp>
+}
+    11f2:	0f 90       	pop	r0
+    11f4:	0f 90       	pop	r0
+    11f6:	0f 90       	pop	r0
+    11f8:	0f 90       	pop	r0
+    11fa:	cf 91       	pop	r28
+    11fc:	df 91       	pop	r29
+    11fe:	08 95       	ret
+
+00001200 <pSuspendTask>:
+
+
+/******任务挂起函数********/
+void pSuspendTask(TaskHandler Handler)
+{
+    1200:	df 93       	push	r29
+    1202:	cf 93       	push	r28
+    1204:	00 d0       	rcall	.+0      	; 0x1206 <pSuspendTask+0x6>
+    1206:	00 d0       	rcall	.+0      	; 0x1208 <pSuspendTask+0x8>
+    1208:	cd b7       	in	r28, 0x3d	; 61
+    120a:	de b7       	in	r29, 0x3e	; 62
+    120c:	9c 83       	std	Y+4, r25	; 0x04
+    120e:	8b 83       	std	Y+3, r24	; 0x03
+    pTCB* p=(pTCB*)(Handler);
+    1210:	8b 81       	ldd	r24, Y+3	; 0x03
+    1212:	9c 81       	ldd	r25, Y+4	; 0x04
+    1214:	9a 83       	std	Y+2, r25	; 0x02
+    1216:	89 83       	std	Y+1, r24	; 0x01
+    ENTER_CRITICAL();                     //进入临界区
+    1218:	0e 94 82 00 	call	0x104	; 0x104 <DisableIntrp>
+    RdyListNum[GetTaskListPrio(p)]--;     //相应优先级的就绪表减一
+    121c:	89 81       	ldd	r24, Y+1	; 0x01
+    121e:	9a 81       	ldd	r25, Y+2	; 0x02
+    1220:	0e 94 f9 06 	call	0xdf2	; 0xdf2 <GetTaskListPrio>
+    1224:	28 2f       	mov	r18, r24
+    1226:	30 e0       	ldi	r19, 0x00	; 0
+    1228:	f9 01       	movw	r30, r18
+    122a:	e2 53       	subi	r30, 0x32	; 50
+    122c:	f1 4f       	sbci	r31, 0xF1	; 241
+    122e:	80 81       	ld	r24, Z
+    1230:	81 50       	subi	r24, 0x01	; 1
+    1232:	f9 01       	movw	r30, r18
+    1234:	e2 53       	subi	r30, 0x32	; 50
+    1236:	f1 4f       	sbci	r31, 0xF1	; 241
+    1238:	80 83       	st	Z, r24
+    p->TCBState=0;                        //变为阻塞状态
+    123a:	e9 81       	ldd	r30, Y+1	; 0x01
+    123c:	fa 81       	ldd	r31, Y+2	; 0x02
+    123e:	16 86       	std	Z+14, r1	; 0x0e
+    if(TaskListIsEmpty(p))                //如果当前挂起的任务所在的队列是空的，也就是挂起的任务已经是当前优先级里面的最后一个任务了
+    1240:	89 81       	ldd	r24, Y+1	; 0x01
+    1242:	9a 81       	ldd	r25, Y+2	; 0x02
+    1244:	0e 94 db 06 	call	0xdb6	; 0xdb6 <TaskListIsEmpty>
+    1248:	88 23       	and	r24, r24
+    124a:	49 f0       	breq	.+18     	; 0x125e <pSuspendTask+0x5e>
+    {
+        RunningTask=GetNextRdyHighTask(); //获取下一个就绪任务中最高优先级的任务
+    124c:	0e 94 3c 07 	call	0xe78	; 0xe78 <GetNextRdyHighTask>
+    1250:	90 93 0e 10 	sts	0x100E, r25
+    1254:	80 93 0d 10 	sts	0x100D, r24
+        TaskContexSwitch();               //强制进行任务切换
+    1258:	0e 94 9e 00 	call	0x13c	; 0x13c <TaskContexSwitch>
+    125c:	27 c0       	rjmp	.+78     	; 0x12ac <pSuspendTask+0xac>
+    }
+    else if(Handler!=RunningTask)         //如果此时挂起的任务不是正在运行的任务
+    125e:	2b 81       	ldd	r18, Y+3	; 0x03
+    1260:	3c 81       	ldd	r19, Y+4	; 0x04
+    1262:	80 91 0d 10 	lds	r24, 0x100D
+    1266:	90 91 0e 10 	lds	r25, 0x100E
+    126a:	28 17       	cp	r18, r24
+    126c:	39 07       	cpc	r19, r25
+    126e:	a1 f0       	breq	.+40     	; 0x1298 <pSuspendTask+0x98>
+    {
+        ListRemoveNode(p);                //在就绪链表删除此任务
+    1270:	89 81       	ldd	r24, Y+1	; 0x01
+    1272:	9a 81       	ldd	r25, Y+2	; 0x02
+    1274:	0e 94 7f 03 	call	0x6fe	; 0x6fe <ListRemoveNode>
+        InsertSuspList(p);                //将挂起的任务挂载到挂起链表中
+    1278:	89 81       	ldd	r24, Y+1	; 0x01
+    127a:	9a 81       	ldd	r25, Y+2	; 0x02
+    127c:	0e 94 41 05 	call	0xa82	; 0xa82 <InsertSuspList>
+        if(p==RunningTask)
+    1280:	20 91 0d 10 	lds	r18, 0x100D
+    1284:	30 91 0e 10 	lds	r19, 0x100E
+    1288:	89 81       	ldd	r24, Y+1	; 0x01
+    128a:	9a 81       	ldd	r25, Y+2	; 0x02
+    128c:	82 17       	cp	r24, r18
+    128e:	93 07       	cpc	r25, r19
+    1290:	69 f4       	brne	.+26     	; 0x12ac <pSuspendTask+0xac>
+            TaskContexSwitch();           //强制进行任务切换
+    1292:	0e 94 9e 00 	call	0x13c	; 0x13c <TaskContexSwitch>
+    1296:	0a c0       	rjmp	.+20     	; 0x12ac <pSuspendTask+0xac>
+    }
+    else                                  //如果此时挂起的任务是正在运行的任务
+    {
+        TaskContexSwitch();               //强制进行任务切换
+    1298:	0e 94 9e 00 	call	0x13c	; 0x13c <TaskContexSwitch>
+        ListRemoveNode(p);                //在就绪链表删除此任务
+    129c:	89 81       	ldd	r24, Y+1	; 0x01
+    129e:	9a 81       	ldd	r25, Y+2	; 0x02
+    12a0:	0e 94 7f 03 	call	0x6fe	; 0x6fe <ListRemoveNode>
+        InsertSuspList(p);                //将挂起的任务挂载到挂起链表中
+    12a4:	89 81       	ldd	r24, Y+1	; 0x01
+    12a6:	9a 81       	ldd	r25, Y+2	; 0x02
+    12a8:	0e 94 41 05 	call	0xa82	; 0xa82 <InsertSuspList>
+    }
+    EXIT_CRITICAL();                      //退出临界区
+    12ac:	0e 94 90 00 	call	0x120	; 0x120 <EnableIntrp>
+}
+    12b0:	0f 90       	pop	r0
+    12b2:	0f 90       	pop	r0
+    12b4:	0f 90       	pop	r0
+    12b6:	0f 90       	pop	r0
+    12b8:	cf 91       	pop	r28
+    12ba:	df 91       	pop	r29
+    12bc:	08 95       	ret
+
+000012be <RefreshBlkList>:
+
+
+/******刷新阻塞链表*********/
+inline void RefreshBlkList(void)
+{
+    12be:	df 93       	push	r29
+    12c0:	cf 93       	push	r28
+    12c2:	00 d0       	rcall	.+0      	; 0x12c4 <RefreshBlkList+0x6>
+    12c4:	0f 92       	push	r0
+    12c6:	cd b7       	in	r28, 0x3d	; 61
+    12c8:	de b7       	in	r29, 0x3e	; 62
+    UINT8 i;
+    pTCB *p=pBlkList->TCBNext;
+    12ca:	e0 91 dd 0e 	lds	r30, 0x0EDD
+    12ce:	f0 91 de 0e 	lds	r31, 0x0EDE
+    12d2:	82 81       	ldd	r24, Z+2	; 0x02
+    12d4:	93 81       	ldd	r25, Z+3	; 0x03
+    12d6:	9a 83       	std	Y+2, r25	; 0x02
+    12d8:	89 83       	std	Y+1, r24	; 0x01
+    ENTER_CRITICAL();
+    12da:	0e 94 82 00 	call	0x104	; 0x104 <DisableIntrp>
+    12de:	5f c0       	rjmp	.+190    	; 0x139e <RefreshBlkList+0xe0>
+    while(p->TCBState!=255)
+    {
+        if(p->TCBDlyCount>0)
+    12e0:	e9 81       	ldd	r30, Y+1	; 0x01
+    12e2:	fa 81       	ldd	r31, Y+2	; 0x02
+    12e4:	84 85       	ldd	r24, Z+12	; 0x0c
+    12e6:	95 85       	ldd	r25, Z+13	; 0x0d
+    12e8:	00 97       	sbiw	r24, 0x00	; 0
+    12ea:	81 f0       	breq	.+32     	; 0x130c <RefreshBlkList+0x4e>
+        {
+            p->TCBDlyCount--;
+    12ec:	e9 81       	ldd	r30, Y+1	; 0x01
+    12ee:	fa 81       	ldd	r31, Y+2	; 0x02
+    12f0:	84 85       	ldd	r24, Z+12	; 0x0c
+    12f2:	95 85       	ldd	r25, Z+13	; 0x0d
+    12f4:	01 97       	sbiw	r24, 0x01	; 1
+    12f6:	e9 81       	ldd	r30, Y+1	; 0x01
+    12f8:	fa 81       	ldd	r31, Y+2	; 0x02
+    12fa:	95 87       	std	Z+13, r25	; 0x0d
+    12fc:	84 87       	std	Z+12, r24	; 0x0c
+            p=p->TCBNext;
+    12fe:	e9 81       	ldd	r30, Y+1	; 0x01
+    1300:	fa 81       	ldd	r31, Y+2	; 0x02
+    1302:	82 81       	ldd	r24, Z+2	; 0x02
+    1304:	93 81       	ldd	r25, Z+3	; 0x03
+    1306:	9a 83       	std	Y+2, r25	; 0x02
+    1308:	89 83       	std	Y+1, r24	; 0x01
+    130a:	49 c0       	rjmp	.+146    	; 0x139e <RefreshBlkList+0xe0>
+        }
+        else
+        {
+            ListRemoveNode(p);                     //从阻塞链表删除
+    130c:	89 81       	ldd	r24, Y+1	; 0x01
+    130e:	9a 81       	ldd	r25, Y+2	; 0x02
+    1310:	0e 94 7f 03 	call	0x6fe	; 0x6fe <ListRemoveNode>
+            p->TCBState=1;
+    1314:	e9 81       	ldd	r30, Y+1	; 0x01
+    1316:	fa 81       	ldd	r31, Y+2	; 0x02
+    1318:	81 e0       	ldi	r24, 0x01	; 1
+    131a:	86 87       	std	Z+14, r24	; 0x0e
+            InsertRdyList(GetTaskListPrio(p),p);   //插入到就绪链表中
+    131c:	89 81       	ldd	r24, Y+1	; 0x01
+    131e:	9a 81       	ldd	r25, Y+2	; 0x02
+    1320:	0e 94 f9 06 	call	0xdf2	; 0xdf2 <GetTaskListPrio>
+    1324:	29 81       	ldd	r18, Y+1	; 0x01
+    1326:	3a 81       	ldd	r19, Y+2	; 0x02
+    1328:	b9 01       	movw	r22, r18
+    132a:	0e 94 50 04 	call	0x8a0	; 0x8a0 <InsertRdyList>
+            RdyListNum[GetTaskListPrio(p)]++;      //就绪队列中相应优先级的任务数加1
+    132e:	89 81       	ldd	r24, Y+1	; 0x01
+    1330:	9a 81       	ldd	r25, Y+2	; 0x02
+    1332:	0e 94 f9 06 	call	0xdf2	; 0xdf2 <GetTaskListPrio>
+    1336:	28 2f       	mov	r18, r24
+    1338:	30 e0       	ldi	r19, 0x00	; 0
+    133a:	f9 01       	movw	r30, r18
+    133c:	e2 53       	subi	r30, 0x32	; 50
+    133e:	f1 4f       	sbci	r31, 0xF1	; 241
+    1340:	80 81       	ld	r24, Z
+    1342:	8f 5f       	subi	r24, 0xFF	; 255
+    1344:	f9 01       	movw	r30, r18
+    1346:	e2 53       	subi	r30, 0x32	; 50
+    1348:	f1 4f       	sbci	r31, 0xF1	; 241
+    134a:	80 83       	st	Z, r24
+            for(i=PRIO_DIFF_SIZE;i>=0;i--)         //对所有任务进行遍历，查找就绪表，确定任务是否处于就绪态
+    134c:	84 e0       	ldi	r24, 0x04	; 4
+    134e:	8b 83       	std	Y+3, r24	; 0x03
+            {
+                if(RdyListNum[i])                  //如果不为零，则返回当前的优先级
+    1350:	8b 81       	ldd	r24, Y+3	; 0x03
+    1352:	88 2f       	mov	r24, r24
+    1354:	90 e0       	ldi	r25, 0x00	; 0
+    1356:	fc 01       	movw	r30, r24
+    1358:	e2 53       	subi	r30, 0x32	; 50
+    135a:	f1 4f       	sbci	r31, 0xF1	; 241
+    135c:	80 81       	ld	r24, Z
+    135e:	88 23       	and	r24, r24
+    1360:	d1 f0       	breq	.+52     	; 0x1396 <RefreshBlkList+0xd8>
+                {
+                    RunningTask=RdyListIndex[i]->TCBNext;
+    1362:	8b 81       	ldd	r24, Y+3	; 0x03
+    1364:	88 2f       	mov	r24, r24
+    1366:	90 e0       	ldi	r25, 0x00	; 0
+    1368:	88 0f       	add	r24, r24
+    136a:	99 1f       	adc	r25, r25
+    136c:	fc 01       	movw	r30, r24
+    136e:	ed 52       	subi	r30, 0x2D	; 45
+    1370:	f1 4f       	sbci	r31, 0xF1	; 241
+    1372:	01 90       	ld	r0, Z+
+    1374:	f0 81       	ld	r31, Z
+    1376:	e0 2d       	mov	r30, r0
+    1378:	82 81       	ldd	r24, Z+2	; 0x02
+    137a:	93 81       	ldd	r25, Z+3	; 0x03
+    137c:	90 93 0e 10 	sts	0x100E, r25
+    1380:	80 93 0d 10 	sts	0x100D, r24
+                    //puts1(RunningTask->TCBName);
+                    //puts1("56888");
+                    break;
+                }
+            }
+            p=pBlkList->TCBNext;
+    1384:	e0 91 dd 0e 	lds	r30, 0x0EDD
+    1388:	f0 91 de 0e 	lds	r31, 0x0EDE
+    138c:	82 81       	ldd	r24, Z+2	; 0x02
+    138e:	93 81       	ldd	r25, Z+3	; 0x03
+    1390:	9a 83       	std	Y+2, r25	; 0x02
+    1392:	89 83       	std	Y+1, r24	; 0x01
+    1394:	04 c0       	rjmp	.+8      	; 0x139e <RefreshBlkList+0xe0>
+        {
+            ListRemoveNode(p);                     //从阻塞链表删除
+            p->TCBState=1;
+            InsertRdyList(GetTaskListPrio(p),p);   //插入到就绪链表中
+            RdyListNum[GetTaskListPrio(p)]++;      //就绪队列中相应优先级的任务数加1
+            for(i=PRIO_DIFF_SIZE;i>=0;i--)         //对所有任务进行遍历，查找就绪表，确定任务是否处于就绪态
+    1396:	8b 81       	ldd	r24, Y+3	; 0x03
+    1398:	81 50       	subi	r24, 0x01	; 1
+    139a:	8b 83       	std	Y+3, r24	; 0x03
+    139c:	d9 cf       	rjmp	.-78     	; 0x1350 <RefreshBlkList+0x92>
+inline void RefreshBlkList(void)
+{
+    UINT8 i;
+    pTCB *p=pBlkList->TCBNext;
+    ENTER_CRITICAL();
+    while(p->TCBState!=255)
+    139e:	e9 81       	ldd	r30, Y+1	; 0x01
+    13a0:	fa 81       	ldd	r31, Y+2	; 0x02
+    13a2:	86 85       	ldd	r24, Z+14	; 0x0e
+    13a4:	8f 3f       	cpi	r24, 0xFF	; 255
+    13a6:	09 f0       	breq	.+2      	; 0x13aa <RefreshBlkList+0xec>
+    13a8:	9b cf       	rjmp	.-202    	; 0x12e0 <RefreshBlkList+0x22>
+                }
+            }
+            p=pBlkList->TCBNext;
+        }
+    }
+    EXIT_CRITICAL();
+    13aa:	0e 94 90 00 	call	0x120	; 0x120 <EnableIntrp>
+}
+    13ae:	0f 90       	pop	r0
+    13b0:	0f 90       	pop	r0
+    13b2:	0f 90       	pop	r0
+    13b4:	cf 91       	pop	r28
+    13b6:	df 91       	pop	r29
+    13b8:	08 95       	ret
+
+000013ba <pDelayTask>:
+
+/******系统延时函数********/
+void pDelayTask(UINT16 Time)
+{
+    13ba:	df 93       	push	r29
+    13bc:	cf 93       	push	r28
+    13be:	00 d0       	rcall	.+0      	; 0x13c0 <pDelayTask+0x6>
+    13c0:	cd b7       	in	r28, 0x3d	; 61
+    13c2:	de b7       	in	r29, 0x3e	; 62
+    13c4:	9a 83       	std	Y+2, r25	; 0x02
+    13c6:	89 83       	std	Y+1, r24	; 0x01
+    ENTER_CRITICAL();                           //进入临界区
+    13c8:	0e 94 82 00 	call	0x104	; 0x104 <DisableIntrp>
+    SwitchRun=RunningTask;
+    13cc:	80 91 0d 10 	lds	r24, 0x100D
+    13d0:	90 91 0e 10 	lds	r25, 0x100E
+    13d4:	90 93 10 10 	sts	0x1010, r25
+    13d8:	80 93 0f 10 	sts	0x100F, r24
+    RdyListNum[GetTaskListPrio(RunningTask)]--; //相应优先级的就绪表减一
+    13dc:	80 91 0d 10 	lds	r24, 0x100D
+    13e0:	90 91 0e 10 	lds	r25, 0x100E
+    13e4:	0e 94 f9 06 	call	0xdf2	; 0xdf2 <GetTaskListPrio>
+    13e8:	28 2f       	mov	r18, r24
+    13ea:	30 e0       	ldi	r19, 0x00	; 0
+    13ec:	f9 01       	movw	r30, r18
+    13ee:	e2 53       	subi	r30, 0x32	; 50
+    13f0:	f1 4f       	sbci	r31, 0xF1	; 241
+    13f2:	80 81       	ld	r24, Z
+    13f4:	81 50       	subi	r24, 0x01	; 1
+    13f6:	f9 01       	movw	r30, r18
+    13f8:	e2 53       	subi	r30, 0x32	; 50
+    13fa:	f1 4f       	sbci	r31, 0xF1	; 241
+    13fc:	80 83       	st	Z, r24
+    RunningTask->TCBState=0;                    //变为阻塞状态
+    13fe:	e0 91 0d 10 	lds	r30, 0x100D
+    1402:	f0 91 0e 10 	lds	r31, 0x100E
+    1406:	16 86       	std	Z+14, r1	; 0x0e
+    RunningTask->TCBDlyCount=Time;              //保存延时时间
+    1408:	e0 91 0d 10 	lds	r30, 0x100D
+    140c:	f0 91 0e 10 	lds	r31, 0x100E
+    1410:	89 81       	ldd	r24, Y+1	; 0x01
+    1412:	9a 81       	ldd	r25, Y+2	; 0x02
+    1414:	95 87       	std	Z+13, r25	; 0x0d
+    1416:	84 87       	std	Z+12, r24	; 0x0c
+    ListRemoveNode(RunningTask);                //在就绪链表删除此任务
+    1418:	80 91 0d 10 	lds	r24, 0x100D
+    141c:	90 91 0e 10 	lds	r25, 0x100E
+    1420:	0e 94 7f 03 	call	0x6fe	; 0x6fe <ListRemoveNode>
+    InsertBlkList(RunningTask);                 //将延时的任务挂载到延时链表中
+    1424:	80 91 0d 10 	lds	r24, 0x100D
+    1428:	90 91 0e 10 	lds	r25, 0x100E
+    142c:	0e 94 9f 04 	call	0x93e	; 0x93e <InsertBlkList>
+    RunningTask=GetNextRdyHighTask();           //获取下一个优先级最高任务
+    1430:	0e 94 3c 07 	call	0xe78	; 0xe78 <GetNextRdyHighTask>
+    1434:	90 93 0e 10 	sts	0x100E, r25
+    1438:	80 93 0d 10 	sts	0x100D, r24
+    TaskContexSwitch();                         //强制进行任务切换
+    143c:	0e 94 9e 00 	call	0x13c	; 0x13c <TaskContexSwitch>
+    EXIT_CRITICAL();
+    1440:	0e 94 90 00 	call	0x120	; 0x120 <EnableIntrp>
+}
+    1444:	0f 90       	pop	r0
+    1446:	0f 90       	pop	r0
+    1448:	cf 91       	pop	r28
+    144a:	df 91       	pop	r29
+    144c:	08 95       	ret
+
+0000144e <uart1_init>:
+函数功能:uart1初始化程序
+入口参数:
+出口参数:
+****************************************************************************/
+void uart1_init(void) //USART1初始化
+{
+    144e:	df 93       	push	r29
+    1450:	cf 93       	push	r28
+    1452:	cd b7       	in	r28, 0x3d	; 61
+    1454:	de b7       	in	r29, 0x3e	; 62
+ UCSR1B = 0x00;   //关闭USART1
+    1456:	ea e9       	ldi	r30, 0x9A	; 154
+    1458:	f0 e0       	ldi	r31, 0x00	; 0
+    145a:	10 82       	st	Z, r1
+ UCSR1A = 0x00;   //不适使用倍速发送
+    145c:	eb e9       	ldi	r30, 0x9B	; 155
+    145e:	f0 e0       	ldi	r31, 0x00	; 0
+    1460:	10 82       	st	Z, r1
+ UCSR1C = (1<<UCSZ11)|(1<<UCSZ10);//数据位为八位
+    1462:	ed e9       	ldi	r30, 0x9D	; 157
+    1464:	f0 e0       	ldi	r31, 0x00	; 0
+    1466:	86 e0       	ldi	r24, 0x06	; 6
+    1468:	80 83       	st	Z, r24
+ UBRR1L=(fosc/16/(baud+1))%256;//异步正常模式下，UBRR的计算公式
+    146a:	e9 e9       	ldi	r30, 0x99	; 153
+    146c:	f0 e0       	ldi	r31, 0x00	; 0
+    146e:	84 e3       	ldi	r24, 0x34	; 52
+    1470:	80 83       	st	Z, r24
+ UBRR1H=(fosc/16/(baud+1))/256;
+    1472:	e8 e9       	ldi	r30, 0x98	; 152
+    1474:	f0 e0       	ldi	r31, 0x00	; 0
+    1476:	10 82       	st	Z, r1
+ UCSR1B =(1<<RXEN1)|(1<<TXEN1); //接收使能，传送使能
+    1478:	ea e9       	ldi	r30, 0x9A	; 154
+    147a:	f0 e0       	ldi	r31, 0x00	; 0
+    147c:	88 e1       	ldi	r24, 0x18	; 24
+    147e:	80 83       	st	Z, r24
+}
+    1480:	cf 91       	pop	r28
+    1482:	df 91       	pop	r29
+    1484:	08 95       	ret
+
+00001486 <putchar1>:
+函数功能:uart1发送单字节数据
+入口参数:c
+出口参数:
+****************************************************************************/
+void putchar1(unsigned char c)//串口1发送字符
+ {
+    1486:	df 93       	push	r29
+    1488:	cf 93       	push	r28
+    148a:	0f 92       	push	r0
+    148c:	cd b7       	in	r28, 0x3d	; 61
+    148e:	de b7       	in	r29, 0x3e	; 62
+    1490:	89 83       	std	Y+1, r24	; 0x01
+     while (!(UCSR1A&(1<<UDRE1)));//表明发送器一准备就绪
+    1492:	eb e9       	ldi	r30, 0x9B	; 155
+    1494:	f0 e0       	ldi	r31, 0x00	; 0
+    1496:	80 81       	ld	r24, Z
+    1498:	88 2f       	mov	r24, r24
+    149a:	90 e0       	ldi	r25, 0x00	; 0
+    149c:	80 72       	andi	r24, 0x20	; 32
+    149e:	90 70       	andi	r25, 0x00	; 0
+    14a0:	00 97       	sbiw	r24, 0x00	; 0
+    14a2:	b9 f3       	breq	.-18     	; 0x1492 <putchar1+0xc>
+  UDR1=c;
+    14a4:	ec e9       	ldi	r30, 0x9C	; 156
+    14a6:	f0 e0       	ldi	r31, 0x00	; 0
+    14a8:	89 81       	ldd	r24, Y+1	; 0x01
+    14aa:	80 83       	st	Z, r24
+ }
+    14ac:	0f 90       	pop	r0
+    14ae:	cf 91       	pop	r28
+    14b0:	df 91       	pop	r29
+    14b2:	08 95       	ret
+
+000014b4 <getchar1>:
+函数功能:uart1接收单字节数据
+入口参数:
+出口参数:
+****************************************************************************/
+unsigned char getchar1(void) //串口1接回收数据
+   {
+    14b4:	df 93       	push	r29
+    14b6:	cf 93       	push	r28
+    14b8:	cd b7       	in	r28, 0x3d	; 61
+    14ba:	de b7       	in	r29, 0x3e	; 62
+  while(!(UCSR1A& (1<<RXC1)));
+    14bc:	eb e9       	ldi	r30, 0x9B	; 155
+    14be:	f0 e0       	ldi	r31, 0x00	; 0
+    14c0:	80 81       	ld	r24, Z
+    14c2:	88 23       	and	r24, r24
+    14c4:	dc f7       	brge	.-10     	; 0x14bc <getchar1+0x8>
+     return UDR1;   //将接收到的字符返回
+    14c6:	ec e9       	ldi	r30, 0x9C	; 156
+    14c8:	f0 e0       	ldi	r31, 0x00	; 0
+    14ca:	80 81       	ld	r24, Z
+ }
+    14cc:	cf 91       	pop	r28
+    14ce:	df 91       	pop	r29
+    14d0:	08 95       	ret
+
+000014d2 <puts1>:
+函数功能:uart1发送字符串数据
+入口参数:*s
+出口参数:
+****************************************************************************/
+void puts1(char *s)
+ {
+    14d2:	df 93       	push	r29
+    14d4:	cf 93       	push	r28
+    14d6:	00 d0       	rcall	.+0      	; 0x14d8 <puts1+0x6>
+    14d8:	cd b7       	in	r28, 0x3d	; 61
+    14da:	de b7       	in	r29, 0x3e	; 62
+    14dc:	9a 83       	std	Y+2, r25	; 0x02
+    14de:	89 83       	std	Y+1, r24	; 0x01
+    14e0:	0a c0       	rjmp	.+20     	; 0x14f6 <puts1+0x24>
+ while (*s)
+  {
+  putchar1(*s);
+    14e2:	e9 81       	ldd	r30, Y+1	; 0x01
+    14e4:	fa 81       	ldd	r31, Y+2	; 0x02
+    14e6:	80 81       	ld	r24, Z
+    14e8:	0e 94 43 0a 	call	0x1486	; 0x1486 <putchar1>
+  s++;
+    14ec:	89 81       	ldd	r24, Y+1	; 0x01
+    14ee:	9a 81       	ldd	r25, Y+2	; 0x02
+    14f0:	01 96       	adiw	r24, 0x01	; 1
+    14f2:	9a 83       	std	Y+2, r25	; 0x02
+    14f4:	89 83       	std	Y+1, r24	; 0x01
+入口参数:*s
+出口参数:
+****************************************************************************/
+void puts1(char *s)
+ {
+ while (*s)
+    14f6:	e9 81       	ldd	r30, Y+1	; 0x01
+    14f8:	fa 81       	ldd	r31, Y+2	; 0x02
+    14fa:	80 81       	ld	r24, Z
+    14fc:	88 23       	and	r24, r24
+    14fe:	89 f7       	brne	.-30     	; 0x14e2 <puts1+0x10>
+  {
+  putchar1(*s);
+  s++;
+  }
+        putchar1(0x0a);//回车换行
+    1500:	8a e0       	ldi	r24, 0x0A	; 10
+    1502:	0e 94 43 0a 	call	0x1486	; 0x1486 <putchar1>
+     putchar1(0x0d);
+    1506:	8d e0       	ldi	r24, 0x0D	; 13
+    1508:	0e 94 43 0a 	call	0x1486	; 0x1486 <putchar1>
+ }
+    150c:	0f 90       	pop	r0
+    150e:	0f 90       	pop	r0
+    1510:	cf 91       	pop	r28
+    1512:	df 91       	pop	r29
+    1514:	08 95       	ret
+
+00001516 <puts1_PrintNumber>:
+
+
+ void puts1_PrintNumber(unsigned long number)
+{
+    1516:	0f 93       	push	r16
+    1518:	1f 93       	push	r17
+    151a:	df 93       	push	r29
+    151c:	cf 93       	push	r28
+    151e:	cd b7       	in	r28, 0x3d	; 61
+    1520:	de b7       	in	r29, 0x3e	; 62
+    1522:	a9 97       	sbiw	r28, 0x29	; 41
+    1524:	0f b6       	in	r0, 0x3f	; 63
+    1526:	f8 94       	cli
+    1528:	de bf       	out	0x3e, r29	; 62
+    152a:	0f be       	out	0x3f, r0	; 63
+    152c:	cd bf       	out	0x3d, r28	; 61
+    152e:	6e a3       	std	Y+38, r22	; 0x26
+    1530:	7f a3       	std	Y+39, r23	; 0x27
+    1532:	88 a7       	std	Y+40, r24	; 0x28
+    1534:	99 a7       	std	Y+41, r25	; 0x29
+      unsigned char usart_save[32]={0};
+    1536:	80 e2       	ldi	r24, 0x20	; 32
+    1538:	fe 01       	movw	r30, r28
+    153a:	36 96       	adiw	r30, 0x06	; 6
+    153c:	df 01       	movw	r26, r30
+    153e:	98 2f       	mov	r25, r24
+    1540:	1d 92       	st	X+, r1
+    1542:	9a 95       	dec	r25
+    1544:	e9 f7       	brne	.-6      	; 0x1540 <puts1_PrintNumber+0x2a>
+        unsigned char *usart_p;
+        unsigned char i=1;
+    1546:	81 e0       	ldi	r24, 0x01	; 1
+    1548:	8b 83       	std	Y+3, r24	; 0x03
+
+        unsigned int num=0;
+    154a:	1a 82       	std	Y+2, r1	; 0x02
+    154c:	19 82       	std	Y+1, r1	; 0x01
+        num=number;
+    154e:	8e a1       	ldd	r24, Y+38	; 0x26
+    1550:	9f a1       	ldd	r25, Y+39	; 0x27
+    1552:	9a 83       	std	Y+2, r25	; 0x02
+    1554:	89 83       	std	Y+1, r24	; 0x01
+    1556:	0d c0       	rjmp	.+26     	; 0x1572 <puts1_PrintNumber+0x5c>
+
+        while(num/10)
+        {
+            num/=10;
+    1558:	89 81       	ldd	r24, Y+1	; 0x01
+    155a:	9a 81       	ldd	r25, Y+2	; 0x02
+    155c:	2a e0       	ldi	r18, 0x0A	; 10
+    155e:	30 e0       	ldi	r19, 0x00	; 0
+    1560:	b9 01       	movw	r22, r18
+    1562:	0e 94 06 0b 	call	0x160c	; 0x160c <__udivmodhi4>
+    1566:	cb 01       	movw	r24, r22
+    1568:	9a 83       	std	Y+2, r25	; 0x02
+    156a:	89 83       	std	Y+1, r24	; 0x01
+            i++;
+    156c:	8b 81       	ldd	r24, Y+3	; 0x03
+    156e:	8f 5f       	subi	r24, 0xFF	; 255
+    1570:	8b 83       	std	Y+3, r24	; 0x03
+        unsigned char i=1;
+
+        unsigned int num=0;
+        num=number;
+
+        while(num/10)
+    1572:	89 81       	ldd	r24, Y+1	; 0x01
+    1574:	9a 81       	ldd	r25, Y+2	; 0x02
+    1576:	8a 30       	cpi	r24, 0x0A	; 10
+    1578:	91 05       	cpc	r25, r1
+    157a:	70 f7       	brcc	.-36     	; 0x1558 <puts1_PrintNumber+0x42>
+        {
+            num/=10;
+            i++;
+        }
+        usart_p=usart_save;
+    157c:	ce 01       	movw	r24, r28
+    157e:	06 96       	adiw	r24, 0x06	; 6
+    1580:	9d 83       	std	Y+5, r25	; 0x05
+    1582:	8c 83       	std	Y+4, r24	; 0x04
+    1584:	31 c0       	rjmp	.+98     	; 0x15e8 <puts1_PrintNumber+0xd2>
+        for(;i>0;i--)
+        {
+            usart_save[i-1]=number%10+48;
+    1586:	8b 81       	ldd	r24, Y+3	; 0x03
+    1588:	88 2f       	mov	r24, r24
+    158a:	90 e0       	ldi	r25, 0x00	; 0
+    158c:	8c 01       	movw	r16, r24
+    158e:	01 50       	subi	r16, 0x01	; 1
+    1590:	10 40       	sbci	r17, 0x00	; 0
+    1592:	8e a1       	ldd	r24, Y+38	; 0x26
+    1594:	9f a1       	ldd	r25, Y+39	; 0x27
+    1596:	a8 a5       	ldd	r26, Y+40	; 0x28
+    1598:	b9 a5       	ldd	r27, Y+41	; 0x29
+    159a:	2a e0       	ldi	r18, 0x0A	; 10
+    159c:	30 e0       	ldi	r19, 0x00	; 0
+    159e:	40 e0       	ldi	r20, 0x00	; 0
+    15a0:	50 e0       	ldi	r21, 0x00	; 0
+    15a2:	bc 01       	movw	r22, r24
+    15a4:	cd 01       	movw	r24, r26
+    15a6:	0e 94 2d 0b 	call	0x165a	; 0x165a <__udivmodsi4>
+    15aa:	dc 01       	movw	r26, r24
+    15ac:	cb 01       	movw	r24, r22
+    15ae:	28 2f       	mov	r18, r24
+    15b0:	20 5d       	subi	r18, 0xD0	; 208
+    15b2:	ce 01       	movw	r24, r28
+    15b4:	06 96       	adiw	r24, 0x06	; 6
+    15b6:	fc 01       	movw	r30, r24
+    15b8:	e0 0f       	add	r30, r16
+    15ba:	f1 1f       	adc	r31, r17
+    15bc:	20 83       	st	Z, r18
+            number/=10;
+    15be:	8e a1       	ldd	r24, Y+38	; 0x26
+    15c0:	9f a1       	ldd	r25, Y+39	; 0x27
+    15c2:	a8 a5       	ldd	r26, Y+40	; 0x28
+    15c4:	b9 a5       	ldd	r27, Y+41	; 0x29
+    15c6:	2a e0       	ldi	r18, 0x0A	; 10
+    15c8:	30 e0       	ldi	r19, 0x00	; 0
+    15ca:	40 e0       	ldi	r20, 0x00	; 0
+    15cc:	50 e0       	ldi	r21, 0x00	; 0
+    15ce:	bc 01       	movw	r22, r24
+    15d0:	cd 01       	movw	r24, r26
+    15d2:	0e 94 2d 0b 	call	0x165a	; 0x165a <__udivmodsi4>
+    15d6:	da 01       	movw	r26, r20
+    15d8:	c9 01       	movw	r24, r18
+    15da:	8e a3       	std	Y+38, r24	; 0x26
+    15dc:	9f a3       	std	Y+39, r25	; 0x27
+    15de:	a8 a7       	std	Y+40, r26	; 0x28
+    15e0:	b9 a7       	std	Y+41, r27	; 0x29
+        {
+            num/=10;
+            i++;
+        }
+        usart_p=usart_save;
+        for(;i>0;i--)
+    15e2:	8b 81       	ldd	r24, Y+3	; 0x03
+    15e4:	81 50       	subi	r24, 0x01	; 1
+    15e6:	8b 83       	std	Y+3, r24	; 0x03
+    15e8:	8b 81       	ldd	r24, Y+3	; 0x03
+    15ea:	88 23       	and	r24, r24
+    15ec:	61 f6       	brne	.-104    	; 0x1586 <puts1_PrintNumber+0x70>
+        {
+            usart_save[i-1]=number%10+48;
+            number/=10;
+        }
+        puts1(usart_save);
+    15ee:	ce 01       	movw	r24, r28
+    15f0:	06 96       	adiw	r24, 0x06	; 6
+    15f2:	0e 94 69 0a 	call	0x14d2	; 0x14d2 <puts1>
+
+}
+    15f6:	a9 96       	adiw	r28, 0x29	; 41
+    15f8:	0f b6       	in	r0, 0x3f	; 63
+    15fa:	f8 94       	cli
+    15fc:	de bf       	out	0x3e, r29	; 62
+    15fe:	0f be       	out	0x3f, r0	; 63
+    1600:	cd bf       	out	0x3d, r28	; 61
+    1602:	cf 91       	pop	r28
+    1604:	df 91       	pop	r29
+    1606:	1f 91       	pop	r17
+    1608:	0f 91       	pop	r16
+    160a:	08 95       	ret
+
+0000160c <__udivmodhi4>:
+    160c:	aa 1b       	sub	r26, r26
+    160e:	bb 1b       	sub	r27, r27
+    1610:	51 e1       	ldi	r21, 0x11	; 17
+    1612:	07 c0       	rjmp	.+14     	; 0x1622 <__udivmodhi4_ep>
+
+00001614 <__udivmodhi4_loop>:
+    1614:	aa 1f       	adc	r26, r26
+    1616:	bb 1f       	adc	r27, r27
+    1618:	a6 17       	cp	r26, r22
+    161a:	b7 07       	cpc	r27, r23
+    161c:	10 f0       	brcs	.+4      	; 0x1622 <__udivmodhi4_ep>
+    161e:	a6 1b       	sub	r26, r22
+    1620:	b7 0b       	sbc	r27, r23
+
+00001622 <__udivmodhi4_ep>:
+    1622:	88 1f       	adc	r24, r24
+    1624:	99 1f       	adc	r25, r25
+    1626:	5a 95       	dec	r21
+    1628:	a9 f7       	brne	.-22     	; 0x1614 <__udivmodhi4_loop>
+    162a:	80 95       	com	r24
+    162c:	90 95       	com	r25
+    162e:	bc 01       	movw	r22, r24
+    1630:	cd 01       	movw	r24, r26
+    1632:	08 95       	ret
+
+00001634 <__divmodhi4>:
+    1634:	97 fb       	bst	r25, 7
+    1636:	09 2e       	mov	r0, r25
+    1638:	07 26       	eor	r0, r23
+    163a:	0a d0       	rcall	.+20     	; 0x1650 <__divmodhi4_neg1>
+    163c:	77 fd       	sbrc	r23, 7
+    163e:	04 d0       	rcall	.+8      	; 0x1648 <__divmodhi4_neg2>
+    1640:	e5 df       	rcall	.-54     	; 0x160c <__udivmodhi4>
+    1642:	06 d0       	rcall	.+12     	; 0x1650 <__divmodhi4_neg1>
+    1644:	00 20       	and	r0, r0
+    1646:	1a f4       	brpl	.+6      	; 0x164e <__divmodhi4_exit>
+
+00001648 <__divmodhi4_neg2>:
+    1648:	70 95       	com	r23
+    164a:	61 95       	neg	r22
+    164c:	7f 4f       	sbci	r23, 0xFF	; 255
+
+0000164e <__divmodhi4_exit>:
+    164e:	08 95       	ret
+
+00001650 <__divmodhi4_neg1>:
+    1650:	f6 f7       	brtc	.-4      	; 0x164e <__divmodhi4_exit>
+    1652:	90 95       	com	r25
+    1654:	81 95       	neg	r24
+    1656:	9f 4f       	sbci	r25, 0xFF	; 255
+    1658:	08 95       	ret
+
+0000165a <__udivmodsi4>:
+    165a:	a1 e2       	ldi	r26, 0x21	; 33
+    165c:	1a 2e       	mov	r1, r26
+    165e:	aa 1b       	sub	r26, r26
+    1660:	bb 1b       	sub	r27, r27
+    1662:	fd 01       	movw	r30, r26
+    1664:	0d c0       	rjmp	.+26     	; 0x1680 <__udivmodsi4_ep>
+
+00001666 <__udivmodsi4_loop>:
+    1666:	aa 1f       	adc	r26, r26
+    1668:	bb 1f       	adc	r27, r27
+    166a:	ee 1f       	adc	r30, r30
+    166c:	ff 1f       	adc	r31, r31
+    166e:	a2 17       	cp	r26, r18
+    1670:	b3 07       	cpc	r27, r19
+    1672:	e4 07       	cpc	r30, r20
+    1674:	f5 07       	cpc	r31, r21
+    1676:	20 f0       	brcs	.+8      	; 0x1680 <__udivmodsi4_ep>
+    1678:	a2 1b       	sub	r26, r18
+    167a:	b3 0b       	sbc	r27, r19
+    167c:	e4 0b       	sbc	r30, r20
+    167e:	f5 0b       	sbc	r31, r21
+
+00001680 <__udivmodsi4_ep>:
+    1680:	66 1f       	adc	r22, r22
+    1682:	77 1f       	adc	r23, r23
+    1684:	88 1f       	adc	r24, r24
+    1686:	99 1f       	adc	r25, r25
+    1688:	1a 94       	dec	r1
+    168a:	69 f7       	brne	.-38     	; 0x1666 <__udivmodsi4_loop>
+    168c:	60 95       	com	r22
+    168e:	70 95       	com	r23
+    1690:	80 95       	com	r24
+    1692:	90 95       	com	r25
+    1694:	9b 01       	movw	r18, r22
+    1696:	ac 01       	movw	r20, r24
+    1698:	bd 01       	movw	r22, r26
+    169a:	cf 01       	movw	r24, r30
+    169c:	08 95       	ret
+
+0000169e <_exit>:
+    169e:	f8 94       	cli
+
+000016a0 <__stop_program>:
+    16a0:	ff cf       	rjmp	.-2      	; 0x16a0 <__stop_program>

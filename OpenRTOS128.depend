@@ -1,0 +1,66 @@
+# depslib dependency file v1.0
+1598921623 source:c:\users\administrator\desktop\doc\openrtos128\core.c
+	"core.h"
+	"OpenRTOS.h"
+	"uart.h"
+
+1598921623 c:\users\administrator\desktop\doc\openrtos128\core.h
+	"OpenRTOS.h"
+
+1598921623 c:\users\administrator\desktop\doc\openrtos128\openrtos.h
+	"type.h"
+	"list.h"
+	"heap.h"
+	"task.h"
+	"core.h"
+	"OpenRTOSconfig.h"
+	<avr/io.h>
+	<avr/interrupt.h>
+	<avr/iom128.h>
+	"stdio.h"
+
+1597456861 c:\users\administrator\desktop\doc\openrtos128\type.h
+
+1598921623 c:\users\administrator\desktop\doc\openrtos128\list.h
+	"type.h"
+	"OpenRTOSconfig.h"
+
+1597465542 c:\users\administrator\desktop\doc\openrtos128\openrtosconfig.h
+
+1597473037 c:\users\administrator\desktop\doc\openrtos128\heap.h
+	"type.h"
+
+1598921623 c:\users\administrator\desktop\doc\openrtos128\task.h
+	"OpenRTOS.h"
+
+1596185372 source:c:\users\administrator\desktop\doc\openrtos128\fuse.c
+
+1596182395 source:c:\users\administrator\desktop\doc\openrtos128\heap.c
+	"heap.h"
+
+1598921623 source:c:\users\administrator\desktop\doc\openrtos128\list.c
+	"list.h"
+	"task.h"
+	"stdio.h"
+
+1577367147 source:c:\users\administrator\desktop\doc\openrtos128\semap.c
+	"semap.h"
+
+1577367322 c:\users\administrator\desktop\doc\openrtos128\semap.h
+	"type.h"
+	"OpenRTOSconfig.h"
+
+1598921623 source:c:\users\administrator\desktop\doc\openrtos128\task.c
+	"task.h"
+	"list.h"
+
+1597470686 source:c:\users\administrator\desktop\doc\openrtos128\uart.c
+	"uart.h"
+
+1597470737 c:\users\administrator\desktop\doc\openrtos128\uart.h
+	"OpenRTOS.h"
+
+1598921666 source:c:\users\administrator\desktop\doc\openrtos128\main.c
+	"OpenRTOS.h"
+	"uart.h"
+
